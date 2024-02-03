@@ -12,11 +12,13 @@ class BaseViewController: UIViewController {
     public var backgoundImageView = UIImageView()
     public var titleLabel = UILabel()
     
+    let testLabel = UILabel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        addTestText()
         setBackground()
         view.backgroundColor = UIColor.white
+        addTestText(text: "base")
     }
     
     
@@ -50,18 +52,17 @@ class BaseViewController: UIViewController {
 
 
 extension BaseViewController {
-    func addTestText() {
-        let testLabel = UILabel()
-        testLabel.text = "Base Text"
+    func addTestText(text: String = "base" ) {
+        testLabel.text = text
         testLabel.textAlignment = .center
         testLabel.font = UIFont.systemFont(ofSize: 10)
-        testLabel.textColor = .red
+        testLabel.textColor = .black
         testLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(testLabel)
         
         NSLayoutConstraint.activate([
-            testLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 150),
-            testLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -310)
+            testLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 160),
+            testLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -300)
         ])
     }
 }

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SnapKit 
+
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -17,13 +19,33 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         self.window = UIWindow(windowScene: windowScene)
-        let pulseViewController = PulseViewController()
-        let navigationController = UINavigationController(rootViewController: pulseViewController)
         
-        self.window?.rootViewController = navigationController
+        
+        // Создаем экземпляры контроллеров
+        let pulseViewController = PulseViewController()
+        let history = HistoryViewController()
+        let diet = DietViewController()
+        let test = TestViewController()
+        let profile = ProfileViewController()
+        
+        // Настроим тайтлы и изображения для каждого таба
+             pulseViewController.tabBarItem = UITabBarItem(title: "Pulse", image: UIImage(named: "pulse_icon"), tag: 0)
+             history.tabBarItem = UITabBarItem(title: "History", image: UIImage(named: "history_icon"), tag: 1)
+             diet.tabBarItem = UITabBarItem(title: "Diet", image: UIImage(named: "diet_icon"), tag: 2)
+             test.tabBarItem = UITabBarItem(title: "Test", image: UIImage(named: "test_icon"), tag: 3)
+             profile.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "test_icon"), tag: 4)
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers =  [pulseViewController, history, diet, test, profile]
+        
+        
+        self.window?.rootViewController = tabBarController
         self.window?.makeKeyAndVisible()
     }
 
+    
+
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.

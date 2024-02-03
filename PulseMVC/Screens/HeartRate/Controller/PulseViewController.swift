@@ -12,5 +12,6 @@ class PulseViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addTestText(text: "pulse")
     }
 }
