@@ -1,0 +1,6 @@
+version: "Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)"
+options: "397c7a97c6a91c0da1307634205a6fe363400ac828fa45c4b88a4c95fa783138"
+build_start_time: [1706978977, 858280000]
+build_end_time: [1706978980, 961253000]
+inputs:
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVCTests/PulseMVCTests.swift": [1706713622, 48417791]

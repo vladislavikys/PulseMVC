@@ -1,0 +1,198 @@
+{
+  "" : {
+    "diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseMVC-master.dia",
+    "emit-module-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseMVC-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseMVC-master-emit-module.dia",
+    "swift-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseMVC-master.swiftdeps"
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/AppDelegate.swift" : {
+    "const-values" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/AppDelegate.swiftconstvalues",
+    "dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/AppDelegate.d",
+    "diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/AppDelegate.dia",
+    "index-unit-output-path" : "/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/AppDelegate.o",
+    "llvm-bc" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/AppDelegate.bc",
+    "object" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/AppDelegate.o",
+    "swift-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/AppDelegate.swiftdeps",
+    "swiftmodule" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/AppDelegate~partial.swiftmodule"
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/SceneDelegate.swift" : {
+    "const-values" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/SceneDelegate.swiftconstvalues",
+    "dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/SceneDelegate.d",
+    "diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/SceneDelegate.dia",
+    "index-unit-output-path" : "/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/SceneDelegate.o",
+    "llvm-bc" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/SceneDelegate.bc",
+    "object" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/SceneDelegate.o",
+    "swift-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/SceneDelegate.swiftdeps",
+    "swiftmodule" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/SceneDelegate~partial.swiftmodule"
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/Base/BaseViewController.swift" : {
+    "const-values" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/BaseViewController.swiftconstvalues",
+    "dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/BaseViewController.d",
+    "diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/BaseViewController.dia",
+    "index-unit-output-path" : "/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/BaseViewController.o",
+    "llvm-bc" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/BaseViewController.bc",
+    "object" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/BaseViewController.o",
+    "swift-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/BaseViewController.swiftdeps",
+    "swiftmodule" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/BaseViewController~partial.swiftmodule"
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/DIet/Controller/DietViewController.swift" : {
+    "const-values" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/DietViewController.swiftconstvalues",
+    "dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/DietViewController.d",
+    "diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/DietViewController.dia",
+    "index-unit-output-path" : "/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/DietViewController.o",
+    "llvm-bc" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/DietViewController.bc",
+    "object" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/DietViewController.o",
+    "swift-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/DietViewController.swiftdeps",
+    "swiftmodule" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/DietViewController~partial.swiftmodule"
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/DIet/Model/DIetModel.swift" : {
+    "const-values" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/DIetModel.swiftconstvalues",
+    "dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/DIetModel.d",
+    "diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/DIetModel.dia",
+    "index-unit-output-path" : "/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/DIetModel.o",
+    "llvm-bc" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/DIetModel.bc",
+    "object" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/DIetModel.o",
+    "swift-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/DIetModel.swiftdeps",
+    "swiftmodule" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/DIetModel~partial.swiftmodule"
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/DIet/View/DietView.swift" : {
+    "const-values" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/DietView.swiftconstvalues",
+    "dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/DietView.d",
+    "diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/DietView.dia",
+    "index-unit-output-path" : "/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/DietView.o",
+    "llvm-bc" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/DietView.bc",
+    "object" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/DietView.o",
+    "swift-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/DietView.swiftdeps",
+    "swiftmodule" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/DietView~partial.swiftmodule"
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/HeartRate/Controller/PulseViewController.swift" : {
+    "const-values" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseViewController.swiftconstvalues",
+    "dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseViewController.d",
+    "diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseViewController.dia",
+    "index-unit-output-path" : "/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseViewController.o",
+    "llvm-bc" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseViewController.bc",
+    "object" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseViewController.o",
+    "swift-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseViewController.swiftdeps",
+    "swiftmodule" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseViewController~partial.swiftmodule"
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/HeartRate/Model/PulseModel.swift" : {
+    "const-values" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseModel.swiftconstvalues",
+    "dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseModel.d",
+    "diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseModel.dia",
+    "index-unit-output-path" : "/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseModel.o",
+    "llvm-bc" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseModel.bc",
+    "object" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseModel.o",
+    "swift-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseModel.swiftdeps",
+    "swiftmodule" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseModel~partial.swiftmodule"
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/HeartRate/View/PulseView.swift" : {
+    "const-values" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseView.swiftconstvalues",
+    "dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseView.d",
+    "diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseView.dia",
+    "index-unit-output-path" : "/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseView.o",
+    "llvm-bc" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseView.bc",
+    "object" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseView.o",
+    "swift-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseView.swiftdeps",
+    "swiftmodule" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/PulseView~partial.swiftmodule"
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/History/Controller/HistoryViewController.swift" : {
+    "const-values" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/HistoryViewController.swiftconstvalues",
+    "dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/HistoryViewController.d",
+    "diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/HistoryViewController.dia",
+    "index-unit-output-path" : "/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/HistoryViewController.o",
+    "llvm-bc" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/HistoryViewController.bc",
+    "object" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/HistoryViewController.o",
+    "swift-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/HistoryViewController.swiftdeps",
+    "swiftmodule" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/HistoryViewController~partial.swiftmodule"
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/History/Model/HIstoryModel.swift" : {
+    "const-values" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/HIstoryModel.swiftconstvalues",
+    "dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/HIstoryModel.d",
+    "diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/HIstoryModel.dia",
+    "index-unit-output-path" : "/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/HIstoryModel.o",
+    "llvm-bc" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/HIstoryModel.bc",
+    "object" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/HIstoryModel.o",
+    "swift-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/HIstoryModel.swiftdeps",
+    "swiftmodule" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/HIstoryModel~partial.swiftmodule"
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/History/View/HistoryView.swift" : {
+    "const-values" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/HistoryView.swiftconstvalues",
+    "dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/HistoryView.d",
+    "diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/HistoryView.dia",
+    "index-unit-output-path" : "/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/HistoryView.o",
+    "llvm-bc" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/HistoryView.bc",
+    "object" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/HistoryView.o",
+    "swift-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/HistoryView.swiftdeps",
+    "swiftmodule" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/HistoryView~partial.swiftmodule"
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/Profile/Controller/ProfileViewController.swift" : {
+    "const-values" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/ProfileViewController.swiftconstvalues",
+    "dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/ProfileViewController.d",
+    "diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/ProfileViewController.dia",
+    "index-unit-output-path" : "/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/ProfileViewController.o",
+    "llvm-bc" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/ProfileViewController.bc",
+    "object" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/ProfileViewController.o",
+    "swift-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/ProfileViewController.swiftdeps",
+    "swiftmodule" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/ProfileViewController~partial.swiftmodule"
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/Profile/Model/ProfileModel.swift" : {
+    "const-values" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/ProfileModel.swiftconstvalues",
+    "dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/ProfileModel.d",
+    "diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/ProfileModel.dia",
+    "index-unit-output-path" : "/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/ProfileModel.o",
+    "llvm-bc" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/ProfileModel.bc",
+    "object" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/ProfileModel.o",
+    "swift-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/ProfileModel.swiftdeps",
+    "swiftmodule" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/ProfileModel~partial.swiftmodule"
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/Profile/View/ProfileView.swift" : {
+    "const-values" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/ProfileView.swiftconstvalues",
+    "dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/ProfileView.d",
+    "diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/ProfileView.dia",
+    "index-unit-output-path" : "/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/ProfileView.o",
+    "llvm-bc" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/ProfileView.bc",
+    "object" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/ProfileView.o",
+    "swift-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/ProfileView.swiftdeps",
+    "swiftmodule" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/ProfileView~partial.swiftmodule"
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/Test/Controller/TestViewController.swift" : {
+    "const-values" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/TestViewController.swiftconstvalues",
+    "dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/TestViewController.d",
+    "diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/TestViewController.dia",
+    "index-unit-output-path" : "/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/TestViewController.o",
+    "llvm-bc" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/TestViewController.bc",
+    "object" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/TestViewController.o",
+    "swift-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/TestViewController.swiftdeps",
+    "swiftmodule" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/TestViewController~partial.swiftmodule"
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/Test/Model/TestModel.swift" : {
+    "const-values" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/TestModel.swiftconstvalues",
+    "dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/TestModel.d",
+    "diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/TestModel.dia",
+    "index-unit-output-path" : "/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/TestModel.o",
+    "llvm-bc" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/TestModel.bc",
+    "object" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/TestModel.o",
+    "swift-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/TestModel.swiftdeps",
+    "swiftmodule" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/TestModel~partial.swiftmodule"
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/Test/View/TestView.swift" : {
+    "const-values" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/TestView.swiftconstvalues",
+    "dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/TestView.d",
+    "diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/TestView.dia",
+    "index-unit-output-path" : "/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/TestView.o",
+    "llvm-bc" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/TestView.bc",
+    "object" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/TestView.o",
+    "swift-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/TestView.swiftdeps",
+    "swiftmodule" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PulseMVC.build/Debug-iphonesimulator/PulseMVC.build/Objects-normal/arm64/TestView~partial.swiftmodule"
+  }
+}

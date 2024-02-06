@@ -1,0 +1,30 @@
+"/Users/vlad/Desktop/swift project all/2024/PulseMVC/Pods/SnapKit/Sources/ConstraintMakerEditable.swift":
+  object: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintMakerEditable.o"
+  dependencies: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintMakerEditable.d"
+  const-values: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintMakerEditable.swiftconstvalues"
+  swift-dependencies: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintMakerEditable.swiftdeps"
+  diagnostics: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintMakerEditable.dia"
+"/Users/vlad/Desktop/swift project all/2024/PulseMVC/Pods/SnapKit/Sources/ConstraintMakerExtendable.swift":
+  swift-dependencies: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintMakerExtendable.swiftdeps"
+  const-values: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintMakerExtendable.swiftconstvalues"
+  object: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintMakerExtendable.o"
+  diagnostics: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintMakerExtendable.dia"
+  dependencies: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintMakerExtendable.d"
+"/Users/vlad/Desktop/swift project all/2024/PulseMVC/Pods/SnapKit/Sources/ConstraintMakerFinalizable.swift":
+  dependencies: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintMakerFinalizable.d"
+  const-values: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintMakerFinalizable.swiftconstvalues"
+  swift-dependencies: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintMakerFinalizable.swiftdeps"
+  object: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintMakerFinalizable.o"
+  diagnostics: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintMakerFinalizable.dia"
+"/Users/vlad/Desktop/swift project all/2024/PulseMVC/Pods/SnapKit/Sources/ConstraintLayoutSupportDSL.swift":
+  object: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintLayoutSupportDSL.o"
+  diagnostics: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintLayoutSupportDSL.dia"
+  dependencies: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintLayoutSupportDSL.d"
+  const-values: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintLayoutSupportDSL.swiftconstvalues"
+  swift-dependencies: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintLayoutSupportDSL.swiftdeps"
+"/Users/vlad/Desktop/swift project all/2024/PulseMVC/Pods/SnapKit/Sources/ConstraintMaker.swift":
+  const-values: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintMaker.swiftconstvalues"
+  diagnostics: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintMaker.dia"
+  object: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintMaker.o"
+  dependencies: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintMaker.d"
+  swift-dependencies: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintMaker.swiftdeps"

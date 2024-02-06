@@ -1,0 +1,15 @@
+{
+  "" : {
+    "dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Index.noindex/Build/Intermediates.noindex/PulseMVC.build/Debug-iphoneos/PulseMVCUITests.build/Objects-normal/arm64/PulseMVCUITests-master.d",
+    "diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Index.noindex/Build/Intermediates.noindex/PulseMVC.build/Debug-iphoneos/PulseMVCUITests.build/Objects-normal/arm64/PulseMVCUITests-master.dia",
+    "emit-module-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Index.noindex/Build/Intermediates.noindex/PulseMVC.build/Debug-iphoneos/PulseMVCUITests.build/Objects-normal/arm64/PulseMVCUITests-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Index.noindex/Build/Intermediates.noindex/PulseMVC.build/Debug-iphoneos/PulseMVCUITests.build/Objects-normal/arm64/PulseMVCUITests-master-emit-module.dia",
+    "swift-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Index.noindex/Build/Intermediates.noindex/PulseMVC.build/Debug-iphoneos/PulseMVCUITests.build/Objects-normal/arm64/PulseMVCUITests-master.swiftdeps"
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVCUITests/PulseMVCUITests.swift" : {
+
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVCUITests/PulseMVCUITestsLaunchTests.swift" : {
+
+  }
+}

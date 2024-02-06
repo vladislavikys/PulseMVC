@@ -1,0 +1,66 @@
+{
+  "" : {
+    "dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Index.noindex/Build/Intermediates.noindex/PulseMVC.build/Debug-iphoneos/PulseMVC.build/Objects-normal/arm64/PulseMVC-master.d",
+    "diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Index.noindex/Build/Intermediates.noindex/PulseMVC.build/Debug-iphoneos/PulseMVC.build/Objects-normal/arm64/PulseMVC-master.dia",
+    "emit-module-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Index.noindex/Build/Intermediates.noindex/PulseMVC.build/Debug-iphoneos/PulseMVC.build/Objects-normal/arm64/PulseMVC-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Index.noindex/Build/Intermediates.noindex/PulseMVC.build/Debug-iphoneos/PulseMVC.build/Objects-normal/arm64/PulseMVC-master-emit-module.dia",
+    "swift-dependencies" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Index.noindex/Build/Intermediates.noindex/PulseMVC.build/Debug-iphoneos/PulseMVC.build/Objects-normal/arm64/PulseMVC-master.swiftdeps"
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Index.noindex/Build/Intermediates.noindex/PulseMVC.build/Debug-iphoneos/PulseMVC.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/AppDelegate.swift" : {
+
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/SceneDelegate.swift" : {
+
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/Base/BaseViewController.swift" : {
+
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/DIet/Controller/DietViewController.swift" : {
+
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/DIet/Model/DIetModel.swift" : {
+
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/DIet/View/DietView.swift" : {
+
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/HeartRate/Controller/PulseViewController.swift" : {
+
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/HeartRate/Model/PulseModel.swift" : {
+
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/HeartRate/View/PulseView.swift" : {
+
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/History/Controller/HistoryViewController.swift" : {
+
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/History/Model/HIstoryModel.swift" : {
+
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/History/View/HistoryView.swift" : {
+
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/Profile/Controller/ProfileViewController.swift" : {
+
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/Profile/Model/ProfileModel.swift" : {
+
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/Profile/View/ProfileView.swift" : {
+
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/Test/Controller/TestViewController.swift" : {
+
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/Test/Model/TestModel.swift" : {
+
+  },
+  "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC/Screens/Test/View/TestView.swift" : {
+
+  }
+}

@@ -1,0 +1,24 @@
+"/Users/vlad/Desktop/swift project all/2024/PulseMVC/Pods/SnapKit/Sources/ConstraintRelatableTarget.swift":
+  dependencies: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintRelatableTarget.d"
+  swift-dependencies: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintRelatableTarget.swiftdeps"
+  diagnostics: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintRelatableTarget.dia"
+  const-values: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintRelatableTarget.swiftconstvalues"
+  object: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintRelatableTarget.o"
+"/Users/vlad/Desktop/swift project all/2024/PulseMVC/Pods/SnapKit/Sources/ConstraintPriority.swift":
+  object: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintPriority.o"
+  swift-dependencies: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintPriority.swiftdeps"
+  diagnostics: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintPriority.dia"
+  dependencies: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintPriority.d"
+  const-values: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintPriority.swiftconstvalues"
+"/Users/vlad/Desktop/swift project all/2024/PulseMVC/Pods/SnapKit/Sources/ConstraintPriorityTarget.swift":
+  const-values: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintPriorityTarget.swiftconstvalues"
+  swift-dependencies: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintPriorityTarget.swiftdeps"
+  object: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintPriorityTarget.o"
+  diagnostics: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintPriorityTarget.dia"
+  dependencies: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintPriorityTarget.d"
+"/Users/vlad/Desktop/swift project all/2024/PulseMVC/Pods/SnapKit/Sources/ConstraintRelation.swift":
+  const-values: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintRelation.swiftconstvalues"
+  swift-dependencies: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintRelation.swiftdeps"
+  object: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintRelation.o"
+  diagnostics: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintRelation.dia"
+  dependencies: "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/SnapKit.build/Objects-normal/arm64/ConstraintRelation.d"

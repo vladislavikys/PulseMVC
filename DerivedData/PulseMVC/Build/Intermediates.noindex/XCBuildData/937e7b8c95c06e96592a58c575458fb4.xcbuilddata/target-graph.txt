@@ -1,0 +1,7 @@
+Target dependency graph (3 targets)
+Target 'PulseMVC' in project 'PulseMVC'
+➜ Implicit dependency on target 'Pods-PulseMVC' in project 'Pods' via file 'Pods_PulseMVC.framework' in build phase 'Link Binary'
+➜ Implicit dependency on target 'SnapKit' in project 'Pods' via options '-framework SnapKit' in build setting 'OTHER_LDFLAGS'
+Target 'Pods-PulseMVC' in project 'Pods'
+➜ Explicit dependency on target 'SnapKit' in project 'Pods'
+Target 'SnapKit' in project 'Pods' (no dependencies)

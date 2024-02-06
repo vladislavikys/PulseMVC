@@ -11,47 +11,23 @@ class BaseViewController: UIViewController {
     
     public var backgoundImageView = UIImageView()
     public var titleLabel = UILabel()
+    public var activityDescriptionLabel = UILabel()
     
     let testLabel = UILabel()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackground()
         view.backgroundColor = UIColor.white
-        addTestText(text: "base")
     }
     
-    
-    
-    func setBackground(){
-        view.addSubview(backgoundImageView)
-        view.addSubview(titleLabel)
-        backgoundImageView.image = UIImage(named: "backgroundColor")
-        backgoundImageView.translatesAutoresizingMaskIntoConstraints = false
-        
-        titleLabel.font = UIFont(name: "San Francisco", size: 28)
-        titleLabel.textAlignment = .left
-        titleLabel.textColor = UIColor(red: 0.114, green: 0.114, blue: 0.145, alpha: 1)
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.adjustsFontSizeToFitWidth = true
-        
-        NSLayoutConstraint.activate([
-            backgoundImageView.topAnchor.constraint(equalTo: view.topAnchor),
-            backgoundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            backgoundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            backgoundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            
-            //titleLabel.heightAnchor.constraint(equalToConstant: 33),
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 18),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -18),
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 80)
-        ])
-    }
 }
 
 
 
 extension BaseViewController {
+    //справа тестовой для того чтобы видеть изминение экрана
     func addTestText(text: String = "base" ) {
         testLabel.text = text
         testLabel.textAlignment = .center
@@ -60,9 +36,46 @@ extension BaseViewController {
         testLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(testLabel)
         
-        NSLayoutConstraint.activate([
-            testLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 160),
-            testLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -300)
-        ])
+        testLabel.snp.makeConstraints { make in
+            make.centerX.equalTo(view).offset(160)
+            make.centerY.equalTo(view).offset(-300)
+        }
+    }
+    //добавляем фон на экран
+    func setBackground(){
+        view.addSubview(backgoundImageView)
+        view.addSubview(titleLabel)
+        view.addSubview(activityDescriptionLabel)
+        backgoundImageView.image = UIImage(named: "backgroundColor")
+        backgoundImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        titleLabel.font = UIFont.systemFont(ofSize: 28, weight: .bold)
+        titleLabel.textAlignment = .left
+        titleLabel.textColor = UIColor(red: 0.114, green: 0.114, blue: 0.145, alpha: 1)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.adjustsFontSizeToFitWidth = true
+        
+        activityDescriptionLabel.text = "Place your finger on the back camera and flashlight"
+        activityDescriptionLabel.numberOfLines = 0
+        activityDescriptionLabel.lineBreakMode = .byWordWrapping
+        activityDescriptionLabel.font = UIFont.systemFont(ofSize: 14, weight: .light)
+        activityDescriptionLabel.textAlignment = .center
+        
+        backgoundImageView.snp.makeConstraints { make in
+            make.edges.equalTo(view)
+        }
+        titleLabel.snp.makeConstraints { make in
+            make.leading.equalTo(view).offset(18)
+            make.trailing.equalTo(view).offset(-18)
+            make.top.equalTo(view).offset(74)
+        }
+        
+        activityDescriptionLabel.snp.makeConstraints { make in
+            make.top.equalTo(view).offset(400)
+            make.width.equalTo(280)
+            make.centerX.equalTo(view)
+        }
+        
+        activityDescriptionLabel.isHidden = true
     }
 }

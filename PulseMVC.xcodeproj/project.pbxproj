@@ -10,6 +10,9 @@
 		0E218DC82EBE1FBAE8734E73 /* Pods_PulseMVCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 289906C9F8C67D10CB89B2B7 /* Pods_PulseMVCTests.framework */; };
 		53C44EB94182BD9E2E0ED284 /* Pods_PulseMVC_PulseMVCUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1513D1A2A9CFB01295F2493E /* Pods_PulseMVC_PulseMVCUITests.framework */; };
 		EE043C2379BE53183994B095 /* Pods_PulseMVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896ACD1CD8947A3BB0D833B7 /* Pods_PulseMVC.framework */; };
+		F508212A2B7139AC00CEF074 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50821292B7139AC00CEF074 /* AboutMeViewController.swift */; };
+		F508212D2B71439500CEF074 /* PulseStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F508212C2B71439500CEF074 /* PulseStack.swift */; };
+		F5243B5B2B6FCD6100589331 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5243B5A2B6FCD6100589331 /* ProgressBar.swift */; };
 		F542FCAA2B6E6A9300ACB81B /* PulseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F542FCA92B6E6A9300ACB81B /* PulseView.swift */; };
 		F542FCBF2B6E746D00ACB81B /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F542FCBE2B6E746D00ACB81B /* HistoryViewController.swift */; };
 		F542FCC12B6E748700ACB81B /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F542FCC02B6E748700ACB81B /* HistoryView.swift */; };
@@ -33,6 +36,9 @@
 		F5A02EED2B6BF09600DF7ED7 /* PulseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A02EEC2B6BF09600DF7ED7 /* PulseModel.swift */; };
 		F5A02EF12B6BF0B700DF7ED7 /* PulseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A02EF02B6BF0B700DF7ED7 /* PulseViewController.swift */; };
 		F5A02EF62B6BFA7000DF7ED7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A02EF52B6BFA7000DF7ED7 /* BaseViewController.swift */; };
+		F5E9C4E12B6FAF25001D5621 /* GlobalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E9C4E02B6FAF25001D5621 /* GlobalButton.swift */; };
+		F5E9C4E32B6FB426001D5621 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E9C4E22B6FB426001D5621 /* AppColor.swift */; };
+		F5E9C4E62B6FB7E5001D5621 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E9C4E52B6FB7E5001D5621 /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +70,9 @@
 		896ACD1CD8947A3BB0D833B7 /* Pods_PulseMVC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PulseMVC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D437570C7B95FBE78BF770C /* Pods-PulseMVCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseMVCTests.debug.xcconfig"; path = "Target Support Files/Pods-PulseMVCTests/Pods-PulseMVCTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF6F6D34C98E619B4CE4ED0B /* Pods-PulseMVC-PulseMVCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseMVC-PulseMVCTests.debug.xcconfig"; path = "Target Support Files/Pods-PulseMVC-PulseMVCTests/Pods-PulseMVC-PulseMVCTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F50821292B7139AC00CEF074 /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
+		F508212C2B71439500CEF074 /* PulseStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseStack.swift; sourceTree = "<group>"; };
+		F5243B5A2B6FCD6100589331 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		F542FCA92B6E6A9300ACB81B /* PulseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseView.swift; sourceTree = "<group>"; };
 		F542FCBE2B6E746D00ACB81B /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		F542FCC02B6E748700ACB81B /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
@@ -91,6 +100,9 @@
 		F5A02EEC2B6BF09600DF7ED7 /* PulseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseModel.swift; sourceTree = "<group>"; };
 		F5A02EF02B6BF0B700DF7ED7 /* PulseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseViewController.swift; sourceTree = "<group>"; };
 		F5A02EF52B6BFA7000DF7ED7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F5E9C4E02B6FAF25001D5621 /* GlobalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalButton.swift; sourceTree = "<group>"; };
+		F5E9C4E22B6FB426001D5621 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		F5E9C4E52B6FB7E5001D5621 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,8 +155,23 @@
 				8D437570C7B95FBE78BF770C /* Pods-PulseMVCTests.debug.xcconfig */,
 				4A221EBA38ADF3DAF8B4F3A6 /* Pods-PulseMVCTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F508212B2B71437D00CEF074 /* PulseStack */ = {
+			isa = PBXGroup;
+			children = (
+				F508212C2B71439500CEF074 /* PulseStack.swift */,
+			);
+			path = PulseStack;
+			sourceTree = "<group>";
+		};
+		F5243B592B6FCD5400589331 /* ProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				F5243B5A2B6FCD6100589331 /* ProgressBar.swift */,
+			);
+			path = ProgressBar;
 			sourceTree = "<group>";
 		};
 		F542FCA62B6E66EF00ACB81B /* HeartRate */ = {
@@ -181,6 +208,7 @@
 		F542FCAB2B6E6AA300ACB81B /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				F5E9C4DF2B6F801C001D5621 /* SetupElements */,
 				F5A02EF52B6BFA7000DF7ED7 /* BaseViewController.swift */,
 			);
 			path = Base;
@@ -386,8 +414,29 @@
 			isa = PBXGroup;
 			children = (
 				F5A02EF02B6BF0B700DF7ED7 /* PulseViewController.swift */,
+				F50821292B7139AC00CEF074 /* AboutMeViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		F5E9C4DF2B6F801C001D5621 /* SetupElements */ = {
+			isa = PBXGroup;
+			children = (
+				F508212B2B71437D00CEF074 /* PulseStack */,
+				F5243B592B6FCD5400589331 /* ProgressBar */,
+				F5E9C4E42B6FB7C8001D5621 /* TabBar */,
+				F5E9C4E02B6FAF25001D5621 /* GlobalButton.swift */,
+				F5E9C4E22B6FB426001D5621 /* AppColor.swift */,
+			);
+			path = SetupElements;
+			sourceTree = "<group>";
+		};
+		F5E9C4E42B6FB7C8001D5621 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F5E9C4E52B6FB7E5001D5621 /* TabBarController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -629,6 +678,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F542FCCD2B6E77FC00ACB81B /* TestView.swift in Sources */,
+				F5E9C4E32B6FB426001D5621 /* AppColor.swift in Sources */,
+				F508212D2B71439500CEF074 /* PulseStack.swift in Sources */,
 				F5A02EF12B6BF0B700DF7ED7 /* PulseViewController.swift in Sources */,
 				F542FCC12B6E748700ACB81B /* HistoryView.swift in Sources */,
 				F5A02EED2B6BF09600DF7ED7 /* PulseModel.swift in Sources */,
@@ -638,12 +689,16 @@
 				F542FCCB2B6E77CE00ACB81B /* TestViewController.swift in Sources */,
 				F542FCC92B6E778800ACB81B /* DIetModel.swift in Sources */,
 				F542FCD32B6E79D800ACB81B /* ProfileModel.swift in Sources */,
+				F508212A2B7139AC00CEF074 /* AboutMeViewController.swift in Sources */,
 				F542FCD52B6E7A5000ACB81B /* ProfileView.swift in Sources */,
+				F5243B5B2B6FCD6100589331 /* ProgressBar.swift in Sources */,
 				F5984E7E2B6A99940090376F /* AppDelegate.swift in Sources */,
 				F542FCC72B6E777400ACB81B /* DietView.swift in Sources */,
 				F5984E802B6A99940090376F /* SceneDelegate.swift in Sources */,
+				F5E9C4E12B6FAF25001D5621 /* GlobalButton.swift in Sources */,
 				F542FCC32B6E74A100ACB81B /* HIstoryModel.swift in Sources */,
 				F542FCCF2B6E781400ACB81B /* TestModel.swift in Sources */,
+				F5E9C4E62B6FB7E5001D5621 /* TabBarController.swift in Sources */,
 				F542FCBF2B6E746D00ACB81B /* HistoryViewController.swift in Sources */,
 				F5A02EF62B6BFA7000DF7ED7 /* BaseViewController.swift in Sources */,
 			);
@@ -821,6 +876,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QYJ996Y32P;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PulseMVC/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -853,6 +909,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QYJ996Y32P;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PulseMVC/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

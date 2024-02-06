@@ -1,0 +1,65 @@
+{
+  "buildCommand" : {
+    "command" : "build",
+    "skipDependencies" : false,
+    "style" : "buildOnly"
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "72d91d935fd5eb30241707c67cdec3d2a0d85f0d0619e6c3367cfb1e52752bd4"
+    }
+  ],
+  "containerPath" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/PulseMVC.xcworkspace",
+  "continueBuildingAfterErrors" : false,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "iphonesimulator",
+      "sdk" : "iphonesimulator17.2",
+      "sdkVariant" : "iphonesimulator",
+      "supportedArchitectures" : [
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Products",
+      "derivedDataPath" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Index.noindex/PrecompiledHeaders",
+      "pchPath" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ASSETCATALOG_FILTER_FOR_DEVICE_MODEL" : "iPhone14,6",
+          "ASSETCATALOG_FILTER_FOR_DEVICE_OS_VERSION" : "17.2",
+          "ASSETCATALOG_FILTER_FOR_THINNING_DEVICE_CONFIGURATION" : "iPhone14,6",
+          "BUILD_ACTIVE_RESOURCES_ONLY" : "YES",
+          "CLANG_COVERAGE_MAPPING" : "YES",
+          "CLANG_PROFILE_DATA_DIRECTORY" : "/Users/vlad/Desktop/swift project all/2024/PulseMVC/DerivedData/PulseMVC/Build/ProfileData",
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "NO",
+          "TARGET_DEVICE_IDENTIFIER" : "7424209C-E2B1-45E1-86BC-6BEE546D6786",
+          "TARGET_DEVICE_MODEL" : "iPhone14,6",
+          "TARGET_DEVICE_OS_VERSION" : "17.2",
+          "TARGET_DEVICE_PLATFORM_NAME" : "iphonesimulator"
+        }
+      }
+    }
+  },
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}
