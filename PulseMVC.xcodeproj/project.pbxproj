@@ -26,6 +26,10 @@
 		F542FCD12B6E789E00ACB81B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F542FCD02B6E789E00ACB81B /* ProfileViewController.swift */; };
 		F542FCD32B6E79D800ACB81B /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F542FCD22B6E79D800ACB81B /* ProfileModel.swift */; };
 		F542FCD52B6E7A5000ACB81B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F542FCD42B6E7A5000ACB81B /* ProfileView.swift */; };
+		F54492532B725BCB002CAA53 /* AboutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54492522B725BCB002CAA53 /* AboutModel.swift */; };
+		F54492562B725ED6002CAA53 /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54492552B725ED6002CAA53 /* AboutCell.swift */; };
+		F544925A2B73A3BF002CAA53 /* unitsFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54492592B73A3BF002CAA53 /* unitsFieldView.swift */; };
+		F544925C2B73AA8F002CAA53 /* unitsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F544925B2B73AA8F002CAA53 /* unitsStackView.swift */; };
 		F5984E7E2B6A99940090376F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5984E7D2B6A99940090376F /* AppDelegate.swift */; };
 		F5984E802B6A99940090376F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5984E7F2B6A99940090376F /* SceneDelegate.swift */; };
 		F5984E872B6A99950090376F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5984E862B6A99950090376F /* Assets.xcassets */; };
@@ -86,6 +90,10 @@
 		F542FCD02B6E789E00ACB81B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F542FCD22B6E79D800ACB81B /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		F542FCD42B6E7A5000ACB81B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		F54492522B725BCB002CAA53 /* AboutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutModel.swift; sourceTree = "<group>"; };
+		F54492552B725ED6002CAA53 /* AboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
+		F54492592B73A3BF002CAA53 /* unitsFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unitsFieldView.swift; sourceTree = "<group>"; };
+		F544925B2B73AA8F002CAA53 /* unitsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unitsStackView.swift; sourceTree = "<group>"; };
 		F5984E7A2B6A99940090376F /* PulseMVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PulseMVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5984E7D2B6A99940090376F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5984E7F2B6A99940090376F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -350,6 +358,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		F54492542B725ECA002CAA53 /* AboutCell */ = {
+			isa = PBXGroup;
+			children = (
+				F54492552B725ED6002CAA53 /* AboutCell.swift */,
+			);
+			path = AboutCell;
+			sourceTree = "<group>";
+		};
 		F5984E712B6A99940090376F = {
 			isa = PBXGroup;
 			children = (
@@ -406,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				F5A02EEC2B6BF09600DF7ED7 /* PulseModel.swift */,
+				F54492522B725BCB002CAA53 /* AboutModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -422,11 +439,14 @@
 		F5E9C4DF2B6F801C001D5621 /* SetupElements */ = {
 			isa = PBXGroup;
 			children = (
+				F54492542B725ECA002CAA53 /* AboutCell */,
 				F508212B2B71437D00CEF074 /* PulseStack */,
 				F5243B592B6FCD5400589331 /* ProgressBar */,
 				F5E9C4E42B6FB7C8001D5621 /* TabBar */,
 				F5E9C4E02B6FAF25001D5621 /* GlobalButton.swift */,
 				F5E9C4E22B6FB426001D5621 /* AppColor.swift */,
+				F54492592B73A3BF002CAA53 /* unitsFieldView.swift */,
+				F544925B2B73AA8F002CAA53 /* unitsStackView.swift */,
 			);
 			path = SetupElements;
 			sourceTree = "<group>";
@@ -683,8 +703,11 @@
 				F5A02EF12B6BF0B700DF7ED7 /* PulseViewController.swift in Sources */,
 				F542FCC12B6E748700ACB81B /* HistoryView.swift in Sources */,
 				F5A02EED2B6BF09600DF7ED7 /* PulseModel.swift in Sources */,
+				F544925A2B73A3BF002CAA53 /* unitsFieldView.swift in Sources */,
 				F542FCAA2B6E6A9300ACB81B /* PulseView.swift in Sources */,
 				F542FCC52B6E774400ACB81B /* DietViewController.swift in Sources */,
+				F54492532B725BCB002CAA53 /* AboutModel.swift in Sources */,
+				F54492562B725ED6002CAA53 /* AboutCell.swift in Sources */,
 				F542FCD12B6E789E00ACB81B /* ProfileViewController.swift in Sources */,
 				F542FCCB2B6E77CE00ACB81B /* TestViewController.swift in Sources */,
 				F542FCC92B6E778800ACB81B /* DIetModel.swift in Sources */,
@@ -701,6 +724,7 @@
 				F5E9C4E62B6FB7E5001D5621 /* TabBarController.swift in Sources */,
 				F542FCBF2B6E746D00ACB81B /* HistoryViewController.swift in Sources */,
 				F5A02EF62B6BFA7000DF7ED7 /* BaseViewController.swift in Sources */,
+				F544925C2B73AA8F002CAA53 /* unitsStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,8 +18,7 @@ class PulseViewController: BaseViewController {
     
     private var globalButton = GlobalButton()
     private var progressBar = ProgressBar()
-    private var pulseStack = PulseStack()
-    private var customStackView: UIStackView?
+    private var pulseStackView: PulseStack!
     
     //test func
     let changePulse = UIButton()
@@ -72,7 +71,7 @@ extension PulseViewController{
         view.addSubview(heartbeatGraphView)
         heartbeatGraphView.snp.makeConstraints { make in
             make.centerX.equalTo(view)
-            make.top.equalTo(380)
+            make.top.equalTo(460)
             
         }
         
@@ -81,18 +80,20 @@ extension PulseViewController{
         globalButton.addTarget(self, action: #selector(startTappeed), for: .touchUpInside)
         globalButton.snp.makeConstraints { make in
             make.centerX.equalTo(view)
-            make.bottom.equalTo(view).offset(-100)
+            make.bottom.equalTo(view).offset(-175)
             
         }
         //pulseStack
-        customStackView = PulseStack.createCustomHorizStackView(pulse: pulse)
-        if let customStackView = customStackView{
-            view.addSubview(customStackView)
-            customStackView.snp.makeConstraints { make in
-                make.centerX.equalTo(view)
-                make.top.equalTo(view).offset(240)
-            }
+        pulseStackView = PulseStack()
+        pulseStackView.pulseLabel.text = "00"
+        view.addSubview(pulseStackView)
+        pulseStackView.snp.makeConstraints { make in
+            make.centerX.equalTo(view)
+            make.top.equalTo(view).offset(240)
         }
+        
+        
+        
         //testButton
         changePulse.backgroundColor = .red
         changePulse.addTarget(self, action: #selector(changePulses), for: .touchUpInside)
@@ -126,30 +127,7 @@ extension PulseViewController{
 extension PulseViewController {
     
     @objc func changePulses(){
-        var current = 0
-        Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { timer in
-            if current <= 210 {
-                self.pulse = "\(current)"
-                current += 7
-                self.updateCustomStackView()
-            }else{
-                timer.invalidate()
-            }
-        }
+        
     }
     
-    func updateCustomStackView(){
-        customStackView?.removeFromSuperview()
-        
-        customStackView = PulseStack.createCustomHorizStackView(pulse: self.pulse)
-        
-        if let customStackView = customStackView{
-            self.view.addSubview(customStackView)
-            customStackView.snp.makeConstraints { make in
-                make.centerX.equalTo(self.view)
-                make.top.equalTo(self.view).offset(240)
-            }
-        }
-    }
 }
-

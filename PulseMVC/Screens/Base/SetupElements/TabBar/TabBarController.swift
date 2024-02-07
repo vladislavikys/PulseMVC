@@ -16,8 +16,8 @@ class TabBarController:UITabBarController{
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        tabBar.frame.size.height = 80
-        tabBar.frame.origin.y = view.frame.height - 80
+        tabBar.frame.size.height = 100
+        tabBar.frame.origin.y = view.frame.height - 100
     }
     
     
@@ -40,12 +40,7 @@ class TabBarController:UITabBarController{
         tabBar.tintColor = AppColor.selectedTabBar.color
         tabBar.backgroundColor = AppColor.tabBarBack.color
         tabBar.layer.cornerRadius = 20
-        
-//        let tabBarHeight: CGFloat = 100
-//        tabBar.frame.size.height = tabBarHeight
-    
-    
-        
+
         let appearance = UITabBarAppearance()
         appearance.stackedLayoutAppearance.normal.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -10)
         tabBar.standardAppearance = appearance

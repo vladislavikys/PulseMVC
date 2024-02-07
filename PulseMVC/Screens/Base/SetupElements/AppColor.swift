@@ -12,6 +12,9 @@ enum AppColor{
     case selectedTabBar
     case unselectedTabBar
     case tabBarBack 
+    case aboutTextColor
+    case aboutCellBack
+    case strokeCell
     
     var color:UIColor{
         switch self{
@@ -23,7 +26,14 @@ enum AppColor{
             return UIColor(named: "unselectedTabBar")!
         case .tabBarBack:
             return UIColor(named: "tabBarBack")!
+        case .aboutTextColor:
+            return UIColor(named: "aboutTextColor")!
+        case .aboutCellBack:
+            return UIColor(named: "aboutCellBack")!
+        case .strokeCell:
+            return UIColor(named: "strokeCell")!
         }
+        
     
 }
 }
