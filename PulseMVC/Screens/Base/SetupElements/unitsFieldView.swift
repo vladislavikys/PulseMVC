@@ -13,6 +13,7 @@ class UnitsFieldView: UIView{
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
+        setupGestureRecognizer()
     }
     
     
@@ -31,24 +32,40 @@ class UnitsFieldView: UIView{
         label.textAlignment = .center
         label.textColor = AppColor.buttonColor.color
         label.font = .systemFont(ofSize: 14, weight: .regular)
-        label.text = "In, Lbs"
         
         self.addSubview(label)
         label.snp.makeConstraints { make in
             make.centerX.equalTo(self)
             make.centerY.equalTo(self)
         }
-        
-        
     }
-    
     func selectView() {
-        
+        print("select")
+        self.layer.backgroundColor = AppColor.buttonColor.color.cgColor
+        label.textColor = UIColor.white
     }
     
     func deSelectView() {
-        
+        print("de-select")
+        self.layer.backgroundColor = UIColor.white.cgColor
+        label.textColor = AppColor.buttonColor.color
     }
-    
-    
+}
+
+extension UnitsFieldView{
+     func setupGestureRecognizer() {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+            addGestureRecognizer(tapGesture)
+            isUserInteractionEnabled = true
+        }
+        
+        @objc private func handleTap(_ sender: UITapGestureRecognizer) {
+            if sender.view == self {
+                if label.textColor == .white {
+                    deSelectView()
+                } else {
+                    selectView()
+                }
+            }
+        }
 }

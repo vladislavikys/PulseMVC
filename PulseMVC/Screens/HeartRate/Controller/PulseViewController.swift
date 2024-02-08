@@ -22,9 +22,9 @@ class PulseViewController: BaseViewController {
     
     //test func
     let changePulse = UIButton()
-    var pulse = "00"
-
-
+    private var timer : Timer?
+    private var currentPulsse = 1
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,13 +90,14 @@ extension PulseViewController{
         pulseStackView.snp.makeConstraints { make in
             make.centerX.equalTo(view)
             make.top.equalTo(view).offset(240)
+            make.width.equalTo(140)
         }
         
         
         
         //testButton
         changePulse.backgroundColor = .red
-        changePulse.addTarget(self, action: #selector(changePulses), for: .touchUpInside)
+        changePulse.addTarget(self, action: #selector(startPulseSimulation), for: .touchUpInside)
         view.addSubview(changePulse)
         changePulse.snp.makeConstraints { make in
             make.top.equalTo(view).offset(78)
@@ -125,9 +126,16 @@ extension PulseViewController{
 }
 
 extension PulseViewController {
-    
-    @objc func changePulses(){
-        
+    @objc func startPulseSimulation() {
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updatePulseLabel), userInfo: nil, repeats: true)
     }
-    
+    @objc func updatePulseLabel() {
+        pulseStackView.pulseLabel.text = "\(currentPulsse)"
+        currentPulsse += 3
+        if currentPulsse > 140{
+            timer?.invalidate()
+        }
+    }
 }
+
+

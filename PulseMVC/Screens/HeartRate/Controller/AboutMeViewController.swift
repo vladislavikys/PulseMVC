@@ -42,15 +42,13 @@ class AboutMeViewController: BaseViewController, UICollectionViewDelegate, UICol
             make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-18)
             make.height.equalTo(360)
         }
+
         view.addSubview(stackUnits)
         stackUnits.snp.makeConstraints { make in
             make.centerX.equalTo(view)
             make.top.equalTo(view.snp.top).offset(110)
-            
         }
-        
-        
-        
+          
         continueButton.setTitle("Continue", for: .normal)
         continueButton.addTarget(self, action: #selector(continueTapped), for: .touchUpInside)
         
