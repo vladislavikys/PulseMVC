@@ -6,9 +6,16 @@
 //
 
 import UIKit
+
+enum UnitsFieldViewState {
+    case seleceted
+    case deselected
+}
+
 class UnitsFieldView: UIView{
     
     var label : UILabel!
+    var state: UnitsFieldViewState = .deselected
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,12 +50,14 @@ class UnitsFieldView: UIView{
         print("select")
         self.layer.backgroundColor = AppColor.buttonColor.color.cgColor
         label.textColor = UIColor.white
+        state = .seleceted
     }
     
     func deSelectView() {
         print("de-select")
         self.layer.backgroundColor = UIColor.white.cgColor
         label.textColor = AppColor.buttonColor.color
+        state = .deselected
     }
 }
 
@@ -60,12 +69,11 @@ extension UnitsFieldView{
         }
         
         @objc private func handleTap(_ sender: UITapGestureRecognizer) {
-            if sender.view == self {
-                if label.textColor == .white {
-                    deSelectView()
-                } else {
-                    selectView()
-                }
+            switch state {
+            case .seleceted:
+                deSelectView()
+            case .deselected:
+                selectView()
             }
         }
 }

@@ -37,7 +37,7 @@ class AboutMeViewController: BaseViewController, UICollectionViewDelegate, UICol
         collectionView.register(GenderAboutCell.self, forCellWithReuseIdentifier: "GenderAboutCell")
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(view).offset(160)
+            make.top.equalTo(view.snp.top).offset(190)
             make.centerY.equalTo(view)
             make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(18)
             make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-18)
@@ -47,7 +47,7 @@ class AboutMeViewController: BaseViewController, UICollectionViewDelegate, UICol
         view.addSubview(stackUnits)
         stackUnits.snp.makeConstraints { make in
             make.centerX.equalTo(view)
-            make.top.equalTo(view.snp.top).offset(110)
+            make.top.equalTo(view.snp.top).offset(140)
         }
         
         continueButton.setTitle("Continue", for: .normal)

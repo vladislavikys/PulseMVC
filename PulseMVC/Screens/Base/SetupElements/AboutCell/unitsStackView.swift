@@ -30,6 +30,8 @@ class UnitsStackView: UIStackView {
         let unitsCmKs = UnitsFieldView()
         let unitsInLbs = UnitsFieldView()
         
+        unitsCmKs.selectView()
+        
         unitsCmKs.label.text = "Cm, Kg"
         unitsInLbs.label.text = "In, Lbs"
         
@@ -39,11 +41,9 @@ class UnitsStackView: UIStackView {
         addArrangedSubview(unitsCmKs)
         addArrangedSubview(unitsInLbs)
         
-        
         unitsCmKs.snp.makeConstraints { make in
             make.height.equalTo(30)
             make.width.equalTo(90)
         }
-        
     }
 }

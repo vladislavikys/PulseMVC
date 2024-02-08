@@ -31,7 +31,8 @@ class CircleButtonHStack: UIStackView {
         oneButtton.genderLabel.text = "Male"
         twoButton.genderLabel.text = "Female"
         
-    
+        oneButtton.selectView()
+        
         oneButtton.setupGestureRecognizer()
         twoButton.setupGestureRecognizer()
         
