@@ -13,6 +13,9 @@
 		F508212A2B7139AC00CEF074 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50821292B7139AC00CEF074 /* AboutMeViewController.swift */; };
 		F508212D2B71439500CEF074 /* PulseStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F508212C2B71439500CEF074 /* PulseStack.swift */; };
 		F5243B5B2B6FCD6100589331 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5243B5A2B6FCD6100589331 /* ProgressBar.swift */; };
+		F53E0C602B74E485002C1DD2 /* GenderAboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E0C5F2B74E485002C1DD2 /* GenderAboutCell.swift */; };
+		F53E0C622B74FC37002C1DD2 /* CIrcleButtonUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E0C612B74FC37002C1DD2 /* CIrcleButtonUIView.swift */; };
+		F53E0C642B74FD24002C1DD2 /* CircleButtonHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E0C632B74FD24002C1DD2 /* CircleButtonHStack.swift */; };
 		F542FCAA2B6E6A9300ACB81B /* PulseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F542FCA92B6E6A9300ACB81B /* PulseView.swift */; };
 		F542FCBF2B6E746D00ACB81B /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F542FCBE2B6E746D00ACB81B /* HistoryViewController.swift */; };
 		F542FCC12B6E748700ACB81B /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F542FCC02B6E748700ACB81B /* HistoryView.swift */; };
@@ -77,6 +80,9 @@
 		F50821292B7139AC00CEF074 /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
 		F508212C2B71439500CEF074 /* PulseStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseStack.swift; sourceTree = "<group>"; };
 		F5243B5A2B6FCD6100589331 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		F53E0C5F2B74E485002C1DD2 /* GenderAboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderAboutCell.swift; sourceTree = "<group>"; };
+		F53E0C612B74FC37002C1DD2 /* CIrcleButtonUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIrcleButtonUIView.swift; sourceTree = "<group>"; };
+		F53E0C632B74FD24002C1DD2 /* CircleButtonHStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonHStack.swift; sourceTree = "<group>"; };
 		F542FCA92B6E6A9300ACB81B /* PulseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseView.swift; sourceTree = "<group>"; };
 		F542FCBE2B6E746D00ACB81B /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		F542FCC02B6E748700ACB81B /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
@@ -362,6 +368,11 @@
 			isa = PBXGroup;
 			children = (
 				F54492552B725ED6002CAA53 /* AboutCell.swift */,
+				F53E0C5F2B74E485002C1DD2 /* GenderAboutCell.swift */,
+				F53E0C612B74FC37002C1DD2 /* CIrcleButtonUIView.swift */,
+				F53E0C632B74FD24002C1DD2 /* CircleButtonHStack.swift */,
+				F54492592B73A3BF002CAA53 /* unitsFieldView.swift */,
+				F544925B2B73AA8F002CAA53 /* unitsStackView.swift */,
 			);
 			path = AboutCell;
 			sourceTree = "<group>";
@@ -445,8 +456,6 @@
 				F5E9C4E42B6FB7C8001D5621 /* TabBar */,
 				F5E9C4E02B6FAF25001D5621 /* GlobalButton.swift */,
 				F5E9C4E22B6FB426001D5621 /* AppColor.swift */,
-				F54492592B73A3BF002CAA53 /* unitsFieldView.swift */,
-				F544925B2B73AA8F002CAA53 /* unitsStackView.swift */,
 			);
 			path = SetupElements;
 			sourceTree = "<group>";
@@ -702,10 +711,13 @@
 				F508212D2B71439500CEF074 /* PulseStack.swift in Sources */,
 				F5A02EF12B6BF0B700DF7ED7 /* PulseViewController.swift in Sources */,
 				F542FCC12B6E748700ACB81B /* HistoryView.swift in Sources */,
+				F53E0C602B74E485002C1DD2 /* GenderAboutCell.swift in Sources */,
 				F5A02EED2B6BF09600DF7ED7 /* PulseModel.swift in Sources */,
+				F53E0C642B74FD24002C1DD2 /* CircleButtonHStack.swift in Sources */,
 				F544925A2B73A3BF002CAA53 /* unitsFieldView.swift in Sources */,
 				F542FCAA2B6E6A9300ACB81B /* PulseView.swift in Sources */,
 				F542FCC52B6E774400ACB81B /* DietViewController.swift in Sources */,
+				F53E0C622B74FC37002C1DD2 /* CIrcleButtonUIView.swift in Sources */,
 				F54492532B725BCB002CAA53 /* AboutModel.swift in Sources */,
 				F54492562B725ED6002CAA53 /* AboutCell.swift in Sources */,
 				F542FCD12B6E789E00ACB81B /* ProfileViewController.swift in Sources */,

@@ -14,9 +14,9 @@
             filePath = "PulseMVC/Screens/Base/SetupElements/AboutCell/AboutCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "doneButtonapped()"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "doneButtonTapped()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

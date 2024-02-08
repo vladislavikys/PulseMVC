@@ -9,10 +9,24 @@ import UIKit
 
 final class AboutCell: UICollectionViewCell{
     
+    var nameCell = "" {
+        didSet {
+            warningLabel.text = "Please enter a valid value for : \(nameCell)"
+        }
+    }
+    
     var titleLabel:UILabel = {
         let label = UILabel()
         label.textColor = .black
         label.font = .systemFont(ofSize: 16, weight: .regular)
+        return label
+    }()
+    
+    var warningLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .red
+        label.font = .systemFont(ofSize: 12, weight: .regular)
+        label.isHidden = true
         return label
     }()
     
@@ -46,17 +60,18 @@ final class AboutCell: UICollectionViewCell{
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupCell()
-        
     }
     required init(coder:NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //настраиваем label ячейки 
     func configTitleLabel(with title: String){
         self.titleLabel.text = title
     }
     
-    func setupCell(){
+    private func setupCell(){
+        
         backgroundColor = AppColor.aboutCellBack.color.withAlphaComponent(0.6)
         
         textField.inputAccessoryView = createDoneButtonToolbar()
@@ -71,6 +86,13 @@ final class AboutCell: UICollectionViewCell{
             make.leading.equalTo(self.snp.leading).offset(16)
             make.centerY.equalToSuperview()
         }
+        
+        addSubview(warningLabel)
+        warningLabel.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().offset(-8)
+            make.leading.equalToSuperview().offset(16)
+        }
+        
         
         addSubview(addButton)
         addButton.snp.makeConstraints { make in
@@ -91,7 +113,7 @@ final class AboutCell: UICollectionViewCell{
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonapped))
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonTapped))
         toolbar.setItems([flexibleSpace, doneButton], animated: false)
         return toolbar
     }
@@ -111,12 +133,17 @@ final class AboutCell: UICollectionViewCell{
     }
     
     //скрываем клаву и убираем выделение textfield
-    @objc func doneButtonapped() {
+    @objc func doneButtonTapped() {
         textField.resignFirstResponder()
         
         if textField.text?.isEmpty ?? true {
             isTextFieldVisible = false
             addButton.setImage(UIImage(named: "redAdd"), for: .normal)
+            warningLabel.isHidden = false
+            animateTitleLabelUp()
+        } else {
+            warningLabel.isHidden = true
+            animateTitleLabelDown()
         }
     }
 }
@@ -132,3 +159,25 @@ extension AboutCell: UITextFieldDelegate {
         return allowedChar.isSuperset(of: charSet)
     }
 }
+
+extension AboutCell {
+    func animateTitleLabelUp() {
+        UIView.animate(withDuration: 0.3) {
+            self.titleLabel.snp.updateConstraints { make in
+                make.centerY.equalToSuperview().offset(-8)
+            }
+            self.layoutIfNeeded()
+        }
+    }
+
+    func animateTitleLabelDown() {
+        UIView.animate(withDuration: 0.3) {
+            self.titleLabel.snp.updateConstraints { make in
+                make.centerY.equalToSuperview()
+            }
+            self.layoutIfNeeded()
+        }
+    }
+
+}
+
