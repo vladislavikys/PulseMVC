@@ -36,6 +36,14 @@ class CircleButtonHStack: UIStackView {
         oneButtton.setupGestureRecognizer()
         twoButton.setupGestureRecognizer()
         
+        oneButtton.selectionHandler = { [weak self] in
+            self?.twoButton.deSelectView()
+        }
+        
+        twoButton.selectionHandler = { [weak self] in
+            self?.oneButtton.deSelectView()
+        }
+        
         addArrangedSubview(oneButtton)
         addArrangedSubview(twoButton)
         

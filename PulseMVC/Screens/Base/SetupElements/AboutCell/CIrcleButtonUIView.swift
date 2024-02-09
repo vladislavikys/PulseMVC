@@ -18,6 +18,8 @@ class CircleButtonUIView: UIView {
     var state: CircleButtonViewState = .deselected
     var genderLabel: UILabel!
     
+    var selectionHandler: (() -> Void)?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -59,13 +61,11 @@ class CircleButtonUIView: UIView {
     func selectView() {
         circleFill.backgroundColor = AppColor.buttonColor.color
         genderLabel.textColor = AppColor.buttonColor.color
-        print("CircleButtonUIView select")
         state = .selected
     }
     func deSelectView() {
         circleFill.backgroundColor = .clear
         genderLabel.textColor = .black
-        print("CircleButtonUIView de-select")
         state = .deselected
     }
 }
@@ -85,6 +85,7 @@ extension CircleButtonUIView{
             deSelectView()
         case .deselected:
             selectView()
+            selectionHandler?()
         }
     }
 }

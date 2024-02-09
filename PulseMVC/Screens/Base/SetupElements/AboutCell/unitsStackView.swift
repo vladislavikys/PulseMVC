@@ -7,10 +7,7 @@
 
 import UIKit
 class UnitsStackView: UIStackView {
-    
-    let unitsCmKs = UnitsFieldView()
-    let unitsInLbs = UnitsFieldView()
-    
+        
     override init(frame:CGRect) {
         super.init(frame: frame)
         setupView()
@@ -30,13 +27,21 @@ class UnitsStackView: UIStackView {
         let unitsCmKs = UnitsFieldView()
         let unitsInLbs = UnitsFieldView()
         
-        unitsCmKs.selectView()
         
         unitsCmKs.label.text = "Cm, Kg"
         unitsInLbs.label.text = "In, Lbs"
         
+        unitsCmKs.selectView()
+        
         unitsCmKs.setupGestureRecognizer()
         unitsInLbs.setupGestureRecognizer()
+        
+        unitsCmKs.selectionHandler = { [weak self] in
+            unitsInLbs.deSelectView()
+        }
+        unitsInLbs.selectionHandler = { [weak self] in
+            unitsCmKs.deSelectView()
+        }
         
         addArrangedSubview(unitsCmKs)
         addArrangedSubview(unitsInLbs)

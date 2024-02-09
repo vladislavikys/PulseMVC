@@ -12,10 +12,14 @@ enum UnitsFieldViewState {
     case deselected
 }
 
-class UnitsFieldView: UIView{
+class  UnitsFieldView: UIView{
+    
+    weak var stackView: UnitsStackView?
     
     var label : UILabel!
     var state: UnitsFieldViewState = .deselected
+    
+    var selectionHandler: (() -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,14 +51,14 @@ class UnitsFieldView: UIView{
         }
     }
     func selectView() {
-        print("select")
+        //print("select")
         self.layer.backgroundColor = AppColor.buttonColor.color.cgColor
         label.textColor = UIColor.white
         state = .seleceted
     }
     
     func deSelectView() {
-        print("de-select")
+        //print("de-select")
         self.layer.backgroundColor = UIColor.white.cgColor
         label.textColor = AppColor.buttonColor.color
         state = .deselected
@@ -74,6 +78,8 @@ extension UnitsFieldView{
                 deSelectView()
             case .deselected:
                 selectView()
+                selectionHandler?()
             }
+
         }
 }

@@ -178,6 +178,5 @@ extension AboutCell {
             self.layoutIfNeeded()
         }
     }
-
 }
 
