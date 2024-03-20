@@ -1,7 +1,7 @@
 import UIKit
 import CoreData
 class PulseViewController: BaseViewController {
-    
+    ///////
     private var buttonInfo = UIButton()
     private var pulseStatusLabel = UILabel()
     private var underRingLabel = UILabel()
