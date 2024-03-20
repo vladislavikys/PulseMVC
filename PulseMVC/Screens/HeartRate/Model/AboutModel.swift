@@ -6,14 +6,23 @@
 //
 
 import UIKit
-class AboutModel{
-    var height:Double
-    var weight:Double
-    var age:Int
+
+class AboutModel : Codable {
+    var gender: String? // Пол
+    var height: Int?    // Рост
+    var weight: Int?    // Вес
+    var age: Int?       // Возраст
+    var units: String?  // Выбранные единицы измерения (например, "Cm, Kg" или "In, Lbs")
     
-    init(height: Double, weight: Double, age: Int) {
+    func update(gender: String?, height: Int?, weight: Int?, age: Int?, units: String?) {
+        self.gender = gender
         self.height = height
         self.weight = weight
         self.age = age
+        self.units = units
+        
+        var model:AboutModel = AboutModel()
+        
+        model.gender = "Male"
     }
 }

@@ -7,9 +7,9 @@
 
 import UIKit
 
-struct Profile {
-    var name: String
-    var lastName: String
-    var dateBirth : Date
-    var gender: Int
-}
+//struct Profile {
+//    var name: String
+//    var lastName: String
+//    var dateBirth : Date
+//    var gender: Int
+//}

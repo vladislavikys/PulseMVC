@@ -65,7 +65,7 @@ extension BaseViewController {
             make.edges.equalTo(view)
         }
         titleLabel.snp.makeConstraints { make in
-            make.leading.equalTo(view).offset(18)
+            make.leading.equalTo(view).offset(20)
             make.trailing.equalTo(view).offset(-18)
             make.top.equalTo(view).offset(74)
         }

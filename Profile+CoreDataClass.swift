@@ -13,3 +13,18 @@ import CoreData
 public class Profile: NSManagedObject {
 
 }
+
+extension Profile {
+
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Profile> {
+        return NSFetchRequest<Profile>(entityName: "Profile")
+    }
+
+    @NSManaged public var gender: String?
+    @NSManaged public var height: Int16
+    @NSManaged public var weight: Int16
+    @NSManaged public var age: Int16
+    @NSManaged public var units: String?
+
+}
+

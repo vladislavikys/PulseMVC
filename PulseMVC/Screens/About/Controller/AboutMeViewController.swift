@@ -6,8 +6,14 @@
 //
 
 import UIKit
+protocol AboutMeViewControllerDelegate: AnyObject {
+    func didCloseAboutScreen()
+}
+
+
 class AboutMeViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
+    weak var delegate: AboutMeViewControllerDelegate?
     
     private var continueButton = GlobalButton()
     private var collectionView: UICollectionView!
@@ -64,11 +70,13 @@ class AboutMeViewController: BaseViewController, UICollectionViewDelegate, UICol
     }
     
     @objc func continueTapped() {
-        //uploadUserDefToUserProfile()
+        UserDefaults.standard.set(true, forKey: "returnedFromAbout")
         dismiss(animated: true) {
             UIView.animate(withDuration: 0.3) {
                 self.view.alpha = 0
             }
+            // После закрытия экрана уведомляем делегата
+            self.delegate?.didCloseAboutScreen()
         }
     }
 }
@@ -104,35 +112,3 @@ extension AboutMeViewController: UICollectionViewDelegateFlowLayout{
     }
 }
 
-extension AboutMeViewController {
-//    private func uploadUserDefToUserProfile() {
-//        let gender = UserDefaults.standard.string(forKey: "SelectedGender")
-//        userProfile.gender = gender
-//        let units = UserDefaults.standard.string(forKey: "Units")
-//        userProfile.units = units
-//        
-//        if let age = UserDefaults.standard.string(forKey: "AgePerson") {
-//            userProfile.age = Int(age)
-//        } else {
-//            userProfile.age = nil
-//        }
-//        if let height = UserDefaults.standard.string(forKey: "HeightPerson") {
-//            userProfile.height = Int(height)
-//        } else {
-//            userProfile.height = nil
-//        }
-//        if let weight = UserDefaults.standard.string(forKey: "WeightPerson") {
-//            userProfile.weight = Int(weight)
-//        } else {
-//            userProfile.weight = nil
-//        }
-//        
-//        let encoder = JSONEncoder()
-//        if let econderUser = try? encoder.encode(userProfile) {
-//            UserDefaults.standard.set(econderUser, forKey: "userProfile")
-//        } else {
-//            print("Ошибка при кодировании данных пользователя")
-//        }
-//        
-//    }
-}

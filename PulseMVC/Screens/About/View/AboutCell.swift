@@ -198,17 +198,14 @@ extension AboutCell {
 //            CoreDataeManager.shared.deleteProfile(byAttribute: "weight")
 //            CoreDataeManager.shared.createWeight(weight: value)
             CoreDataeManager.shared.updateProfile(weight: value)
-            print("Weight =" ,value)
         case "Height":
 //            CoreDataeManager.shared.deleteProfile(byAttribute: "height")
 //            CoreDataeManager.shared.createHeight(height: value)
             CoreDataeManager.shared.updateProfile(height: value)
-            print("Height =" ,value)
         case "Age":
 //            CoreDataeManager.shared.deleteProfile(byAttribute: "age")
 //            CoreDataeManager.shared.createAge(age: value)
             CoreDataeManager.shared.updateProfile(age: value)
-            print("Age =",value)
         default:
             break
         }

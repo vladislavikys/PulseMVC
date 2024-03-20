@@ -11,10 +11,11 @@ enum AppColor{
     case buttonColor
     case selectedTabBar
     case unselectedTabBar
-    case tabBarBack 
+    case tabBarBack
     case aboutTextColor
     case aboutCellBack
     case strokeCell
+    case backAnalyzeView
     
     var color:UIColor{
         switch self{
@@ -32,8 +33,10 @@ enum AppColor{
             return UIColor(named: "aboutCellBack")!
         case .strokeCell:
             return UIColor(named: "strokeCell")!
+        case .backAnalyzeView:
+            return UIColor(named: "backAnalyzeView")!
         }
-        
     
-}
+        
+    }
 }
