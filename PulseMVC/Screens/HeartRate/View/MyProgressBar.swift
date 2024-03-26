@@ -4,55 +4,96 @@
 //
 //  Created by Влад on 8.03.24.
 //
-
 import UIKit
+
 class MyProgressBar: UIView {
+    let radius:CGFloat = 107
+    let lineWidthCircle:CGFloat = 20
     
-    private var circleLayer: CAShapeLayer!
-    private var progressLayer: CAShapeLayer!
+    private var staticProgressLayer: CAShapeLayer!
+    private var animatedProgressLayer: CAShapeLayer!
+    
+    private var startPointLayer: CAShapeLayer! // Новый слой для белой точки
+    
+    var circlePath: UIBezierPath!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupLayers()
+        setupCirclePath()
+        setupStaticProgressLayer()
+        setupAnimatedProgressLayer()
+        //setupStartPointLayer()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupLayers() {
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: frame.size.width / 2.0,
-                                                         y: frame.size.height / 2.0),
-                                                         radius: 107,
-                                                         startAngle: -CGFloat.pi / 2,
-                                                         endAngle: 2 * CGFloat.pi - CGFloat.pi / 2,
-                                                         clockwise: true)
-        
-        circleLayer = CAShapeLayer()
-        circleLayer.path = circlePath.cgPath
-        circleLayer.fillColor = UIColor.clear.cgColor
-        circleLayer.strokeColor = UIColor(red: 169.0/255.0, green: 169.0/255.0, blue: 169.0/255.0, alpha: 0.2).cgColor // Фоновый цвет окружности
-        circleLayer.lineWidth = 2
-        circleLayer.strokeEnd = 1.0
-        layer.addSublayer(circleLayer)
-        
-        progressLayer = CAShapeLayer()
-        progressLayer.path = circlePath.cgPath
-        progressLayer.fillColor = UIColor.clear.cgColor
-        progressLayer.strokeColor = UIColor(red: 113/255, green: 102/255, blue: 249/255, alpha: 0.3).cgColor // Цвет фиолетового прогресса
-        progressLayer.lineWidth = 20
-        progressLayer.strokeEnd = 0
-        layer.addSublayer(progressLayer)
+    
+    private func setupCirclePath() {
+        circlePath = UIBezierPath(arcCenter: CGPoint(x: frame.size.width / 2.0,
+                                                     y: frame.size.height / 2.0),
+                                  radius: radius,
+                                  startAngle: -CGFloat.pi / 2,
+                                  endAngle: 2 * CGFloat.pi - CGFloat.pi / 2,
+                                  clockwise: true)
+    }
+    
+    private func setupStaticProgressLayer() {
+        staticProgressLayer = CAShapeLayer()
+        staticProgressLayer.path = circlePath.cgPath
+        staticProgressLayer.fillColor = UIColor.clear.cgColor
+        staticProgressLayer.lineWidth = lineWidthCircle
+        staticProgressLayer.strokeEnd = 0
+        staticProgressLayer.strokeColor = UIColor(red: 113/255, green: 102/255, blue: 249/255, alpha: 0.4).cgColor // Цвет фиолетового прогресса
+        layer.addSublayer(staticProgressLayer)
+    }
+    
+    private func setupAnimatedProgressLayer() {
+        animatedProgressLayer = CAShapeLayer()
+        animatedProgressLayer.path = circlePath.cgPath
+        animatedProgressLayer.fillColor = UIColor.clear.cgColor
+        animatedProgressLayer.lineWidth = lineWidthCircle
+        animatedProgressLayer.lineCap = .round
+        animatedProgressLayer.strokeEnd = 0
+        animatedProgressLayer.strokeColor = UIColor(red: 113/255, green: 102/255, blue: 249/255, alpha: 1).cgColor // Цвет фиолетового прогресса
+        layer.addSublayer(animatedProgressLayer)
+    }
+    
+    private func setupStartPointLayer() {
+        startPointLayer = CAShapeLayer()
+        let center = CGPoint(x: frame.size.width / 2.0,y: frame.size.height / 2.0)
+        startPointLayer.path = UIBezierPath(arcCenter: center,
+                                            radius: 5, // Радиус белой точки
+                                            startAngle: -CGFloat.pi / 2,
+                                            endAngle: 2 * CGFloat.pi,
+                                            clockwise: true).cgPath
+        startPointLayer.position = center // располагаем в центре кольца
+        startPointLayer.fillColor = UIColor.red.cgColor // Белый цвет точки
+        layer.addSublayer(startPointLayer)
     }
     
     func setProgress(to progressConstant: CGFloat) {
+        staticProgressLayer.strokeEnd = progressConstant
         let animation = CABasicAnimation(keyPath: "strokeEnd")
-        animation.duration = 2
-        animation.fromValue = progressLayer.strokeEnd
+        animation.duration = 6
+        animation.fromValue = animatedProgressLayer.strokeEnd
         animation.toValue = progressConstant
         animation.timingFunction = CAMediaTimingFunction(name: .linear)
-        progressLayer.strokeEnd = progressConstant
-        progressLayer.add(animation, forKey: "animateProgress")
+        animatedProgressLayer.strokeEnd = progressConstant
+        animatedProgressLayer.add(animation, forKey: "animateProgress")
+        
+        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        rotationAnimation.fromValue = animatedProgressLayer.strokeEnd
+        rotationAnimation.toValue = progressConstant
+        rotationAnimation.duration = 6
+        rotationAnimation.timingFunction = CAMediaTimingFunction(name: .linear)
+
+        //startPointLayer.speed = 1
+        animatedProgressLayer.speed = 1
+        
+       // startPointLayer.add(rotationAnimation, forKey: nil)
+        
+
     }
 }
-   

@@ -112,6 +112,7 @@ class PulseViewController: BaseViewController {
         welcomeView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
             make.height.equalTo(330)
+
         }
         //cameraView
         view.addSubview(cameraView)
@@ -140,7 +141,7 @@ class PulseViewController: BaseViewController {
             currentProgress = 0.0 // Сброс текущего прогресса
             progressBar.setProgress(to: currentProgress)
            // progressTimer?.invalidate()
-            progressTimer = Timer.scheduledTimer(timeInterval: 0.01,
+            progressTimer = Timer.scheduledTimer(timeInterval: 0.001,
                                                  target: self,
                                                  selector: #selector(updateProgressBar),
                                                  userInfo: nil, repeats: true)
@@ -167,7 +168,7 @@ class PulseViewController: BaseViewController {
     //обновления прогресса
     @objc func updateProgressBar() {
         if currentProgress < 1.0 {
-            currentProgress += 0.010
+            currentProgress += 0.0010
             progressBar.setProgress(to: currentProgress)
         } else {
             progressTimer?.invalidate() // Останавливаем таймер, если прогресс достиг 1
@@ -175,7 +176,6 @@ class PulseViewController: BaseViewController {
     }
 
 }
-
 
 extension PulseViewController {
 

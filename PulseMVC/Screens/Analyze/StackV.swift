@@ -42,11 +42,9 @@ class StackV: UIStackView {
         label.textColor = .black
         //Делегирование ответственности
         activityView.label = label // Передаем ссылку на UILabel в ActivityView
+    
         
-
-        
-        
-        addArrangedSubview(activityView)  
+        addArrangedSubview(activityView)
         addArrangedSubview(label)
     }
 }

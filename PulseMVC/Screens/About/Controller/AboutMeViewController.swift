@@ -11,14 +11,13 @@ protocol AboutMeViewControllerDelegate: AnyObject {
 }
 
 
-class AboutMeViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+final class AboutMeViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
     weak var delegate: AboutMeViewControllerDelegate?
     
-    private var continueButton = GlobalButton()
+    private var continueButton:GlobalButton!
     private var collectionView: UICollectionView!
-    
-    var stackUnits: UnitsStackView!
+    private var stackUnits: UnitsStackView!
     
     private let aboutData = ["Height", "Weight", "Age"]
     
@@ -29,40 +28,47 @@ class AboutMeViewController: BaseViewController, UICollectionViewDelegate, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupLayout()
     }
     private func setupUI() {
         titleLabel.text = "About me"
+    
+        stackUnits = UnitsStackView()
+        
+        continueButton = GlobalButton()
+        continueButton.setTitle("Continue", for: .normal)
+        continueButton.addTarget(self, action: #selector(continueTapped), for: .touchUpInside)
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        
-        stackUnits = UnitsStackView()
-        
+    
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .clear
+        collectionView.backgroundColor = .red
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(AboutCell.self, forCellWithReuseIdentifier: "AboutCell")
         collectionView.register(GenderAboutCell.self, forCellWithReuseIdentifier: "GenderAboutCell")
+        
+    }
+    
+    private func setupLayout() {
         view.addSubview(collectionView)
+        view.addSubview(stackUnits)
+        view.addSubview(continueButton)
+        
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(view.snp.top).offset(190)
-            make.centerY.equalTo(view)
+            make.top.equalTo(stackUnits.snp.bottom).offset(24)
             make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(18)
             make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-18)
-            make.height.equalTo(360)
+            make.bottom.equalTo(continueButton.snp.top)
         }
         
-        view.addSubview(stackUnits)
         stackUnits.snp.makeConstraints { make in
             make.centerX.equalTo(view)
             make.top.equalTo(view.snp.top).offset(140)
+            make.height.equalTo(30)
         }
         
-        continueButton.setTitle("Continue", for: .normal)
-        continueButton.addTarget(self, action: #selector(continueTapped), for: .touchUpInside)
-        
-        view.addSubview(continueButton)
         continueButton.snp.makeConstraints { make in
             make.centerX.equalTo(view)
             make.bottom.equalTo(view).offset(-110)

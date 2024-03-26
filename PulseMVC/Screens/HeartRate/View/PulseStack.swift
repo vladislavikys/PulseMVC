@@ -12,6 +12,9 @@ class PulseStack: UIStackView{
     let dummyView = UIView()
     let pulseLabel = UILabel()
     
+    let heartImageView = UIImageView(image: UIImage(named: "heartImage"))
+    let bpmLabel = UILabel()
+    
     override init(frame:CGRect) {
         super.init(frame: frame)
         setupStack()
@@ -49,13 +52,12 @@ class PulseStack: UIStackView{
         }
         
         
-        // Создание и настройка изображения сердца
-        let heartImageView = UIImageView(image: UIImage(named: "heartImage"))
+        //настройка изображения сердца
+       
         heartImageView.contentMode = .scaleAspectFit
         heartImageView.setContentHuggingPriority(.required, for: .horizontal)
         
         // Настройка метки "bpm"
-        let bpmLabel = UILabel()
         bpmLabel.text = "bpm"
         bpmLabel.font = UIFont.systemFont(ofSize: 19, weight: .medium)
         

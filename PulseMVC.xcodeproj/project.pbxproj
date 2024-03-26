@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		DFF715820705E8A4FC1D903B /* Pods_PulseMVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF5D93D076ADAABC1C81BFB /* Pods_PulseMVC.framework */; };
 		E036215F2BA5A63000E6B076 /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E036215E2BA5A63000E6B076 /* Profile+CoreDataClass.swift */; };
+		E0DB8DF12BB2AA82006B6517 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DB8DF02BB2AA82006B6517 /* ResultView.swift */; };
+		E0DB8DF32BB2C061006B6517 /* StatusPulseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DB8DF22BB2C061006B6517 /* StatusPulseView.swift */; };
+		E0DB8DF82BB2EE9C006B6517 /* StackResultH.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DB8DF72BB2EE9C006B6517 /* StackResultH.swift */; };
 		E0E45DC72BA9C61900A7DCD7 /* CameraAccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E45DC62BA9C61900A7DCD7 /* CameraAccessView.swift */; };
 		E0F83EEF2BA5DE0000C47D5A /* AnalyzViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F83EEE2BA5DE0000C47D5A /* AnalyzViewController.swift */; };
 		E0F83EF12BA5E89200C47D5A /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F83EF02BA5E89200C47D5A /* ActivityView.swift */; };
@@ -61,6 +64,9 @@
 		90BF2E75F841E25AE3406EE3 /* Pods-PulseMVC-PulseMVCUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseMVC-PulseMVCUITests.release.xcconfig"; path = "Target Support Files/Pods-PulseMVC-PulseMVCUITests/Pods-PulseMVC-PulseMVCUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B9CC3EDFDDD11404740CA379 /* Pods-PulseMVC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseMVC.debug.xcconfig"; path = "Target Support Files/Pods-PulseMVC/Pods-PulseMVC.debug.xcconfig"; sourceTree = "<group>"; };
 		E036215E2BA5A63000E6B076 /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E0DB8DF02BB2AA82006B6517 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		E0DB8DF22BB2C061006B6517 /* StatusPulseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPulseView.swift; sourceTree = "<group>"; };
+		E0DB8DF72BB2EE9C006B6517 /* StackResultH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackResultH.swift; sourceTree = "<group>"; };
 		E0E45DC62BA9C61900A7DCD7 /* CameraAccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAccessView.swift; sourceTree = "<group>"; };
 		E0F83EEE2BA5DE0000C47D5A /* AnalyzViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzViewController.swift; sourceTree = "<group>"; };
 		E0F83EF02BA5E89200C47D5A /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
@@ -151,6 +157,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E0DB8DF42BB2EE51006B6517 /* StackPulseValue */ = {
+			isa = PBXGroup;
+			children = (
+				E0DB8DF72BB2EE9C006B6517 /* StackResultH.swift */,
+			);
+			path = StackPulseValue;
+			sourceTree = "<group>";
+		};
 		E0F83EED2BA5DD8800C47D5A /* Analyze */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,11 +204,13 @@
 		F542FCA82B6E6A8600ACB81B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E0DB8DF42BB2EE51006B6517 /* StackPulseValue */,
 				F54ACF3F2B9B2274002467A0 /* MyProgressBar.swift */,
 				F53A49682B7BAA1F002B2E65 /* WelcomViewV.swift */,
 				F59EF6132B80F6CD0014C7E0 /* DimmyView.swift */,
 				F508212C2B71439500CEF074 /* PulseStack.swift */,
 				E0E45DC62BA9C61900A7DCD7 /* CameraAccessView.swift */,
+				E0DB8DF02BB2AA82006B6517 /* ResultView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -459,6 +475,7 @@
 				F5E9C4E42B6FB7C8001D5621 /* TabBar */,
 				F5E9C4E02B6FAF25001D5621 /* GlobalButton.swift */,
 				F5E9C4E22B6FB426001D5621 /* AppColor.swift */,
+				E0DB8DF22BB2C061006B6517 /* StatusPulseView.swift */,
 			);
 			path = SetupElements;
 			sourceTree = "<group>";
@@ -612,6 +629,7 @@
 				F542FCD52B6E7A5000ACB81B /* ProfileView.swift in Sources */,
 				E0F83EF52BA604E900C47D5A /* StackH.swift in Sources */,
 				F5531F1E2B95FFEE00A37224 /* CoreData.xcdatamodeld in Sources */,
+				E0DB8DF82BB2EE9C006B6517 /* StackResultH.swift in Sources */,
 				F5984E7E2B6A99940090376F /* AppDelegate.swift in Sources */,
 				F542FCC72B6E777400ACB81B /* DietView.swift in Sources */,
 				F54ACF402B9B2274002467A0 /* MyProgressBar.swift in Sources */,
@@ -620,8 +638,10 @@
 				F5E9C4E12B6FAF25001D5621 /* GlobalButton.swift in Sources */,
 				F542FCC32B6E74A100ACB81B /* HIstoryModel.swift in Sources */,
 				F542FCCF2B6E781400ACB81B /* TestModel.swift in Sources */,
+				E0DB8DF32BB2C061006B6517 /* StatusPulseView.swift in Sources */,
 				F5E9C4E62B6FB7E5001D5621 /* TabBarController.swift in Sources */,
 				F542FCBF2B6E746D00ACB81B /* HistoryViewController.swift in Sources */,
+				E0DB8DF12BB2AA82006B6517 /* ResultView.swift in Sources */,
 				F5A02EF62B6BFA7000DF7ED7 /* BaseViewController.swift in Sources */,
 				F544925C2B73AA8F002CAA53 /* unitsStackView.swift in Sources */,
 			);

@@ -22,13 +22,9 @@ class ActivityView: UIView {
             updateBorder()
             if isActive {
                 delegate?.activityViewDidActivate(self)
-            }else{
-                
             }
         }
     }
-    
-
     
     var nameEmoji = ""
     var label: UILabel?

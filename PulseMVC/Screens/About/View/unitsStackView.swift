@@ -6,6 +6,8 @@
 //
 
 import UIKit
+
+
 class UnitsStackView: UIStackView {
     let unitsCmKs = UnitsFieldView()
     let unitsInLbs = UnitsFieldView()
@@ -14,6 +16,8 @@ class UnitsStackView: UIStackView {
     override init(frame:CGRect) {
         super.init(frame: frame)
         setupView()
+        addTaps()
+        bindings()
         unitsCmKs.selectView()
         self.saveUnitsCoreData(units: self.unitsCmKs.label.text!)
     }
@@ -21,6 +25,8 @@ class UnitsStackView: UIStackView {
     required init(coder: NSCoder) {
         super.init(coder: coder)
         setupView()
+        addTaps()
+        bindings()
     }
     
     private func setupView() {
@@ -29,23 +35,9 @@ class UnitsStackView: UIStackView {
         self.alignment = .fill
         self.spacing = 10
         
-        
         unitsCmKs.label.text = "Cm, Kg"
         unitsInLbs.label.text = "In, lbs"
-        self.saveUnitsCoreData(units: self.unitsCmKs.label.text!)
-        
-        
-        unitsCmKs.setupGestureRecognizer()
-        unitsInLbs.setupGestureRecognizer()
-        
-        unitsCmKs.selectionHandler = {
-            self.saveUnitsCoreData(units: self.unitsCmKs.label.text!)
-            self.unitsInLbs.deSelectView()
-        }
-        unitsInLbs.selectionHandler = {
-            self.saveUnitsCoreData(units: self.unitsInLbs.label.text!)
-            self.unitsCmKs.deSelectView()
-        }
+        self.saveUnitsCoreData(units: self.unitsCmKs.label.text ?? "")
         
         addArrangedSubview(unitsCmKs)
         addArrangedSubview(unitsInLbs)
@@ -53,6 +45,22 @@ class UnitsStackView: UIStackView {
         unitsCmKs.snp.makeConstraints { make in
             make.height.equalTo(30)
             make.width.equalTo(90)
+        }
+    }
+    
+    private func addTaps() {
+        unitsCmKs.setupGestureRecognizer()
+        unitsInLbs.setupGestureRecognizer()
+    }
+    
+    private func bindings() {
+        unitsCmKs.selectionHandler = {
+            self.saveUnitsCoreData(units: self.unitsCmKs.label.text ?? "")
+            self.unitsInLbs.deSelectView()
+        }
+        unitsInLbs.selectionHandler = {
+            self.saveUnitsCoreData(units: self.unitsInLbs.label.text ?? "")
+            self.unitsCmKs.deSelectView()
         }
     }
     
