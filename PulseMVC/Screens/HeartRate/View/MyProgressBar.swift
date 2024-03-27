@@ -74,9 +74,11 @@ class MyProgressBar: UIView {
     }
     
     func setProgress(to progressConstant: CGFloat) {
-        staticProgressLayer.strokeEnd = progressConstant
+        staticProgressLayer.strokeEnd = 1
         let animation = CABasicAnimation(keyPath: "strokeEnd")
-        animation.duration = 6
+        
+        
+        //animation.duration = 6
         animation.fromValue = animatedProgressLayer.strokeEnd
         animation.toValue = progressConstant
         animation.timingFunction = CAMediaTimingFunction(name: .linear)
@@ -93,7 +95,5 @@ class MyProgressBar: UIView {
         animatedProgressLayer.speed = 1
         
        // startPointLayer.add(rotationAnimation, forKey: nil)
-        
-
     }
 }

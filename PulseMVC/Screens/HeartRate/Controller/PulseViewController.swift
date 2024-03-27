@@ -28,6 +28,8 @@ class PulseViewController: BaseViewController {
         super.viewDidLoad()
         setupUI()
         fingerOnCameraGuide.isHidden = true
+        hideWelcomeView()
+        hideCameraView()
         if UserDefaults.standard.bool(forKey: "userEnteringWelcom") {
             print("пользователь уже вхоли -viewDidLoad ")
             hideWelcomeView()
@@ -118,14 +120,13 @@ class PulseViewController: BaseViewController {
         view.addSubview(cameraView)
         cameraView.okButtonAction = {
             self.hideCameraView()
-            self.startMeasurePulseView()
         }
         cameraView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
             make.height.equalTo(330)
         }
         //progressBar
-        progressBar.setProgress(to: 1)
+        progressBar.setProgress(to: 0.001)
         view.addSubview(progressBar)
         progressBar.snp.makeConstraints { make in
             make.centerX.equalTo(view).offset(0)
@@ -136,19 +137,17 @@ class PulseViewController: BaseViewController {
     @objc func startTapped() {
         if UserDefaults.standard.bool(forKey: "userEnteringApp") {
             print("Пользователь уже вошел - startTapped")
-            // Теперь извлекаем и распечатываем данные из CoreData
             
             currentProgress = 0.0 // Сброс текущего прогресса
             progressBar.setProgress(to: currentProgress)
-           // progressTimer?.invalidate()
-            progressTimer = Timer.scheduledTimer(timeInterval: 0.001,
+            progressTimer?.invalidate()
+            progressTimer = Timer.scheduledTimer(timeInterval: 0.00001,
                                                  target: self,
                                                  selector: #selector(updateProgressBar),
                                                  userInfo: nil, repeats: true)
 
             
-            
-            if  let coreData = CoreDataeManager.shared.fetchProfile(){
+            if let coreData = CoreDataeManager.shared.fetchProfile(){
                 // Распечатываем данные пользователя
                 print("-----------------")
                 print("Выбранные единицы измерения: \(coreData.units ?? "Не указаны")")
@@ -158,6 +157,10 @@ class PulseViewController: BaseViewController {
                 print("Возраст: \(coreData.age)")
                 print("-----------------")
             }
+            
+            
+            //settings start measure func this
+            //startMeasurePulseView()
         } else {
             print("Первый раз вошел - startTapped")
             UserDefaults.standard.set(true, forKey: "userEnteringApp")
@@ -168,13 +171,12 @@ class PulseViewController: BaseViewController {
     //обновления прогресса
     @objc func updateProgressBar() {
         if currentProgress < 1.0 {
-            currentProgress += 0.0010
+            currentProgress += 0.000003
             progressBar.setProgress(to: currentProgress)
         } else {
             progressTimer?.invalidate() // Останавливаем таймер, если прогресс достиг 1
         }
     }
-
 }
 
 extension PulseViewController {
@@ -197,7 +199,7 @@ extension PulseViewController {
     // Метод для скрытия WelcomeView
     func hideWelcomeView() {
         tabBarController?.tabBar.isHidden = false
-        cameraView.isHidden = true
+        welcomeView.isHidden = true
         dimmy.isHidden = true
         dimmy.removeFromSuperview()
     }
@@ -247,6 +249,13 @@ extension PulseViewController {
         heartbeatGraphView.isHidden = true
         startButton.isHidden = true
         cameraFingerGuideText.isHidden = false
+    }
+    
+    func endMeasurePulseView(){
+        fingerOnCameraGuide.isHidden = true
+        heartbeatGraphView.isHidden = false
+        startButton.isHidden = false
+        cameraFingerGuideText.isHidden = true
     }
 }
 

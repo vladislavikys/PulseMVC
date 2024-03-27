@@ -43,7 +43,6 @@ final class AboutMeViewController: BaseViewController, UICollectionViewDelegate,
         layout.scrollDirection = .vertical
     
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .red
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(AboutCell.self, forCellWithReuseIdentifier: "AboutCell")
