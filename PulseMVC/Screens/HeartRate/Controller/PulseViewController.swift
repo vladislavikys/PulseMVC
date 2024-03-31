@@ -1,7 +1,8 @@
 import UIKit
 import CoreData
+import AVKit
+
 class PulseViewController: BaseViewController {
-    ///////
     private var buttonInfo = UIButton()
     private var pulseStatusLabel = UILabel()
     private var underRingLabel = UILabel()
@@ -18,6 +19,13 @@ class PulseViewController: BaseViewController {
     var dimmy = DimmyView()
     var userProfile = AboutModel()
     
+    
+    var heartRateManager: HeartRateManager! // Менеджер для измерения сердечного ритма
+    var bpmForCalculating: [Int] = [] // Массив для хранения значений BPM
+    var validFrameCounter = 0 // Счетчик валидных кадров
+    var timer = Timer() // Таймер
+    var timerTwo = Timer() // Второй таймер
+
     
     //таймер для прогресса
     private var progressTimer: Timer?
@@ -160,7 +168,7 @@ class PulseViewController: BaseViewController {
             
             
             //settings start measure func this
-            //startMeasurePulseView()
+            startMeasurePulseView()
         } else {
             print("Первый раз вошел - startTapped")
             UserDefaults.standard.set(true, forKey: "userEnteringApp")
@@ -219,6 +227,7 @@ extension PulseViewController {
             make.height.equalTo(320)
         }
     }
+    
     // Метод для скрытия CameraAccessView
     func hideCameraView() {
         tabBarController?.tabBar.isHidden = false
@@ -249,6 +258,8 @@ extension PulseViewController {
         heartbeatGraphView.isHidden = true
         startButton.isHidden = true
         cameraFingerGuideText.isHidden = false
+        
+    
     }
     
     func endMeasurePulseView(){
@@ -259,10 +270,7 @@ extension PulseViewController {
     }
 }
 
-// MARK: - AboutMeViewControllerDelegate
-
-extension PulseViewController: AboutMeViewControllerDelegate{
-    // Отображаем интерфейс доступа к камере для пользователя
+extension PulseViewController: AboutMeViewControllerDelegate {
     func didCloseAboutScreen() {
         showCameraView()
     }
