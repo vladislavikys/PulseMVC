@@ -9,7 +9,7 @@ class PulseViewController: BaseViewController {
     private var underRingLabel = UILabel()
     private var fingerOnCameraGuide = UIImageView()
     private var cameraFingerGuideText = UILabel()
-    private var heartbeatGraphView = UIImageView(
+    private var heartbeatGraphView = UIImageView()
     
     private var startButton = GlobalButton()
     private var progressBar = MyProgressBar()
