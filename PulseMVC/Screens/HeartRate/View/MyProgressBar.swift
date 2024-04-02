@@ -60,6 +60,7 @@ class MyProgressBar: UIView {
         layer.addSublayer(animatedProgressLayer)
     }
     
+    //настройка белой точки в центре
     private func setupStartPointLayer() {
         startPointLayer = CAShapeLayer()
         let center = CGPoint(x: frame.size.width / 2.0,y: frame.size.height / 2.0)
@@ -73,6 +74,7 @@ class MyProgressBar: UIView {
         layer.addSublayer(startPointLayer)
     }
     
+    //настраиваем знаение прогресса на круге
     func setProgress(to progressConstant: CGFloat) {
         staticProgressLayer.strokeEnd = 1
         let animation = CABasicAnimation(keyPath: "strokeEnd")

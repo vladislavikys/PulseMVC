@@ -141,7 +141,7 @@ class PulseViewController: BaseViewController {
             make.height.equalTo(330)
         }
         //progressBar
-        progressBar.setProgress(to: 0.001)
+        progressBar.setProgress(to: 0.03)
         view.addSubview(progressBar)
         progressBar.snp.makeConstraints { make in
             make.centerX.equalTo(view).offset(0)
@@ -161,7 +161,6 @@ class PulseViewController: BaseViewController {
                                                  selector: #selector(updateProgressBar),
                                                  userInfo: nil, repeats: true)
 
-            
             if let coreData = CoreDataeManager.shared.fetchProfile(){
                 // Распечатываем данные пользователя
                 print("-----------------")
@@ -173,14 +172,11 @@ class PulseViewController: BaseViewController {
                 print("-----------------")
             }
             startPulseHeartRate()
-            initStartPulse()
-            startMeasurement()
         } else {
             print("Первый раз вошел - startTapped")
             UserDefaults.standard.set(true, forKey: "userEnteringApp")
             openAboutVC()
         }
-
     }
     //обновления прогресса
     @objc func updateProgressBar() {
@@ -274,6 +270,7 @@ extension PulseViewController: AboutMeViewControllerDelegate {
 }
 
 extension PulseViewController {
+    
     private func startPulseHeartRate() {
         fingerOnCameraGuide.isHidden = false
         heartbeatGraphView.isHidden = true
@@ -286,12 +283,13 @@ extension PulseViewController {
                 // Если разрешение получено, останавливаем текущую анимацию,
                 // показываем необходимые UI элементы и инициализируем процесс захвата видео.
                 print("START PULSE MEASURE")
+                initStartPulse()
             }
         } else {
             // Если разрешение на использование камеры не получено,
             //показать алерт на получение разрешения камеры
+            
         }
-        
     }
     
     // Инициализирует процесс захвата видео для начала измерения пульса.
