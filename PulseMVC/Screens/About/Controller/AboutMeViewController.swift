@@ -32,9 +32,7 @@ final class AboutMeViewController: BaseViewController, UICollectionViewDelegate,
     }
     private func setupUI() {
         titleLabel.text = "About me"
-    
         stackUnits = UnitsStackView()
-        
         continueButton = GlobalButton()
         continueButton.setTitle("Continue", for: .normal)
         continueButton.addTarget(self, action: #selector(continueTapped), for: .touchUpInside)
@@ -45,9 +43,9 @@ final class AboutMeViewController: BaseViewController, UICollectionViewDelegate,
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.backgroundColor = .clear
         collectionView.register(AboutCell.self, forCellWithReuseIdentifier: "AboutCell")
         collectionView.register(GenderAboutCell.self, forCellWithReuseIdentifier: "GenderAboutCell")
-        
     }
     
     private func setupLayout() {
@@ -95,7 +93,6 @@ extension AboutMeViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell: UICollectionViewCell
-        
         if indexPath.item == 0 {
             let genderCell = collectionView.dequeueReusableCell(withReuseIdentifier: "GenderAboutCell", for: indexPath) as! GenderAboutCell
             cell = genderCell
@@ -104,7 +101,6 @@ extension AboutMeViewController: UICollectionViewDelegateFlowLayout{
             let name = aboutData[indexPath.item - 1 ]
             aboutCell.titleLabel.text = name
             aboutCell.nameCell = name
-            
             cell = aboutCell
         }
         return cell

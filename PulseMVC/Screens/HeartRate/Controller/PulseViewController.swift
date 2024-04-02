@@ -173,6 +173,8 @@ class PulseViewController: BaseViewController {
                 print("-----------------")
             }
             startPulseHeartRate()
+            initStartPulse()
+            startMeasurement()
         } else {
             print("Первый раз вошел - startTapped")
             UserDefaults.standard.set(true, forKey: "userEnteringApp")
@@ -468,7 +470,7 @@ extension PulseViewController {
     // Сохраняет результаты измерения пульса в базу данных и закрывает экран с результатами.
     func saveToDBAndCloseResultView() {
         // Вызываем метод модели представления для сохранения результатов измерений пульса в базу данных.
-        viewModel?.saveToBDBpmSetting()
+        //viewModel?.saveToBDBpmSetting()
 
         // После сохранения результатов, скрываем нижнюю навигационную панель,
         // чтобы вернуть пользователя к основному пользовательскому интерфейсу приложения.
@@ -476,18 +478,17 @@ extension PulseViewController {
 
         // Проверяем, был ли уже показан экран оценки приложения пользователем.
         // GetUserSettings().showRating возвращает false, если экран оценки еще не показывался.
-        if !GetUserSettings().showRating {
+        //if !GetUserSettings().showRating {
             // Если экран оценки не показывался, создаем и настраиваем view для отображения запроса оценки приложения.
-            self.ratingView.delegate = self  // Устанавливаем делегат для обработки действий пользователя на экране оценки.
-            self.tabBarController?.view.addSubview(ratingView)  // Добавляем экран оценки на текущий таб бар контроллер для отображения пользователю.
+            //self.ratingView.delegate = self  // Устанавливаем делегат для обработки действий пользователя на экране оценки.
+            //self.tabBarController?.view.addSubview(ratingView)  // Добавляем экран оценки на текущий таб бар контроллер для отображения пользователю.
 
             // Вызываем метод модели представления для изменения состояния,
             // указывающего, что экран оценки уже был показан пользователю.
-            viewModel?.changeStateRatingShow()
-        } else {
+            //viewModel?.changeStateRatingShow()
+        //} else {
             // Если экран оценки уже был показан, переключаем вкладку таб бара на следующую,
             // чтобы пользователь продолжил взаимодействие с приложением.
-            tabBarController?.selectedIndex = 1
+            //tabBarController?.selectedIndex = 1
         }
     }
-}
