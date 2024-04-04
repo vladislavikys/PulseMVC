@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol StackHDelegate: AnyObject {
+    func didSelectActivityView(named imageName: String)
+}
+
 class StackH: UIStackView, ActivityViewDelegate {
+    
+    weak var delegate: StackHDelegate?
     
     // Создание трех экземпляров ActivityView
     let coffeeView = StackV()
@@ -30,16 +36,17 @@ class StackH: UIStackView, ActivityViewDelegate {
         alignment = .center
         spacing = 16 // Задайте нужный интервал
         
-        // Настройка первого ActivityView
-        coffeeView.activityView.setImage(named: "coffeeEmoji")
+        
+        coffeeView.activityView.nameEmoji = "coffeeEmoji"
+        coffeeView.activityView.setImage(named: coffeeView.activityView.nameEmoji)
         coffeeView.label.text = "Resting"
         
-        // Настройка второго ActivityView
-        sleepEmoji.activityView.setImage(named: "sleepEmoji")
+        sleepEmoji.activityView.nameEmoji = "sleepEmoji"
+        sleepEmoji.activityView.setImage(named: sleepEmoji.activityView.nameEmoji)
         sleepEmoji.label.text = "Sleep"
         
-        // Настройка третьего ActivityView
-        activityEmoji.activityView.setImage(named: "activityEmoji")
+        activityEmoji.activityView.nameEmoji = "activityEmoji"
+        activityEmoji.activityView.setImage(named: activityEmoji.activityView.nameEmoji)
         activityEmoji.label.text = "Active"
         
         coffeeView.activityView.delegate = self
@@ -52,16 +59,22 @@ class StackH: UIStackView, ActivityViewDelegate {
     }
     
     func activityViewDidActivate(_ activityView: ActivityView) {
-            let views = [coffeeView.activityView, sleepEmoji.activityView, activityEmoji.activityView]
-            
-            // Деактивация всех, кроме активированного
-            views.forEach { view in
-                if view !== activityView { // Используем идентичность, а не равенство
-                    //Оператор идентичности (!==) проверяет, что два объекта не являются одним и тем же объектом в памяти.
-                    view.isActive = false
-                }
+        let views = [coffeeView.activityView, sleepEmoji.activityView, activityEmoji.activityView]
+        
+        // Деактивация всех, кроме активированного
+        views.forEach { view in
+            if view !== activityView {
+                // проверка что они не являются одним  объектом в памяти тип
+                view.isActive = false
             }
         }
+        
+        if (views.first != nil) == activityView.isActive {
+            print("activityimage = \(activityView.nameEmoji)")
+            delegate?.didSelectActivityView(named: activityView.nameEmoji)
+        }
+        
+    }
 }
 
- 
+

@@ -31,7 +31,7 @@ class StackV: UIStackView {
 //        activityView.backgroundColor = .red // Для отладки
 //        label.backgroundColor = .green // Для отладки
         
-        //activityView.setImage(named: "coffeEmoji")
+        activityView.setImage(named: activityView.nameEmoji)
         activityView.snp.makeConstraints { make in
             make.width.height.equalTo(80)
         }
@@ -40,9 +40,9 @@ class StackV: UIStackView {
         label.alpha = 0.45
         label.font = .systemFont(ofSize: 18)
         label.textColor = .black
-        //Делегирование ответственности
-        activityView.label = label // Передаем ссылку на UILabel в ActivityView
-    
+        
+        //забыл для чего РАЗОБРАТЬСЯ
+        activityView.label = label
         
         addArrangedSubview(activityView)
         addArrangedSubview(label)

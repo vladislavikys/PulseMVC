@@ -26,5 +26,7 @@ extension Profile {
     @NSManaged public var age: Int16
     @NSManaged public var units: String?
     @NSManaged public var bpm: Int16
+    @NSManaged public var analyze: String?
+    
 }
 

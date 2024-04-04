@@ -8,24 +8,19 @@
 import UIKit
 
 class AnalyzViewController: BaseViewController {
-    // Кнопка "Continue"
     private var globalButton = GlobalButton()
-    
     private var text = UITextView()
-    
     private var stackH = StackH()
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupUI()
     }
     
-    
-    
     func setupUI() {
+        stackH.delegate = self
         titleLabel.text = "Analyzing"
-        
         text.text = "People have different heart rates in different states, Selecting the current state will effectively provide you with heart rate assessment analysis"
         text.backgroundColor = .clear
         text.font = .systemFont(ofSize: 16)
@@ -37,15 +32,13 @@ class AnalyzViewController: BaseViewController {
             make.width.equalTo(320)
             make.height.equalTo(84)
         }
-        
-        ///stack
+        //stack
         view.addSubview(stackH)
         stackH.snp.makeConstraints { make in
-            make.center.equalToSuperview() // Центрируем стек в супервью
-            make.width.equalTo(300) // Установите желаемую ширину для stackV
-            // Высота stackV будет автоматически рассчитана на основе содержимого
+            make.center.equalToSuperview()
+            make.width.equalTo(300)
+            // Высота  будет автоматически рассчитана от содержимого
         }
-        
         //globalButton
         globalButton.setTitle("Continue", for: .normal)
         view.addSubview(globalButton)
@@ -54,13 +47,27 @@ class AnalyzViewController: BaseViewController {
             make.centerX.equalTo(view)
             make.bottom.equalTo(view).offset(-175)
         }
+        
+        
     }
     
     @objc func continueTapped() {
+        if let coreData = CoreDataeManager.shared.fetchProfile(){
+            // Распечатываем данные пользователя
+            print("-----------------")
+            print("ANALYZETYPE = \(coreData.analyze)")
+            print("-----------------")
+        }
         dismiss(animated: true) {
             UIView.animate(withDuration: 0.3) {
                 self.view.alpha = 0
             }
         }
     }
+}
+
+extension AnalyzViewController: StackHDelegate {
+    func didSelectActivityView(named imageName: String) {
+            CoreDataeManager.shared.updateProfile(analyze: imageName)
+        }
 }

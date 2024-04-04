@@ -149,14 +149,14 @@ class PulseViewController: BaseViewController {
         if UserDefaults.standard.bool(forKey: "userEnteringApp") {
             print("Пользователь уже вошел - startTapped")
             
-            currentProgress = 0.008
-            progressBar.setProgress(to: currentProgress)
-            progressTimer?.invalidate()
-            progressTimer = Timer.scheduledTimer(timeInterval: 0.00001,
-                                                 target: self,
-                                                 selector: #selector(updateProgressBar),
-                                                 userInfo: nil, repeats: true)
-            
+//            currentProgress = 0.008
+//            progressBar.setProgress(to: currentProgress)
+//            progressTimer?.invalidate()
+//            progressTimer = Timer.scheduledTimer(timeInterval: 0.00001,
+//                                                 target: self,
+//                                                 selector: #selector(updateProgressBar),
+//                                                 userInfo: nil, repeats: true)
+//            
             printDB()
             startPulseHeartRate()
         } else {
@@ -166,14 +166,14 @@ class PulseViewController: BaseViewController {
         }
     }
     //обновления прогресса
-    @objc func updateProgressBar() {
-        if currentProgress < 1.0 {
-            currentProgress += 0.000003
-            progressBar.setProgress(to: currentProgress)
-        } else {
-            progressTimer?.invalidate() // Останавливаем таймер, если прогресс достиг 1
-        }
-    }
+//    @objc func updateProgressBar() {
+//        if currentProgress < 1.0 {
+//            currentProgress += 0.000003
+//            progressBar.setProgress(to: currentProgress)
+//        } else {
+//            progressTimer?.invalidate() // Останавливаем таймер, если прогресс достиг 1
+//        }
+//    }
 }
 
 extension PulseViewController {
@@ -258,15 +258,17 @@ extension PulseViewController: AboutMeViewControllerDelegate {
 
 extension PulseViewController {
     private func startPulseHeartRate() {
-        fingerOnCameraGuide.isHidden = false
-        heartbeatGraphView.isHidden = true
-        startButton.isHidden = true
-        cameraFingerGuideText.isHidden = false
-        pulseStatusLabel.text = "19 seconds remaining"
+        
         
         if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
+                fingerOnCameraGuide.isHidden = false
+                heartbeatGraphView.isHidden = true
+                startButton.isHidden = true
+                cameraFingerGuideText.isHidden = false
+                pulseStatusLabel.text = "19 seconds remaining"
+                
                 print("START PULSE MEASURE")
                 initStartPulse()
             }
@@ -355,6 +357,7 @@ extension PulseViewController {
                     let pulse = 60.0/average
                     print("pulse: \(pulse)")
                     print(bpmForCalculating)
+                    self.pulseStatusLabel.text = "\(count) seconds remaining"
                     
                     // Проверка пульса и обновление данных.
                     if pulse != -60 {
@@ -369,6 +372,7 @@ extension PulseViewController {
                     }
                     self.defaultState()
                     printDB()
+                    openAnalyzeVC()
                 }
             })
         }

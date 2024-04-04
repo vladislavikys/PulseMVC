@@ -46,7 +46,7 @@ public final class CoreDataeManager: NSObject {
         }
     
     // Объединенный метод для обновления свойств профиля
-    public func updateProfile(units: String? = nil, gender: String? = nil, age: Int? = nil, weight: Int? = nil, height: Int? = nil, bpmAverage: Int? = nil) {
+    public func updateProfile(units: String? = nil, gender: String? = nil, age: Int? = nil, weight: Int? = nil, height: Int? = nil, bpmAverage: Int? = nil, analyze: String? = nil) {
             let profile = getOrCreateProfile()
             
             //обновляем если передали
@@ -69,6 +69,10 @@ public final class CoreDataeManager: NSObject {
             if let bpmAverage = bpmAverage {
                 profile.bpm = Int16(bpmAverage)
             }
+            if let analyze = analyze {
+                profile.analyze = analyze
+            }
+        
             appDelegate.saveContext()
         }
     // Сохранение контекста с обработкой ошибок
