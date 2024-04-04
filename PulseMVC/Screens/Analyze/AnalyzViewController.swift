@@ -7,7 +7,15 @@
 
 import UIKit
 
+protocol AnalyzViewControllerDelegate: AnyObject {
+    func didTapContinue()
+}
+
 class AnalyzViewController: BaseViewController {
+    
+    weak var delegate: AnalyzViewControllerDelegate?
+    
+    
     private var globalButton = GlobalButton()
     private var text = UITextView()
     private var stackH = StackH()
@@ -52,13 +60,8 @@ class AnalyzViewController: BaseViewController {
     }
     
     @objc func continueTapped() {
-        if let coreData = CoreDataeManager.shared.fetchProfile(){
-            // Распечатываем данные пользователя
-            print("-----------------")
-            print("ANALYZETYPE = \(coreData.analyze)")
-            print("-----------------")
-        }
         dismiss(animated: true) {
+            self.delegate?.didTapContinue()
             UIView.animate(withDuration: 0.3) {
                 self.view.alpha = 0
             }

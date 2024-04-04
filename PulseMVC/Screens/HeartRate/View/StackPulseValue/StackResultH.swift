@@ -10,7 +10,7 @@ import UIKit
 class StackResultH: UIStackView {
     
     private var heartImage = UIImageView(image: UIImage(named: "heartImage"))
-    private  let pulseLabel = UILabel()
+    var pulseLabel = UILabel()
     private  let bpmLabel = UILabel()
     
     override init(frame:CGRect) {
@@ -55,6 +55,5 @@ class StackResultH: UIStackView {
             make.centerY.equalTo(6)
             make.leading.equalTo(pulseLabel.snp.trailing).offset(10)
         }
-        
     }
 }

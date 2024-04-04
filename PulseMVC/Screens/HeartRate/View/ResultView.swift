@@ -41,14 +41,9 @@ class ResultView: UIView {
         return label
     }()
     
-    private let stackHeart = StackResultH()
-    private let statusPulse = StatusPulseView()
-    
-    private let activityView: ActivityView = {
-        let view = ActivityView()
-        view.nameEmoji = "coffee"
-        return view
-    }()
+     let stackHeart = StackResultH()
+     let statusPulse = StatusPulseView()
+     let activityView = ActivityView()
     
     private let headerTitle: UILabel = {
         let label = UILabel()
@@ -101,8 +96,6 @@ class ResultView: UIView {
         addSubview(statusPulse)
         addSubview(dateTitle)
         
-        
-        
         dateTitle.snp.makeConstraints { make in
             make.leading.left.equalTo(20)
             make.top.equalTo(titleLabel.snp.bottom).offset(20)
@@ -114,7 +107,7 @@ class ResultView: UIView {
         }
         
         activityView.layer.cornerRadius = 20
-        activityView.setImage(named: "coffee")
+        activityView.setImage(named: activityView.nameEmoji)
         activityView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(20)
             make.trailing.equalToSuperview().offset(-30)

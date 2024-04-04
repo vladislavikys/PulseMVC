@@ -15,6 +15,7 @@ class PulseViewController: BaseViewController {
     private var pulseStackView: PulseStack!
     
     private var welcomeView = WelcomeView()
+    private var resultView = ResultView()
     private var cameraView = CameraAccessView()
     var dimmy = DimmyView()
     var userProfile = AboutModel()
@@ -41,6 +42,7 @@ class PulseViewController: BaseViewController {
         fingerOnCameraGuide.isHidden = true
         hideWelcomeView()
         hideCameraView()
+        hideResultView()
         if UserDefaults.standard.bool(forKey: "userEnteringWelcom") {
             print("пользователь уже вхоли -viewDidLoad ")
             hideWelcomeView()
@@ -127,6 +129,7 @@ class PulseViewController: BaseViewController {
             make.height.equalTo(330)
             
         }
+      
         //cameraView
         view.addSubview(cameraView)
         cameraView.okButtonAction = {
@@ -135,6 +138,15 @@ class PulseViewController: BaseViewController {
         cameraView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
             make.height.equalTo(330)
+        }
+        //resultView
+        view.addSubview(resultView)
+        resultView.acceptButtonAction = {
+            self.hideResultView()
+        }
+        resultView.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.height.equalTo(630)
         }
         //progressBar
         progressBar.setProgress()
@@ -181,6 +193,7 @@ extension PulseViewController {
     // MARK: - Navigation
     func openAnalyzeVC(){
         let analyzi = AnalyzViewController()
+        analyzi.delegate = self
         analyzi.modalPresentationStyle = .fullScreen
         analyzi.modalTransitionStyle = .crossDissolve
         present(analyzi, animated: true, completion: nil)
@@ -193,14 +206,14 @@ extension PulseViewController {
         aboutVC.modalTransitionStyle = .crossDissolve
         present(aboutVC, animated: true, completion: nil)
     }
-    // Метод для скрытия WelcomeView
+     //Метод для скрытия WelcomeView
     func hideWelcomeView() {
         tabBarController?.tabBar.isHidden = false
         welcomeView.isHidden = true
         dimmy.isHidden = true
         dimmy.removeFromSuperview()
     }
-    // Метод для отображения WelcomeView
+     //Метод для отображения WelcomeView
     func showWelcomeView() {
         tabBarController?.tabBar.isHidden = true
         welcomeView.isHidden = false
@@ -216,7 +229,6 @@ extension PulseViewController {
             make.height.equalTo(320)
         }
     }
-    
     // Метод для скрытия CameraAccessView
     func hideCameraView() {
         tabBarController?.tabBar.isHidden = false
@@ -241,6 +253,30 @@ extension PulseViewController {
             make.height.equalTo(320)
         }
     }
+    func hideResultView() {
+        tabBarController?.tabBar.isHidden = false
+        resultView.isHidden = true
+        dimmy.isHidden = true
+        dimmy.removeFromSuperview()
+    }
+    func showResultView() {
+        let coreData = CoreDataeManager.shared.fetchProfile()
+        tabBarController?.tabBar.isHidden = true
+        resultView.isHidden = false
+        
+        resultView.activityView.nameEmoji = coreData?.analyze ?? "coffeeEmoji"
+        resultView.stackHeart.pulseLabel.text = String(coreData!.bpm)
+        view.addSubview(dimmy)
+        dimmy.isHidden = false
+        dimmy.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        view.addSubview(resultView)
+        resultView.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.height.equalTo(320)
+        }
+    }
     
     func endMeasurePulseView(){
         fingerOnCameraGuide.isHidden = true
@@ -253,6 +289,12 @@ extension PulseViewController {
 extension PulseViewController: AboutMeViewControllerDelegate {
     func didCloseAboutScreen() {
         showCameraView()
+    }
+}
+
+extension PulseViewController: AnalyzViewControllerDelegate {
+    func didTapContinue() {
+        showResultView()
     }
 }
 
