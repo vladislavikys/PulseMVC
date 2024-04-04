@@ -31,6 +31,8 @@ class CircleButtonHStack: UIStackView {
         oneButtton.setupGestureRecognizer()
         twoButton.setupGestureRecognizer()
         
+        
+        
         oneButtton.selectionHandler = { [weak self] in
             self?.twoButton.deSelectView()
             self?.saveCoreData(gender: "Male")
@@ -52,10 +54,7 @@ class CircleButtonHStack: UIStackView {
 }
 
 extension CircleButtonHStack {
-    //сохранение пола
     private func saveCoreData(gender: String){
-//        CoreDataeManager.shared.deleteProfile(byAttribute: "gender")
-//        CoreDataeManager.shared.createGender(gender: gender)
         CoreDataeManager.shared.updateProfile(gender: gender)
     }
     

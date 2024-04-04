@@ -33,6 +33,7 @@ class CircleButtonUIView: UIView {
         
         genderLabel = UILabel()
         genderLabel.textColor = .black
+        genderLabel.isUserInteractionEnabled = true
         
         addSubview(circleFill)
         circleFill.snp.makeConstraints { make in
@@ -64,9 +65,24 @@ extension CircleButtonUIView{
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         addGestureRecognizer(tapGesture)
         isUserInteractionEnabled = true
+        
+        
+        //пробовал по нажатию тексат выбор втю но ХУЙ ТАМ
+        
+        let labelTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleLabelTap(_:)))
+        genderLabel.addGestureRecognizer(labelTapGesture)
     }
     
     @objc private func handleTap(_ sender: UITapGestureRecognizer) {
+        switch state {
+        case .selected:
+            deSelectView()
+        case .deselected:
+            selectView()
+            selectionHandler?()
+        }
+    }
+    @objc private func  handleLabelTap(_ sender: UITapGestureRecognizer) {
         switch state {
         case .selected:
             deSelectView()

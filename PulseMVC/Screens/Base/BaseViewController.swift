@@ -7,11 +7,8 @@
 
 import UIKit
 class BaseViewController: UIViewController {
-    
-    
     public var backgoundImageView = UIImageView()
     public var titleLabel = UILabel()
-    public var activityDescriptionLabel = UILabel()
     
     let testLabel = UILabel()
     
@@ -23,8 +20,6 @@ class BaseViewController: UIViewController {
     }
     
 }
-
-
 
 extension BaseViewController {
     //справа тестовой для того чтобы видеть изминение экрана
@@ -45,7 +40,7 @@ extension BaseViewController {
     func setBackground(){
         view.addSubview(backgoundImageView)
         view.addSubview(titleLabel)
-        view.addSubview(activityDescriptionLabel)
+        //view.addSubview(activityDescriptionLabel)
         backgoundImageView.image = UIImage(named: "backgroundColor")
         backgoundImageView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -54,12 +49,7 @@ extension BaseViewController {
         titleLabel.textColor = UIColor(red: 0.114, green: 0.114, blue: 0.145, alpha: 1)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.adjustsFontSizeToFitWidth = true
-        
-        activityDescriptionLabel.text = "Place your finger on the back camera and flashlight"
-        activityDescriptionLabel.numberOfLines = 0
-        activityDescriptionLabel.lineBreakMode = .byWordWrapping
-        activityDescriptionLabel.font = UIFont.systemFont(ofSize: 14, weight: .light)
-        activityDescriptionLabel.textAlignment = .center
+    
         
         backgoundImageView.snp.makeConstraints { make in
             make.edges.equalTo(view)
@@ -69,13 +59,5 @@ extension BaseViewController {
             make.trailing.equalTo(view).offset(-18)
             make.top.equalTo(view).offset(74)
         }
-        
-        activityDescriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(view).offset(400)
-            make.width.equalTo(280)
-            make.centerX.equalTo(view)
-        }
-        
-        activityDescriptionLabel.isHidden = true
     }
 }

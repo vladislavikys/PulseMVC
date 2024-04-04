@@ -36,8 +36,7 @@ class PulseViewController: BaseViewController {
     var timer = Timer() // Таймер
     var timerTwo = Timer() // Второй таймер
 
-    
-
+    var viewModel = HeartRateModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,7 +102,7 @@ class PulseViewController: BaseViewController {
         view.addSubview(heartbeatGraphView)
         heartbeatGraphView.snp.makeConstraints { make in
             make.centerX.equalTo(view)
-            make.top.equalTo(460)
+            make.top.equalTo(430)
         }
         //globalButton
         view.addSubview(startButton)
@@ -141,7 +140,7 @@ class PulseViewController: BaseViewController {
             make.height.equalTo(330)
         }
         //progressBar
-        progressBar.setProgress(to: 0.03)
+        progressBar.setProgress()
         view.addSubview(progressBar)
         progressBar.snp.makeConstraints { make in
             make.centerX.equalTo(view).offset(0)
@@ -153,7 +152,7 @@ class PulseViewController: BaseViewController {
         if UserDefaults.standard.bool(forKey: "userEnteringApp") {
             print("Пользователь уже вошел - startTapped")
             
-            currentProgress = 0.0 // Сброс текущего прогресса
+            currentProgress = 0.008
             progressBar.setProgress(to: currentProgress)
             progressTimer?.invalidate()
             progressTimer = Timer.scheduledTimer(timeInterval: 0.00001,
@@ -161,16 +160,7 @@ class PulseViewController: BaseViewController {
                                                  selector: #selector(updateProgressBar),
                                                  userInfo: nil, repeats: true)
 
-            if let coreData = CoreDataeManager.shared.fetchProfile(){
-                // Распечатываем данные пользователя
-                print("-----------------")
-                print("Выбранные единицы измерения: \(coreData.units ?? "Не указаны")")
-                print("Пол: \(coreData.gender ?? "Не указан")")
-                print("Рост: \(coreData.height)")
-                print("Вес: \(coreData.weight)")
-                print("Возраст: \(coreData.age)")
-                print("-----------------")
-            }
+            printDB()
             startPulseHeartRate()
         } else {
             print("Первый раз вошел - startTapped")
@@ -335,7 +325,7 @@ extension PulseViewController {
         DispatchQueue.main.async { [unowned self] in
             self.bpmForCalculating.removeAll()
             self.toggleTorch(status: true)
-            //self.progress.animationProgress(duration: 20)
+            self.progressBar.setProgress()
             var count = 20
             
             // Таймер для обновления интерфейса и расчета пульса.
@@ -348,6 +338,7 @@ extension PulseViewController {
                     let average = self.pulseDetector.getAverage()
                     let pulse = 60.0/average
                     print("pulse: \(pulse)")
+                    print(bpmForCalculating)
                     
                     // Проверка пульса и обновление данных.
                     if pulse != -60 {
@@ -357,10 +348,11 @@ extension PulseViewController {
                 } else {
                     // Действия по завершении измерения.
                     if self.bpmForCalculating != [] {
-//                        self.viewModel?.calculatingAndSaveToDBBpmData(pulse: self.bpmForCalculating)
-//                        self.viewModel?.callAnalyzeModule(self)
+                        print("// Действия по завершении измерения.")
+                        viewModel.calculatingAndSaveToDBBpmData(pulse: self.bpmForCalculating)
                     }
                     self.defaultState()
+                    printDB()
                 }
             })
         }
@@ -372,14 +364,17 @@ extension PulseViewController {
         self.startButton.isHidden = false
         self.pulseStackView.isHidden = false
         self.buttonInfo.isHidden = false
+        self.cameraFingerGuideText.isHidden = true
+        self.fingerOnCameraGuide.isHidden = true
+        self.heartbeatGraphView.isHidden = false
         
         print("DEFALT SCREEN ")
-        
         
         self.toggleTorch(status: false)
         self.heartRateManager.stopCapture()
         timer.invalidate()
-    }
+}
+    
     // Обработка захваченного видео для измерения пульса.
     func handle(buffer: CMSampleBuffer) {
         var redmean:CGFloat = 0.0
@@ -460,33 +455,8 @@ extension PulseViewController {
                 // Обновляем значение переменной "rateVariable"
                 self.pulseStackView.pulseLabel.text = "00"
                 // Удаляем анимации прогресса
-                //self.progress.deleteAnimations()
+                self.progressBar.removeAnimation()
             }
         }
     }
-    
-    // Сохраняет результаты измерения пульса в базу данных и закрывает экран с результатами.
-    func saveToDBAndCloseResultView() {
-        // Вызываем метод модели представления для сохранения результатов измерений пульса в базу данных.
-        //viewModel?.saveToBDBpmSetting()
-
-        // После сохранения результатов, скрываем нижнюю навигационную панель,
-        // чтобы вернуть пользователя к основному пользовательскому интерфейсу приложения.
-        tabBarController?.tabBar.isHidden = false
-
-        // Проверяем, был ли уже показан экран оценки приложения пользователем.
-        // GetUserSettings().showRating возвращает false, если экран оценки еще не показывался.
-        //if !GetUserSettings().showRating {
-            // Если экран оценки не показывался, создаем и настраиваем view для отображения запроса оценки приложения.
-            //self.ratingView.delegate = self  // Устанавливаем делегат для обработки действий пользователя на экране оценки.
-            //self.tabBarController?.view.addSubview(ratingView)  // Добавляем экран оценки на текущий таб бар контроллер для отображения пользователю.
-
-            // Вызываем метод модели представления для изменения состояния,
-            // указывающего, что экран оценки уже был показан пользователю.
-            //viewModel?.changeStateRatingShow()
-        //} else {
-            // Если экран оценки уже был показан, переключаем вкладку таб бара на следующую,
-            // чтобы пользователь продолжил взаимодействие с приложением.
-            //tabBarController?.selectedIndex = 1
-        }
-    }
+}

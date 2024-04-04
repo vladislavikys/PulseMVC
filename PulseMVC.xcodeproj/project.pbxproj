@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DFF715820705E8A4FC1D903B /* Pods_PulseMVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF5D93D076ADAABC1C81BFB /* Pods_PulseMVC.framework */; };
 		E036215F2BA5A63000E6B076 /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E036215E2BA5A63000E6B076 /* Profile+CoreDataClass.swift */; };
+		E0B467DD2BBE87C50006119E /* ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B467DC2BBE87C50006119E /* ext.swift */; };
 		E0C36B982BB69ACA00C0840A /* AVCaptureDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C36B972BB69ACA00C0840A /* AVCaptureDevice.swift */; };
 		E0C36B9B2BB69B0200C0840A /* ColorUtilitesHeart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C36B9A2BB69B0200C0840A /* ColorUtilitesHeart.swift */; };
 		E0C36B9E2BB69B2400C0840A /* FilterHeart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C36B9D2BB69B2400C0840A /* FilterHeart.swift */; };
@@ -18,6 +19,7 @@
 		E0DB8DF32BB2C061006B6517 /* StatusPulseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DB8DF22BB2C061006B6517 /* StatusPulseView.swift */; };
 		E0DB8DF82BB2EE9C006B6517 /* StackResultH.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DB8DF72BB2EE9C006B6517 /* StackResultH.swift */; };
 		E0E45DC72BA9C61900A7DCD7 /* CameraAccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E45DC62BA9C61900A7DCD7 /* CameraAccessView.swift */; };
+		E0E483082BBE80EA00E62036 /* HeartRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E483072BBE80EA00E62036 /* HeartRateModel.swift */; };
 		E0F83EEF2BA5DE0000C47D5A /* AnalyzViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F83EEE2BA5DE0000C47D5A /* AnalyzViewController.swift */; };
 		E0F83EF12BA5E89200C47D5A /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F83EF02BA5E89200C47D5A /* ActivityView.swift */; };
 		E0F83EF32BA604E300C47D5A /* StackV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F83EF22BA604E300C47D5A /* StackV.swift */; };
@@ -69,6 +71,7 @@
 		90BF2E75F841E25AE3406EE3 /* Pods-PulseMVC-PulseMVCUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseMVC-PulseMVCUITests.release.xcconfig"; path = "Target Support Files/Pods-PulseMVC-PulseMVCUITests/Pods-PulseMVC-PulseMVCUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B9CC3EDFDDD11404740CA379 /* Pods-PulseMVC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseMVC.debug.xcconfig"; path = "Target Support Files/Pods-PulseMVC/Pods-PulseMVC.debug.xcconfig"; sourceTree = "<group>"; };
 		E036215E2BA5A63000E6B076 /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E0B467DC2BBE87C50006119E /* ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ext.swift; sourceTree = "<group>"; };
 		E0C36B972BB69ACA00C0840A /* AVCaptureDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureDevice.swift; sourceTree = "<group>"; };
 		E0C36B9A2BB69B0200C0840A /* ColorUtilitesHeart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtilitesHeart.swift; sourceTree = "<group>"; };
 		E0C36B9D2BB69B2400C0840A /* FilterHeart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHeart.swift; sourceTree = "<group>"; };
@@ -78,6 +81,7 @@
 		E0DB8DF22BB2C061006B6517 /* StatusPulseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPulseView.swift; sourceTree = "<group>"; };
 		E0DB8DF72BB2EE9C006B6517 /* StackResultH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackResultH.swift; sourceTree = "<group>"; };
 		E0E45DC62BA9C61900A7DCD7 /* CameraAccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAccessView.swift; sourceTree = "<group>"; };
+		E0E483072BBE80EA00E62036 /* HeartRateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateModel.swift; sourceTree = "<group>"; };
 		E0F83EEE2BA5DE0000C47D5A /* AnalyzViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzViewController.swift; sourceTree = "<group>"; };
 		E0F83EF02BA5E89200C47D5A /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		E0F83EF22BA604E300C47D5A /* StackV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackV.swift; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 		E03621602BA5A6C400E6B076 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F54492522B725BCB002CAA53 /* AboutModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 				E0C36B9C2BB69B1800C0840A /* Detector Helpers */,
 				E0C36B992BB69AF200C0840A /* UtilitesHeart */,
 				E0C36B962BB69ABB00C0840A /* ExtensionHeart */,
+				E0B467DC2BBE87C50006119E /* ext.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -511,7 +517,7 @@
 		F5A02EF22B6BF11A00DF7ED7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F54492522B725BCB002CAA53 /* AboutModel.swift */,
+				E0E483072BBE80EA00E62036 /* HeartRateModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -681,6 +687,7 @@
 				F542FCCB2B6E77CE00ACB81B /* TestViewController.swift in Sources */,
 				F542FCC92B6E778800ACB81B /* DIetModel.swift in Sources */,
 				F542FCD32B6E79D800ACB81B /* ProfileModel.swift in Sources */,
+				E0B467DD2BBE87C50006119E /* ext.swift in Sources */,
 				F508212A2B7139AC00CEF074 /* AboutMeViewController.swift in Sources */,
 				E0E45DC72BA9C61900A7DCD7 /* CameraAccessView.swift in Sources */,
 				E0C36B9B2BB69B0200C0840A /* ColorUtilitesHeart.swift in Sources */,
@@ -689,6 +696,7 @@
 				F5531F1E2B95FFEE00A37224 /* CoreData.xcdatamodeld in Sources */,
 				E0DB8DF82BB2EE9C006B6517 /* StackResultH.swift in Sources */,
 				F5984E7E2B6A99940090376F /* AppDelegate.swift in Sources */,
+				E0E483082BBE80EA00E62036 /* HeartRateModel.swift in Sources */,
 				F542FCC72B6E777400ACB81B /* DietView.swift in Sources */,
 				F54ACF402B9B2274002467A0 /* MyProgressBar.swift in Sources */,
 				F59EF6142B80F6CD0014C7E0 /* DimmyView.swift in Sources */,
