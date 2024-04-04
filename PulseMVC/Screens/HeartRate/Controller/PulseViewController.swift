@@ -18,12 +18,10 @@ class PulseViewController: BaseViewController {
     private var cameraView = CameraAccessView()
     var dimmy = DimmyView()
     var userProfile = AboutModel()
-
+    
     //таймер для прогресса
     private var progressTimer: Timer?
     private var currentProgress: CGFloat = 0.0
-    
-    
     
     // Менеджеры для работы с измерением пульса
     var hueFilter = Filter() // Фильтр для обработки изображения
@@ -35,7 +33,6 @@ class PulseViewController: BaseViewController {
     var validFrameCounter = 0 // Счетчик валидных кадров
     var timer = Timer() // Таймер
     var timerTwo = Timer() // Второй таймер
-
     var viewModel = HeartRateModel()
     
     override func viewDidLoad() {
@@ -128,7 +125,7 @@ class PulseViewController: BaseViewController {
         welcomeView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
             make.height.equalTo(330)
-
+            
         }
         //cameraView
         view.addSubview(cameraView)
@@ -159,7 +156,7 @@ class PulseViewController: BaseViewController {
                                                  target: self,
                                                  selector: #selector(updateProgressBar),
                                                  userInfo: nil, repeats: true)
-
+            
             printDB()
             startPulseHeartRate()
         } else {
@@ -180,7 +177,7 @@ class PulseViewController: BaseViewController {
 }
 
 extension PulseViewController {
-
+    
     // MARK: - Navigation
     func openAnalyzeVC(){
         let analyzi = AnalyzViewController()
@@ -227,7 +224,7 @@ extension PulseViewController {
         dimmy.isHidden = true
         dimmy.removeFromSuperview()
     }
-
+    
     // Метод для отображения CameraAccessView
     func showCameraView(){
         tabBarController?.tabBar.isHidden = true
@@ -260,25 +257,44 @@ extension PulseViewController: AboutMeViewControllerDelegate {
 }
 
 extension PulseViewController {
-    
     private func startPulseHeartRate() {
         fingerOnCameraGuide.isHidden = false
         heartbeatGraphView.isHidden = true
         startButton.isHidden = true
         cameraFingerGuideText.isHidden = false
+        pulseStatusLabel.text = "19 seconds remaining"
         
         if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
-                // Если разрешение получено, останавливаем текущую анимацию,
-                // показываем необходимые UI элементы и инициализируем процесс захвата видео.
                 print("START PULSE MEASURE")
                 initStartPulse()
             }
         } else {
             // Если разрешение на использование камеры не получено,
             //показать алерт на получение разрешения камеры
-            
+            DispatchQueue.main.async { [weak self] in
+                let alert = UIAlertController(title: "Camera Access ",
+                                              message: "Please enable camera access in your device settings.",
+                                              preferredStyle: .alert)
+                let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
+                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                        return
+                    }
+                    
+                    if UIApplication.shared.canOpenURL(settingsUrl) {
+                        UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                            print("Settings opened: \(success)")
+                        })
+                    }
+                }
+                
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                alert.addAction(settingsAction)
+                alert.addAction(cancelAction)
+                
+                self?.present(alert, animated: true, completion: nil)
+            }
         }
     }
     
@@ -288,7 +304,7 @@ extension PulseViewController {
         initVideoCapture()
         initCaptureSession()
     }
-
+    
     // Инициализация захвата видео с камеры.
     func initVideoCapture() {
         // Задаем характеристики захвата видео.
@@ -367,13 +383,11 @@ extension PulseViewController {
         self.cameraFingerGuideText.isHidden = true
         self.fingerOnCameraGuide.isHidden = true
         self.heartbeatGraphView.isHidden = false
-        
-        print("DEFALT SCREEN ")
-        
+        self.pulseStatusLabel.text = "No finger"
         self.toggleTorch(status: false)
         self.heartRateManager.stopCapture()
         timer.invalidate()
-}
+    }
     
     // Обработка захваченного видео для измерения пульса.
     func handle(buffer: CMSampleBuffer) {
@@ -451,8 +465,6 @@ extension PulseViewController {
                 // Останавливаем анимацию пульса и сердцебиения
                 //self.stopAnimationPulse()
                 //self.stopAnimationHeartBeat()
-                // Изменяем текст метки "fingerLabel"
-                // Обновляем значение переменной "rateVariable"
                 self.pulseStackView.pulseLabel.text = "00"
                 // Удаляем анимации прогресса
                 self.progressBar.removeAnimation()
