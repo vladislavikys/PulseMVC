@@ -119,12 +119,7 @@ final class AboutCell: UICollectionViewCell{
         return toolbar
     }
     
-    //скрываем клаву и убираем выделение textfield
-    @objc func doneButtonTapped() {
-        textField.resignFirstResponder()
-        
-        valueChangeHandler?(textField.text ?? "")
-        
+    func checkTextFieldAndShowWarningIfNeeded() {
         if textField.text?.isEmpty ?? true {
             isTextFieldVisible = false
             addButton.setImage(UIImage(named: "redAdd"), for: .normal)
@@ -134,6 +129,15 @@ final class AboutCell: UICollectionViewCell{
             warningLabel.isHidden = true
             animateTitleLabelDown()
         }
+    }
+    
+    //скрываем клаву и убираем выделение textfield
+    @objc func doneButtonTapped() {
+        textField.resignFirstResponder()
+        
+        valueChangeHandler?(textField.text ?? "")
+        checkTextFieldAndShowWarningIfNeeded()
+        
     }
     
     @objc func addButtonTapper(){

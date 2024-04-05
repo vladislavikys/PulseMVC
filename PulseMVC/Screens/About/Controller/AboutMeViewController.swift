@@ -72,9 +72,15 @@ final class AboutMeViewController: BaseViewController, UICollectionViewDelegate,
     }
     
     @objc func continueTapped() {
+        // Перебор всех  ячеек = AboutCell
+        for case let aboutCell as AboutCell in collectionView.visibleCells {
+            //проверка ксли нет данных показываем красный текст
+            aboutCell.checkTextFieldAndShowWarningIfNeeded()
+        }
+        
         // Проверяем, все ли данные заполнены
         guard userProfile.isComplete else {
-            // Если данные не заполнены, показываем предупреждение
+            // Если данные не заполнены, показываем алерт 
             let alert = UIAlertController(title: "Incomplete Information", message: "Please enter all your information before continuing.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             present(alert, animated: true, completion: nil)
@@ -111,6 +117,9 @@ extension AboutMeViewController: UICollectionViewDelegateFlowLayout{
             aboutCell.nameCell = name
             cell = aboutCell
             
+            
+            
+            //прошлось дописать иначе алерт все равно показывался даже если данные ввели
             //  valueChangeHandler для обновления userProfile
             aboutCell.valueChangeHandler = { [weak self] newValue in
                 guard let intValue = Int(newValue) else { return }
