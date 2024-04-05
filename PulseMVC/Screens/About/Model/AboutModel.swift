@@ -21,8 +21,15 @@ class AboutModel : Codable {
         self.age = age
         self.units = units
         
-        var model:AboutModel = AboutModel()
+        let model:AboutModel = AboutModel()
         
         model.gender = "Male"
+    }
+}
+
+//для проверки на экране ABOUT что все данные введены
+extension AboutModel {
+    var isComplete: Bool {
+        return height != nil && weight != nil && age != nil
     }
 }

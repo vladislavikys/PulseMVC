@@ -86,8 +86,6 @@ public final class CoreDataeManager: NSObject {
     //
     
     
-    
-    
     //save
     public func createUnits(units: String){
         guard let unitsEntityDescription = NSEntityDescription.entity(forEntityName: "Profile", in: context) else {return}

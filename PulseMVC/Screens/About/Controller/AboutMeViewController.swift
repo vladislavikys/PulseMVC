@@ -10,7 +10,6 @@ protocol AboutMeViewControllerDelegate: AnyObject {
     func didCloseAboutScreen()
 }
 
-
 final class AboutMeViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
     weak var delegate: AboutMeViewControllerDelegate?
@@ -24,7 +23,7 @@ final class AboutMeViewController: BaseViewController, UICollectionViewDelegate,
     var userProfile =  AboutModel()
     //замыкание передачи пользователя
     var didEnterData: ((AboutModel) -> Void)?
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -39,7 +38,7 @@ final class AboutMeViewController: BaseViewController, UICollectionViewDelegate,
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-    
+        
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -73,12 +72,21 @@ final class AboutMeViewController: BaseViewController, UICollectionViewDelegate,
     }
     
     @objc func continueTapped() {
+        // Проверяем, все ли данные заполнены
+        guard userProfile.isComplete else {
+            // Если данные не заполнены, показываем предупреждение
+            let alert = UIAlertController(title: "Incomplete Information", message: "Please enter all your information before continuing.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        // Если все данные заполнены, закрываем экран
         UserDefaults.standard.set(true, forKey: "returnedFromAbout")
         dismiss(animated: true) {
             UIView.animate(withDuration: 0.3) {
                 self.view.alpha = 0
             }
-            // После закрытия экрана уведомляем делегата
             self.delegate?.didCloseAboutScreen()
         }
     }
@@ -102,6 +110,20 @@ extension AboutMeViewController: UICollectionViewDelegateFlowLayout{
             aboutCell.titleLabel.text = name
             aboutCell.nameCell = name
             cell = aboutCell
+            
+            //  valueChangeHandler для обновления userProfile
+            aboutCell.valueChangeHandler = { [weak self] newValue in
+                guard let intValue = Int(newValue) else { return }
+                switch name {
+                case "Height":
+                    self?.userProfile.height = intValue
+                case "Weight":
+                    self?.userProfile.weight = intValue
+                case "Age":
+                    self?.userProfile.age = intValue
+                default: break
+                }
+            }
         }
         return cell
     }

@@ -164,7 +164,6 @@ extension AboutCell: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        //saveValue(value: textField.text ?? "")
         saveValueCoreData(value: textField.text ?? "not data", name: titleLabel.text)
     }
 }
@@ -195,16 +194,10 @@ extension AboutCell {
         guard let name = name , let value = Int(value!) else {return }
         switch name {
         case "Weight":
-//            CoreDataeManager.shared.deleteProfile(byAttribute: "weight")
-//            CoreDataeManager.shared.createWeight(weight: value)
             CoreDataeManager.shared.updateProfile(weight: value)
         case "Height":
-//            CoreDataeManager.shared.deleteProfile(byAttribute: "height")
-//            CoreDataeManager.shared.createHeight(height: value)
             CoreDataeManager.shared.updateProfile(height: value)
         case "Age":
-//            CoreDataeManager.shared.deleteProfile(byAttribute: "age")
-//            CoreDataeManager.shared.createAge(age: value)
             CoreDataeManager.shared.updateProfile(age: value)
         default:
             break
