@@ -38,22 +38,11 @@ class PulseViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-            self.openPayWallVC()
-        }
+        displayCheckPayWall()
         setupUI()
         fingerOnCameraGuide.isHidden = true
-        hideWelcomeView()
-        hideCameraView()
-        hideResultView()
-        if UserDefaults.standard.bool(forKey: "userEnteringWelcom") {
-            print("пользователь уже вхоли -viewDidLoad ")
-            hideWelcomeView()
-        } else {
-            print("первый раз вощелЭ - viewDidLoad")
-            showWelcomeView()
-            UserDefaults.standard.set(true, forKey: "userEnteringWelcom")
-        }
+        hideView()
+        displayCheckWelcomeView()
     }
     
     func setupUI() {
@@ -191,14 +180,38 @@ class PulseViewController: BaseViewController {
 }
 
 extension PulseViewController {
-    
+    func hideView(){
+        hideWelcomeView()
+        hideCameraView()
+        hideResultView()
+    }
     func openPayWallVC(){
         let payWall = PayWallController()
         payWall.modalPresentationStyle = .fullScreen
         payWall.modalTransitionStyle = .crossDissolve
         present(payWall, animated: true, completion: nil)
     }
+    func displayCheckPayWall(){
+        if UserDefaults.standard.bool(forKey: "userEnteringPayWall"){
+            print("БОЛЬШЕ НЕ ПОКАЗЫВАЕМ paywall")
+        }else{
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1){
+                self.openPayWallVC()
+                UserDefaults.standard.set(true, forKey: "userEnteringPayWall")
+            }
+        }
+    }
     
+    func displayCheckWelcomeView(){
+        if UserDefaults.standard.bool(forKey: "userEnteringWelcom") {
+            print("пользователь уже вхоли -viewDidLoad ")
+            hideWelcomeView()
+        } else {
+            print("первый раз вощелЭ - viewDidLoad")
+            showWelcomeView()
+            UserDefaults.standard.set(true, forKey: "userEnteringWelcom")
+        }
+    }
     // MARK: - Navigation
     func openAnalyzeVC(){
         let analyzi = AnalyzViewController()

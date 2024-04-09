@@ -82,7 +82,7 @@ class MyProgressBar: UIView {
 //        circleOfProgress.position = miniCircleCenter
 //    }
     
-    func setProgress(to progressConstant: CGFloat = 0.008, duration: TimeInterval = 20) {
+    func setProgress(to progressConstant: CGFloat = 0.0, duration: TimeInterval = 20) {
         // Установка и анимация прогресса
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.duration = duration

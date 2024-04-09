@@ -117,8 +117,6 @@ extension AboutMeViewController: UICollectionViewDelegateFlowLayout{
             aboutCell.nameCell = name
             cell = aboutCell
             
-            
-            
             //прошлось дописать иначе алерт все равно показывался даже если данные ввели
             //  valueChangeHandler для обновления userProfile
             aboutCell.valueChangeHandler = { [weak self] newValue in

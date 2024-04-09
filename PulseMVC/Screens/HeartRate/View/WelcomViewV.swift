@@ -67,11 +67,9 @@ class WelcomeView: UIView {
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview().offset(-80)
         }
-        
         acceptButton.addTarget(self, action: #selector(acceptButtonTapped), for: .touchUpInside)
     }
 
-    
     @objc private func acceptButtonTapped() {
         self.isHidden = true
         acceptButtonAction?()

@@ -14,8 +14,8 @@
             filePath = "PulseMVC/Screens/HeartRate/Controller/PulseViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "startTapped()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "PulseMVC/Screens/HeartRate/Controller/PulseViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
             landmarkName = "openAnalyzeVC()"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "PulseMVC/Screens/HeartRate/Controller/PulseViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
             landmarkName = "hideWelcomeView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "PulseMVC/Screens/HeartRate/Controller/PulseViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "431"
-            endingLineNumber = "431"
+            startingLineNumber = "444"
+            endingLineNumber = "444"
             landmarkName = "PulseViewController"
             landmarkType = "21">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "PulseMVC/Screens/HeartRate/Controller/PulseViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "529"
-            endingLineNumber = "529"
+            startingLineNumber = "542"
+            endingLineNumber = "542"
             landmarkName = "PulseViewController"
             landmarkType = "21">
          </BreakpointContent>
@@ -110,8 +110,8 @@
             filePath = "PulseMVC/Screens/HeartRate/Controller/PulseViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "456"
-            endingLineNumber = "456"
+            startingLineNumber = "469"
+            endingLineNumber = "469"
             landmarkName = "handle(buffer:)"
             landmarkType = "7">
          </BreakpointContent>
