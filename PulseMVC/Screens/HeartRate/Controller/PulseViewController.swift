@@ -12,7 +12,7 @@ class PulseViewController: BaseViewController {
     
     private var startButton = GlobalButton()
     private var progressBar = MyProgressBar()
-    private var pulseStackView: PulseStack!
+    private var pulseStackView = PulseStack()
     
     private var welcomeView = WelcomeView()
     private var resultView = ResultView()
@@ -38,6 +38,9 @@ class PulseViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+            self.openPayWallVC()
+        }
         setupUI()
         fingerOnCameraGuide.isHidden = true
         hideWelcomeView()
@@ -54,9 +57,20 @@ class PulseViewController: BaseViewController {
     }
     
     func setupUI() {
+        view.addSubview(buttonInfo)
+        view.addSubview(pulseStatusLabel)
+        view.addSubview(cameraFingerGuideText)
+        view.addSubview(fingerOnCameraGuide)
+        view.addSubview(heartbeatGraphView)
+        view.addSubview(startButton)
+        view.addSubview(pulseStackView)
+        view.addSubview(welcomeView)
+        view.addSubview(cameraView)
+        view.addSubview(resultView)
+        view.addSubview(progressBar)
+        
         //buttonInfo
         buttonInfo.setImage(UIImage(named: "buttonInfo"), for: .normal)
-        view.addSubview(buttonInfo)
         buttonInfo.snp.makeConstraints { make in
             make.top.equalTo(view).offset(78)
             make.trailing.equalTo(view.snp.trailingMargin).offset(-5)
@@ -69,7 +83,6 @@ class PulseViewController: BaseViewController {
         //pulseStatusLabel
         pulseStatusLabel.text = "No finger"
         pulseStatusLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        view.addSubview(pulseStatusLabel)
         pulseStatusLabel.snp.makeConstraints { make in
             make.top.equalTo(125)
             make.centerX.equalTo(view)
@@ -80,7 +93,6 @@ class PulseViewController: BaseViewController {
         cameraFingerGuideText.text = "Place your finger on the back camera and flashlight"
         cameraFingerGuideText.textAlignment = .center
         cameraFingerGuideText.numberOfLines = 2
-        view.addSubview(cameraFingerGuideText)
         cameraFingerGuideText.snp.makeConstraints { make in
             make.centerX.equalTo(view)
             make.top.equalTo(460)
@@ -90,7 +102,6 @@ class PulseViewController: BaseViewController {
         
         //fingerOnCameraGuide
         fingerOnCameraGuide.image = UIImage(named: "fingerOnCameraGuide")
-        view.addSubview(fingerOnCameraGuide)
         fingerOnCameraGuide.snp.makeConstraints { make in
             make.top.equalTo(560)
             make.centerX.equalTo(view)
@@ -98,40 +109,33 @@ class PulseViewController: BaseViewController {
         
         //heartbeatGraphView
         heartbeatGraphView.image = UIImage(named: "heartbeat")
-        view.addSubview(heartbeatGraphView)
         heartbeatGraphView.snp.makeConstraints { make in
             make.centerX.equalTo(view)
             make.top.equalTo(430)
         }
         //globalButton
-        view.addSubview(startButton)
         startButton.addTarget(self, action: #selector(startTapped), for: .touchUpInside)
         startButton.snp.makeConstraints { make in
             make.centerX.equalTo(view)
             make.bottom.equalTo(view).offset(-175)
         }
         //pulseStack
-        pulseStackView = PulseStack()
+       
         pulseStackView.pulseLabel.text = "00"
-        view.addSubview(pulseStackView)
         pulseStackView.snp.makeConstraints { make in
             make.centerX.equalTo(view)
             make.top.equalTo(view).offset(240)
             make.width.equalTo(140)
         }
         //welcomeView
-        view.addSubview(welcomeView)
         welcomeView.acceptButtonAction = {
             self.hideWelcomeView()
         }
         welcomeView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
             make.height.equalTo(330)
-            
         }
-      
         //cameraView
-        view.addSubview(cameraView)
         cameraView.okButtonAction = {
             self.hideCameraView()
         }
@@ -140,7 +144,6 @@ class PulseViewController: BaseViewController {
             make.height.equalTo(330)
         }
         //resultView
-        view.addSubview(resultView)
         resultView.acceptButtonAction = {
             self.hideResultView()
         }
@@ -150,7 +153,6 @@ class PulseViewController: BaseViewController {
         }
         //progressBar
         progressBar.setProgress()
-        view.addSubview(progressBar)
         progressBar.snp.makeConstraints { make in
             make.centerX.equalTo(view).offset(0)
             make.top.equalTo(view).offset(275)
@@ -189,6 +191,13 @@ class PulseViewController: BaseViewController {
 }
 
 extension PulseViewController {
+    
+    func openPayWallVC(){
+        let payWall = PayWallController()
+        payWall.modalPresentationStyle = .fullScreen
+        payWall.modalTransitionStyle = .crossDissolve
+        present(payWall, animated: true, completion: nil)
+    }
     
     // MARK: - Navigation
     func openAnalyzeVC(){

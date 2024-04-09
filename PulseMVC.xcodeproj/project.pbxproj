@@ -20,6 +20,7 @@
 		E0DB8DF82BB2EE9C006B6517 /* StackResultH.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DB8DF72BB2EE9C006B6517 /* StackResultH.swift */; };
 		E0E45DC72BA9C61900A7DCD7 /* CameraAccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E45DC62BA9C61900A7DCD7 /* CameraAccessView.swift */; };
 		E0E483082BBE80EA00E62036 /* HeartRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E483072BBE80EA00E62036 /* HeartRateModel.swift */; };
+		E0F4666B2BC51D4B002E8B51 /* PayWallController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F4666A2BC51D4B002E8B51 /* PayWallController.swift */; };
 		E0F83EEF2BA5DE0000C47D5A /* AnalyzViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F83EEE2BA5DE0000C47D5A /* AnalyzViewController.swift */; };
 		E0F83EF12BA5E89200C47D5A /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F83EF02BA5E89200C47D5A /* ActivityView.swift */; };
 		E0F83EF32BA604E300C47D5A /* StackV.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F83EF22BA604E300C47D5A /* StackV.swift */; };
@@ -82,6 +83,7 @@
 		E0DB8DF72BB2EE9C006B6517 /* StackResultH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackResultH.swift; sourceTree = "<group>"; };
 		E0E45DC62BA9C61900A7DCD7 /* CameraAccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraAccessView.swift; sourceTree = "<group>"; };
 		E0E483072BBE80EA00E62036 /* HeartRateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateModel.swift; sourceTree = "<group>"; };
+		E0F4666A2BC51D4B002E8B51 /* PayWallController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallController.swift; sourceTree = "<group>"; };
 		E0F83EEE2BA5DE0000C47D5A /* AnalyzViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzViewController.swift; sourceTree = "<group>"; };
 		E0F83EF02BA5E89200C47D5A /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		E0F83EF22BA604E300C47D5A /* StackV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackV.swift; sourceTree = "<group>"; };
@@ -225,6 +227,14 @@
 			path = StackPulseValue;
 			sourceTree = "<group>";
 		};
+		E0F466692BC51D34002E8B51 /* PayWall */ = {
+			isa = PBXGroup;
+			children = (
+				E0F4666A2BC51D4B002E8B51 /* PayWallController.swift */,
+			);
+			path = PayWall;
+			sourceTree = "<group>";
+		};
 		E0F83EED2BA5DD8800C47D5A /* Analyze */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +259,7 @@
 		F542FCA72B6E670300ACB81B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				E0F466692BC51D34002E8B51 /* PayWall */,
 				E0F83EED2BA5DD8800C47D5A /* Analyze */,
 				F542FCAB2B6E6AA300ACB81B /* Base */,
 				F542FCA62B6E66EF00ACB81B /* HeartRate */,
@@ -681,6 +692,7 @@
 				F54492532B725BCB002CAA53 /* AboutModel.swift in Sources */,
 				E0F83EF32BA604E300C47D5A /* StackV.swift in Sources */,
 				F54492562B725ED6002CAA53 /* AboutCell.swift in Sources */,
+				E0F4666B2BC51D4B002E8B51 /* PayWallController.swift in Sources */,
 				F542FCD12B6E789E00ACB81B /* ProfileViewController.swift in Sources */,
 				F548ED0F2B8F2C460057A791 /* StorageManager.swift in Sources */,
 				E0C36BA42BB69B6B00C0840A /* ManagerHeartRate.swift in Sources */,
