@@ -11,7 +11,8 @@ class PulseViewController: BaseViewController {
     private var heartbeatGraphView = UIImageView()
     
     private var startButton = GlobalButton()
-    private var progressBar = MyProgressBar()
+//    private var progressBar = MyProgressBar()
+    private var progressBar = VadimProgressCopyLogic()
     private var pulseStackView = PulseStack()
     
     private var welcomeView = WelcomeView()
@@ -141,7 +142,7 @@ class PulseViewController: BaseViewController {
             make.height.equalTo(630)
         }
         //progressBar
-        progressBar.setProgress()
+        progressBar.setupProgressBar(type: true)
         progressBar.snp.makeConstraints { make in
             make.centerX.equalTo(view).offset(0)
             make.top.equalTo(view).offset(275)
@@ -321,9 +322,31 @@ extension PulseViewController: AnalyzViewControllerDelegate {
 }
 
 extension PulseViewController {
+    private func reqCameraPermiss(){
+        DispatchQueue.main.async { [weak self] in
+            let alert = UIAlertController(title: "Camera Access ",
+                                          message: "Please enable camera access in your device settings.",
+                                          preferredStyle: .alert)
+            let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                    return
+                }
+                
+                if UIApplication.shared.canOpenURL(settingsUrl) {
+                    UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                        print("Settings opened: \(success)")
+                    })
+                }
+            }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alert.addAction(settingsAction)
+            alert.addAction(cancelAction)
+            
+            self?.present(alert, animated: true, completion: nil)
+        }
+    }
     private func startPulseHeartRate() {
-        
-        
         if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
@@ -332,35 +355,13 @@ extension PulseViewController {
                 startButton.isHidden = true
                 cameraFingerGuideText.isHidden = false
                 pulseStatusLabel.text = "19 seconds remaining"
-                
                 print("START PULSE MEASURE")
                 initStartPulse()
             }
         } else {
             // Если разрешение на использование камеры не получено,
             //показать алерт на получение разрешения камеры
-            DispatchQueue.main.async { [weak self] in
-                let alert = UIAlertController(title: "Camera Access ",
-                                              message: "Please enable camera access in your device settings.",
-                                              preferredStyle: .alert)
-                let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
-                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-                        return
-                    }
-                    
-                    if UIApplication.shared.canOpenURL(settingsUrl) {
-                        UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
-                            print("Settings opened: \(success)")
-                        })
-                    }
-                }
-                
-                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-                alert.addAction(settingsAction)
-                alert.addAction(cancelAction)
-                
-                self?.present(alert, animated: true, completion: nil)
-            }
+            reqCameraPermiss()
         }
     }
     
@@ -405,10 +406,12 @@ extension PulseViewController {
     // Начало процесса измерения пульса.
     func startMeasurement() {
         DispatchQueue.main.async { [unowned self] in
+            var count = 20
             self.bpmForCalculating.removeAll()
             self.toggleTorch(status: true)
-            self.progressBar.setProgress()
-            var count = 20
+            
+            //self.progressBar.setProgress(to: 1, duration: 20)
+            self.progressBar.animationProgress(duration: 20)
             
             // Таймер для обновления интерфейса и расчета пульса.
             self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] (timer) in
@@ -433,10 +436,15 @@ extension PulseViewController {
                     if self.bpmForCalculating != [] {
                         print("// Действия по завершении измерения.")
                         viewModel.calculatingAndSaveToDBBpmData(pulse: self.bpmForCalculating)
+                        //self.progressBar.removeAnimation()
+                        self.progressBar.deleteAnimations()
                     }
                     self.defaultState()
                     printDB()
-                    openAnalyzeVC()
+                    //ВРЕМЕННО ЧТОБЫ НЕ ОТКРЫВАТЬ АНАЛИЗ ЭКРАН
+                    //ПРИ НАСТРОЙКЕ ПРОГРЕССА
+                    //позже раскомитить
+                    //openAnalyzeVC()
                 }
             })
         }
@@ -535,7 +543,8 @@ extension PulseViewController {
                 //self.stopAnimationHeartBeat()
                 self.pulseStackView.pulseLabel.text = "00"
                 // Удаляем анимации прогресса
-                self.progressBar.removeAnimation()
+                //self.progressBar.removeAnimation()
+                self.progressBar.deleteAnimations()
             }
         }
     }

@@ -47,32 +47,15 @@ class CircleButtonUIView: UIView {
             make.leading.equalTo(circleFill.snp.trailing).offset(8)
         }
     }
-    
-    func selectView() {
-        circleFill.backgroundColor = AppColor.buttonColor.color
-        genderLabel.textColor = AppColor.buttonColor.color
-        state = .selected
-    }
-    func deSelectView() {
-        circleFill.backgroundColor = .clear
-        genderLabel.textColor = .black
-        state = .deselected
-    }
 }
 
-extension CircleButtonUIView{
+extension CircleButtonUIView {
+    //все view должно реашировать на нажатие а не только круг
     func setupGestureRecognizer() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         addGestureRecognizer(tapGesture)
-        isUserInteractionEnabled = true
-        
-        
-        //пробовал по нажатию тексат выбор втю но ХУЙ ТАМ
-        
-        let labelTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleLabelTap(_:)))
-        genderLabel.addGestureRecognizer(labelTapGesture)
     }
-    
+
     @objc private func handleTap(_ sender: UITapGestureRecognizer) {
         switch state {
         case .selected:
@@ -82,13 +65,14 @@ extension CircleButtonUIView{
             selectionHandler?()
         }
     }
-    @objc private func  handleLabelTap(_ sender: UITapGestureRecognizer) {
-        switch state {
-        case .selected:
-            deSelectView()
-        case .deselected:
-            selectView()
-            selectionHandler?()
-        }
+    func selectView() {
+        circleFill.backgroundColor = AppColor.buttonColor.color
+        genderLabel.textColor = AppColor.buttonColor.color
+        state = .selected
+    }
+    func deSelectView() {
+        circleFill.backgroundColor = .clear
+        genderLabel.textColor = .black
+        state = .deselected
     }
 }

@@ -40,13 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             } catch {
                 let nserror = error as NSError
                 fatalError(error.localizedDescription )
-                
-//                DispatchQueue.main.async {
-//                    let alert = UIAlertController(title: "Ошибка сохранения",
-//                                                  message: "Не удалось сохранить изменения. Попробуйте еще раз.",
-//                                                preferredStyle: UIAlertController.Style.alert)
-//                    alert.addAction(UIAlertAction(title: "OK", style: .default))
-//                }
             }
         }
     }

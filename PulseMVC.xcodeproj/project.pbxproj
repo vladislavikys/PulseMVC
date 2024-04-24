@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DFF715820705E8A4FC1D903B /* Pods_PulseMVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF5D93D076ADAABC1C81BFB /* Pods_PulseMVC.framework */; };
+		E00260992BD90F0100E9117F /* VadimProgressCopyLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00260982BD90F0100E9117F /* VadimProgressCopyLogic.swift */; };
 		E036215F2BA5A63000E6B076 /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E036215E2BA5A63000E6B076 /* Profile+CoreDataClass.swift */; };
 		E0B467DD2BBE87C50006119E /* ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B467DC2BBE87C50006119E /* ext.swift */; };
 		E0C36B982BB69ACA00C0840A /* AVCaptureDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C36B972BB69ACA00C0840A /* AVCaptureDevice.swift */; };
@@ -73,6 +74,7 @@
 		8555EC0178C0D9A6E4F6425D /* Pods-PulseMVCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseMVCTests.debug.xcconfig"; path = "Target Support Files/Pods-PulseMVCTests/Pods-PulseMVCTests.debug.xcconfig"; sourceTree = "<group>"; };
 		90BF2E75F841E25AE3406EE3 /* Pods-PulseMVC-PulseMVCUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseMVC-PulseMVCUITests.release.xcconfig"; path = "Target Support Files/Pods-PulseMVC-PulseMVCUITests/Pods-PulseMVC-PulseMVCUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B9CC3EDFDDD11404740CA379 /* Pods-PulseMVC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseMVC.debug.xcconfig"; path = "Target Support Files/Pods-PulseMVC/Pods-PulseMVC.debug.xcconfig"; sourceTree = "<group>"; };
+		E00260982BD90F0100E9117F /* VadimProgressCopyLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VadimProgressCopyLogic.swift; sourceTree = "<group>"; };
 		E036215E2BA5A63000E6B076 /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E0B467DC2BBE87C50006119E /* ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ext.swift; sourceTree = "<group>"; };
 		E0C36B972BB69ACA00C0840A /* AVCaptureDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureDevice.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				F508212C2B71439500CEF074 /* PulseStack.swift */,
 				E0E45DC62BA9C61900A7DCD7 /* CameraAccessView.swift */,
 				E0DB8DF02BB2AA82006B6517 /* ResultView.swift */,
+				E00260982BD90F0100E9117F /* VadimProgressCopyLogic.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -710,6 +713,7 @@
 				E0E45DC72BA9C61900A7DCD7 /* CameraAccessView.swift in Sources */,
 				E0F4666D2BC51FB9002E8B51 /* PayWallCell.swift in Sources */,
 				E0C36B9B2BB69B0200C0840A /* ColorUtilitesHeart.swift in Sources */,
+				E00260992BD90F0100E9117F /* VadimProgressCopyLogic.swift in Sources */,
 				F542FCD52B6E7A5000ACB81B /* ProfileView.swift in Sources */,
 				E0F83EF52BA604E900C47D5A /* StackH.swift in Sources */,
 				F5531F1E2B95FFEE00A37224 /* CoreData.xcdatamodeld in Sources */,
