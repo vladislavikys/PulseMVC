@@ -71,6 +71,7 @@ class WelcomeView: UIView {
     }
 
     @objc private func acceptButtonTapped() {
+        UserDefaults.standard.set(true, forKey: "userEnteringWelcom")
         self.isHidden = true
         acceptButtonAction?()
     }

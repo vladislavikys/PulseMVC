@@ -87,36 +87,36 @@ public final class CoreDataeManager: NSObject {
     
     
     //save
-    public func createUnits(units: String){
-        guard let unitsEntityDescription = NSEntityDescription.entity(forEntityName: "Profile", in: context) else {return}
-        let profile = Profile(entity: unitsEntityDescription, insertInto: context)
-        profile.units = units
-        appDelegate.saveContext()
-    }
-    public func createGender(gender: String){
-        guard let unitsEntityDescription = NSEntityDescription.entity(forEntityName: "Profile", in: context) else {return}
-        let profile = Profile(entity: unitsEntityDescription, insertInto: context)
-        profile.gender = gender
-        appDelegate.saveContext()
-    }
-    public func createAge(age: Int){
-        guard let unitsEntityDescription = NSEntityDescription.entity(forEntityName: "Profile", in: context) else {return}
-        let profile = Profile(entity: unitsEntityDescription, insertInto: context)
-        profile.age = Int16(age)
-        appDelegate.saveContext()
-    }
-    public func createWeight(weight: Int){
-        guard let unitsEntityDescription = NSEntityDescription.entity(forEntityName: "Profile", in: context) else {return}
-        let profile = Profile(entity: unitsEntityDescription, insertInto: context)
-        profile.weight = Int16(weight)
-        appDelegate.saveContext()
-    }
-    public func createHeight(height: Int){
-        guard let unitsEntityDescription = NSEntityDescription.entity(forEntityName: "Profile", in: context) else {return}
-        let profile = Profile(entity: unitsEntityDescription, insertInto: context)
-        profile.height = Int16(height)
-        appDelegate.saveContext()
-    }
+//    public func createUnits(units: String){
+//        guard let unitsEntityDescription = NSEntityDescription.entity(forEntityName: "Profile", in: context) else {return}
+//        let profile = Profile(entity: unitsEntityDescription, insertInto: context)
+//        profile.units = units
+//        appDelegate.saveContext()
+//    }
+//    public func createGender(gender: String){
+//        guard let unitsEntityDescription = NSEntityDescription.entity(forEntityName: "Profile", in: context) else {return}
+//        let profile = Profile(entity: unitsEntityDescription, insertInto: context)
+//        profile.gender = gender
+//        appDelegate.saveContext()
+//    }
+//    public func createAge(age: Int){
+//        guard let unitsEntityDescription = NSEntityDescription.entity(forEntityName: "Profile", in: context) else {return}
+//        let profile = Profile(entity: unitsEntityDescription, insertInto: context)
+//        profile.age = Int16(age)
+//        appDelegate.saveContext()
+//    }
+//    public func createWeight(weight: Int){
+//        guard let unitsEntityDescription = NSEntityDescription.entity(forEntityName: "Profile", in: context) else {return}
+//        let profile = Profile(entity: unitsEntityDescription, insertInto: context)
+//        profile.weight = Int16(weight)
+//        appDelegate.saveContext()
+//    }
+//    public func createHeight(height: Int){
+//        guard let unitsEntityDescription = NSEntityDescription.entity(forEntityName: "Profile", in: context) else {return}
+//        let profile = Profile(entity: unitsEntityDescription, insertInto: context)
+//        profile.height = Int16(height)
+//        appDelegate.saveContext()
+//    }
     
     
     //read

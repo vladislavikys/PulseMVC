@@ -50,16 +50,12 @@ class StatusPulseView: UIView {
 extension StatusPulseView {
     func setPulseStatus(_ status: PulseStatus) {
             switch status {
-            case .normal:
-                setLabelText("Normal pulse")
-                backgroundColor = UIColor.yellow.withAlphaComponent(0.2)
-                setLabelTextColor(UIColor.orange)
             case .bad:
                 setLabelText("Bad pulse")
                 backgroundColor = UIColor.red.withAlphaComponent(0.2)
                 setLabelTextColor(UIColor.red)
-            case .good:
-                setLabelText("Good pulse")
+            case .normal:
+                setLabelText("Normal pulse")
                 backgroundColor = AppColor.status.color.withAlphaComponent(0.2)
                 setLabelTextColor(AppColor.status.color)
                 

@@ -16,7 +16,7 @@ class ActivityView: UIView {
     
     weak var delegate: ActivityViewDelegate?
 
-    private var imageView: UIImageView!
+    var imageView: UIImageView!
     var isActive: Bool = false {
         didSet {
             updateBorder()

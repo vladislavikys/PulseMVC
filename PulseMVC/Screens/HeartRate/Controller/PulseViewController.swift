@@ -152,15 +152,6 @@ class PulseViewController: BaseViewController {
     @objc func startTapped() {
         if UserDefaults.standard.bool(forKey: "userEnteringApp") {
             print("Пользователь уже вошел - startTapped")
-            
-//            currentProgress = 0.008
-//            progressBar.setProgress(to: currentProgress)
-//            progressTimer?.invalidate()
-//            progressTimer = Timer.scheduledTimer(timeInterval: 0.00001,
-//                                                 target: self,
-//                                                 selector: #selector(updateProgressBar),
-//                                                 userInfo: nil, repeats: true)
-//            
             printDB()
             startPulseHeartRate()
         } else {
@@ -169,15 +160,6 @@ class PulseViewController: BaseViewController {
             openAboutVC()
         }
     }
-    //обновления прогресса
-//    @objc func updateProgressBar() {
-//        if currentProgress < 1.0 {
-//            currentProgress += 0.000003
-//            progressBar.setProgress(to: currentProgress)
-//        } else {
-//            progressTimer?.invalidate() // Останавливаем таймер, если прогресс достиг 1
-//        }
-//    }
 }
 
 extension PulseViewController {
@@ -198,7 +180,6 @@ extension PulseViewController {
         }else{
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1){
                 self.openPayWallVC()
-                UserDefaults.standard.set(true, forKey: "userEnteringPayWall")
             }
         }
     }
@@ -210,7 +191,6 @@ extension PulseViewController {
         } else {
             print("первый раз вощелЭ - viewDidLoad")
             showWelcomeView()
-            UserDefaults.standard.set(true, forKey: "userEnteringWelcom")
         }
     }
     // MARK: - Navigation
@@ -284,20 +264,35 @@ extension PulseViewController {
     }
     func showResultView() {
         let coreData = CoreDataeManager.shared.fetchProfile()
-        tabBarController?.tabBar.isHidden = true
-        resultView.isHidden = false
+        let bpm = Int(coreData?.bpm ?? 0)
+        let nameEmoji = coreData?.analyze ?? "coffeeEmoji"
         
-        resultView.activityView.nameEmoji = coreData?.analyze ?? "coffeeEmoji"
+        tabBarController?.tabBar.isHidden = true
+        
+        resultView.activityView.setImage(named: nameEmoji)
+    
+        
+        //если пульс выше 120 статус меняется на bad pulse
         resultView.stackHeart.pulseLabel.text = String(coreData!.bpm)
-        view.addSubview(dimmy)
+        if bpm < 120{
+            resultView.statusPulse.setPulseStatus(.normal)
+        } else {
+            resultView.statusPulse.setPulseStatus(.bad)
+        }
+        
+        resultView.isHidden = false
         dimmy.isHidden = false
+        
+        view.addSubview(dimmy)
+        view.addSubview(resultView)
+        
+        
         dimmy.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        view.addSubview(resultView)
         resultView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
-            make.height.equalTo(320)
+            make.height.equalTo(520)
         }
     }
     
@@ -354,7 +349,7 @@ extension PulseViewController {
                 heartbeatGraphView.isHidden = true
                 startButton.isHidden = true
                 cameraFingerGuideText.isHidden = false
-                pulseStatusLabel.text = "19 seconds remaining"
+                pulseStatusLabel.text = "20 seconds remaining"
                 print("START PULSE MEASURE")
                 initStartPulse()
             }
@@ -425,7 +420,6 @@ extension PulseViewController {
                     print("pulse: \(pulse)")
                     print(bpmForCalculating)
                     self.pulseStatusLabel.text = "\(count) seconds remaining"
-                    
                     // Проверка пульса и обновление данных.
                     if pulse != -60 {
                         self.pulseStackView.pulseLabel.text = "\(lroundf(pulse))"
@@ -441,10 +435,7 @@ extension PulseViewController {
                     }
                     self.defaultState()
                     printDB()
-                    //ВРЕМЕННО ЧТОБЫ НЕ ОТКРЫВАТЬ АНАЛИЗ ЭКРАН
-                    //ПРИ НАСТРОЙКЕ ПРОГРЕССА
-                    //позже раскомитить
-                    //openAnalyzeVC()
+                    openAnalyzeVC()
                 }
             })
         }

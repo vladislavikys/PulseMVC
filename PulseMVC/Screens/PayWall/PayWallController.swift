@@ -74,6 +74,7 @@ class PayWallController: UIViewController {
     }
 
     @objc func pressedButton(){
+        UserDefaults.standard.set(true, forKey: "userEnteringPayWall")
         dismiss(animated: true)
     }
 }

@@ -15,7 +15,6 @@ class StackH: UIStackView, ActivityViewDelegate {
     
     weak var delegate: StackHDelegate?
     
-    // Создание трех экземпляров ActivityView
     let coffeeView = StackV()
     let sleepEmoji = StackV()
     let activityEmoji = StackV()
@@ -34,8 +33,7 @@ class StackH: UIStackView, ActivityViewDelegate {
         axis = .horizontal
         distribution = .fillEqually
         alignment = .center
-        spacing = 16 // Задайте нужный интервал
-        
+        spacing = 16
         
         coffeeView.activityView.nameEmoji = "coffeeEmoji"
         coffeeView.activityView.setImage(named: coffeeView.activityView.nameEmoji)
@@ -64,7 +62,7 @@ class StackH: UIStackView, ActivityViewDelegate {
         // Деактивация всех, кроме активированного
         views.forEach { view in
             if view !== activityView {
-                // проверка что они не являются одним  объектом в памяти тип
+                // проверка что они не являются одним объектом в памяти
                 view.isActive = false
             }
         }
@@ -73,7 +71,6 @@ class StackH: UIStackView, ActivityViewDelegate {
             print("activityimage = \(activityView.nameEmoji)")
             delegate?.didSelectActivityView(named: activityView.nameEmoji)
         }
-        
     }
 }
 

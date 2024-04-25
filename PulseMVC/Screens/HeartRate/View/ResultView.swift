@@ -10,7 +10,6 @@ import UIKit
 enum PulseStatus {
     case normal
     case bad
-    case good
 }
 
 class ResultView: UIView {
@@ -20,7 +19,7 @@ class ResultView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = .systemFont(ofSize: 18, weight: .light)
+        label.font = .systemFont(ofSize: 20, weight: .regular)
         label.textAlignment = .center
         label.text = "Result"
         return label
@@ -37,7 +36,7 @@ class ResultView: UIView {
         label.textColor = .gray
         label.font = .systemFont(ofSize: 12, weight: .light)
         label.textAlignment = .left
-        label.text = "February 15 2021, 11:47 AM"
+        label.text = "February 66 9999, 25:64 AM"
         return label
     }()
     
@@ -48,7 +47,7 @@ class ResultView: UIView {
     private let headerTitle: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = .systemFont(ofSize: 20, weight: .regular)
+        label.font = .systemFont(ofSize: 20, weight: .medium)
         label.textAlignment = .center
         label.text = "Heart rate Tips"
         return label
@@ -106,8 +105,7 @@ class ResultView: UIView {
             make.leading.equalToSuperview().offset(20)
         }
         
-        activityView.layer.cornerRadius = 20
-        activityView.setImage(named: activityView.nameEmoji)
+        activityView.layer.cornerRadius = 20 
         activityView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(20)
             make.trailing.equalToSuperview().offset(-30)
@@ -119,7 +117,7 @@ class ResultView: UIView {
             make.top.equalToSuperview().offset(20)
         }
         
-        statusPulse.setPulseStatus(.good)
+        statusPulse.setPulseStatus(.normal)
         statusPulse.snp.makeConstraints { make in
             make.bottom.equalTo(headerTitle.snp.top).offset(-20)
             make.leading.equalToSuperview().offset(20)
@@ -156,7 +154,6 @@ class ResultView: UIView {
         // Обновляем время каждую минуту
         Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(updateTime), userInfo: nil, repeats: false)
     }
-    
     
     @objc private func acceptButtonTapped() {
         self.isHidden = true
