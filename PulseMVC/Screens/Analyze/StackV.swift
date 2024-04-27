@@ -9,7 +9,7 @@ import UIKit
 
 class StackV: UIStackView {
     
-    let activityView = ActivityView()
+    let activityView = ActivityView(frame: CGRect.zero)
     let label = UILabel()
     
     override init(frame: CGRect) {

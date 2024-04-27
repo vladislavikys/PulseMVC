@@ -42,7 +42,7 @@ class ResultView: UIView {
     
      let stackHeart = StackResultH()
      let statusPulse = StatusPulseView()
-     let activityView = ActivityView()
+    let activityView = ActivityView(frame: CGRect.zero, emojiSize: 24)
     
     private let headerTitle: UILabel = {
         let label = UILabel()
@@ -105,7 +105,7 @@ class ResultView: UIView {
             make.leading.equalToSuperview().offset(20)
         }
         
-        activityView.layer.cornerRadius = 20 
+        activityView.layer.cornerRadius = 20
         activityView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(20)
             make.trailing.equalToSuperview().offset(-30)

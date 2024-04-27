@@ -27,33 +27,35 @@ class ActivityView: UIView {
     }
     
     var nameEmoji = ""
+    var emojiSize: CGFloat = 42 // Default size
     var label: UILabel?
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupImageView(name: nameEmoji)
-        setupTapGesture()
-        updateBorder()
-    }
+    init(frame: CGRect, emojiSize: CGFloat = 42) {
+            self.emojiSize = emojiSize
+            super.init(frame: frame)
+            setupImageView(name: nameEmoji, size: emojiSize)
+            setupTapGesture()
+            updateBorder()
+        }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupImageView(name: nameEmoji)
+        setupImageView(name: nameEmoji, size: emojiSize)
         setupTapGesture()
         updateBorder()
     }
     func setImage(named name: String) {
         imageView.image = UIImage(named: name)
     }
-    private func setupImageView(name: String) {
-        imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        addSubview(imageView)
-        imageView.snp.makeConstraints { make in
-            make.width.height.equalTo(42)
-            make.center.equalToSuperview()
+    private func setupImageView(name: String, size: CGFloat) {
+            imageView = UIImageView()
+            imageView.contentMode = .scaleAspectFit
+            addSubview(imageView)
+            imageView.snp.makeConstraints { make in
+                make.width.height.equalTo(size)
+                make.center.equalToSuperview()
+            }
         }
-    }
     
     private func setupTapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(toggleActive))

@@ -26,7 +26,8 @@ class TabBarController:UITabBarController{
     private func setupTabs(){
         let pulseViewController = PulseViewController()
         let history = HistoryViewController()
-        let diet = DietViewController()
+        //let diet = DietViewController()
+        let diet = BaseRecipeView()
         let test = TestViewController()
         let profile = ProfileViewController()
         

@@ -270,7 +270,7 @@ extension PulseViewController {
         tabBarController?.tabBar.isHidden = true
         
         resultView.activityView.setImage(named: nameEmoji)
-    
+
         
         //если пульс выше 120 статус меняется на bad pulse
         resultView.stackHeart.pulseLabel.text = String(coreData!.bpm)
@@ -292,7 +292,7 @@ extension PulseViewController {
         }
         resultView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
-            make.height.equalTo(520)
+            make.height.equalTo(540)
         }
     }
     

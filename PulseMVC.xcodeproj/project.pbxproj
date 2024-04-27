@@ -10,6 +10,7 @@
 		DFF715820705E8A4FC1D903B /* Pods_PulseMVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF5D93D076ADAABC1C81BFB /* Pods_PulseMVC.framework */; };
 		E00260992BD90F0100E9117F /* VadimProgressCopyLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00260982BD90F0100E9117F /* VadimProgressCopyLogic.swift */; };
 		E036215F2BA5A63000E6B076 /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E036215E2BA5A63000E6B076 /* Profile+CoreDataClass.swift */; };
+		E090F8EA2BDAA37700F65BD5 /* BaseRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E090F8E92BDAA37700F65BD5 /* BaseRecipeView.swift */; };
 		E0B467DD2BBE87C50006119E /* ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B467DC2BBE87C50006119E /* ext.swift */; };
 		E0C36B982BB69ACA00C0840A /* AVCaptureDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C36B972BB69ACA00C0840A /* AVCaptureDevice.swift */; };
 		E0C36B9B2BB69B0200C0840A /* ColorUtilitesHeart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C36B9A2BB69B0200C0840A /* ColorUtilitesHeart.swift */; };
@@ -76,6 +77,7 @@
 		B9CC3EDFDDD11404740CA379 /* Pods-PulseMVC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseMVC.debug.xcconfig"; path = "Target Support Files/Pods-PulseMVC/Pods-PulseMVC.debug.xcconfig"; sourceTree = "<group>"; };
 		E00260982BD90F0100E9117F /* VadimProgressCopyLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VadimProgressCopyLogic.swift; sourceTree = "<group>"; };
 		E036215E2BA5A63000E6B076 /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E090F8E92BDAA37700F65BD5 /* BaseRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRecipeView.swift; sourceTree = "<group>"; };
 		E0B467DC2BBE87C50006119E /* ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ext.swift; sourceTree = "<group>"; };
 		E0C36B972BB69ACA00C0840A /* AVCaptureDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureDevice.swift; sourceTree = "<group>"; };
 		E0C36B9A2BB69B0200C0840A /* ColorUtilitesHeart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtilitesHeart.swift; sourceTree = "<group>"; };
@@ -395,6 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				F542FCC62B6E777400ACB81B /* DietView.swift */,
+				E090F8E92BDAA37700F65BD5 /* BaseRecipeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -690,6 +693,7 @@
 				F5A02EF12B6BF0B700DF7ED7 /* PulseViewController.swift in Sources */,
 				F542FCC12B6E748700ACB81B /* HistoryView.swift in Sources */,
 				F53E0C602B74E485002C1DD2 /* GenderAboutCell.swift in Sources */,
+				E090F8EA2BDAA37700F65BD5 /* BaseRecipeView.swift in Sources */,
 				F53A49692B7BAA1F002B2E65 /* WelcomViewV.swift in Sources */,
 				E036215F2BA5A63000E6B076 /* Profile+CoreDataClass.swift in Sources */,
 				F53E0C642B74FD24002C1DD2 /* CircleButtonHStack.swift in Sources */,
