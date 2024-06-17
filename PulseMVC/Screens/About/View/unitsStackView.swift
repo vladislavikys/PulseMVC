@@ -65,8 +65,6 @@ class UnitsStackView: UIStackView {
     }
     
     private func saveUnitsCoreData(units: String){
-//        CoreDataeManager.shared.deleteProfile(byAttribute: "units")
-//        CoreDataeManager.shared.createUnits(units: units)
         CoreDataeManager.shared.updateProfile(units: units)
     }
 }

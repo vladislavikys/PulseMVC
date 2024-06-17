@@ -22,10 +22,8 @@ public final class CoreDataeManager: NSObject {
     public var context: NSManagedObjectContext {
         appDelegate.persistentContainer.viewContext
     }
-    //
+    
     // Получение или создание единственного экземпляра Profile
-    //нашел в сети но я понимаю как работает либо его понять
-    //либо  перепсать совими словами
         private func getOrCreateProfile() -> Profile {
             // Создаем запрос на выборку для сущности Profile
             let fetchRequest: NSFetchRequest<Profile> = Profile.fetchRequest()
@@ -50,7 +48,6 @@ public final class CoreDataeManager: NSObject {
             let profile = getOrCreateProfile()
             
             //обновляем если передали
-            
             if let units = units {
                 profile.units = units
             }
@@ -73,52 +70,17 @@ public final class CoreDataeManager: NSObject {
                 profile.analyze = analyze
             }
         
-            appDelegate.saveContext()
+        saveContextProfile()
         }
     // Сохранение контекста с обработкой ошибок
-        private func saveContext() {
+         func saveContextProfile() {
             do {
                 try context.save()
+                print("Profile saved successfully.")
             } catch {
-                print("Ошибка при сохранении контекста: \(error.localizedDescription)")
+                print("Error saving Profile: \(error.localizedDescription)")
             }
         }
-    //
-    
-    
-    //save
-//    public func createUnits(units: String){
-//        guard let unitsEntityDescription = NSEntityDescription.entity(forEntityName: "Profile", in: context) else {return}
-//        let profile = Profile(entity: unitsEntityDescription, insertInto: context)
-//        profile.units = units
-//        appDelegate.saveContext()
-//    }
-//    public func createGender(gender: String){
-//        guard let unitsEntityDescription = NSEntityDescription.entity(forEntityName: "Profile", in: context) else {return}
-//        let profile = Profile(entity: unitsEntityDescription, insertInto: context)
-//        profile.gender = gender
-//        appDelegate.saveContext()
-//    }
-//    public func createAge(age: Int){
-//        guard let unitsEntityDescription = NSEntityDescription.entity(forEntityName: "Profile", in: context) else {return}
-//        let profile = Profile(entity: unitsEntityDescription, insertInto: context)
-//        profile.age = Int16(age)
-//        appDelegate.saveContext()
-//    }
-//    public func createWeight(weight: Int){
-//        guard let unitsEntityDescription = NSEntityDescription.entity(forEntityName: "Profile", in: context) else {return}
-//        let profile = Profile(entity: unitsEntityDescription, insertInto: context)
-//        profile.weight = Int16(weight)
-//        appDelegate.saveContext()
-//    }
-//    public func createHeight(height: Int){
-//        guard let unitsEntityDescription = NSEntityDescription.entity(forEntityName: "Profile", in: context) else {return}
-//        let profile = Profile(entity: unitsEntityDescription, insertInto: context)
-//        profile.height = Int16(height)
-//        appDelegate.saveContext()
-//    }
-    
-    
     //read
     public func fetchProfile() -> Profile?{
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Profile")
@@ -132,7 +94,7 @@ public final class CoreDataeManager: NSObject {
     }
     
     //delete
-    public func deleteAll(){
+    public func deleteAllProfile(){
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Profile")
         do {
             let profile = try? context.fetch(fetchRequest) as? [Profile]
@@ -140,26 +102,87 @@ public final class CoreDataeManager: NSObject {
         }
         appDelegate.saveContext()
     }
-    
-    //delete attribute internete
-    public func deleteProfile(byAttribute attribute: String) {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Profile")
-        // Удаление происходит по наличию атрибута, без учёта его значения.
-        // Важно: Убедитесь, что атрибут существует в вашей модели.
-        fetchRequest.predicate = NSPredicate(format: "%K != nil", attribute)
-
-        do {
-            let results = try context.fetch(fetchRequest) as? [Profile]
-            results?.forEach { profile in
-                context.delete(profile)
-            }
-            appDelegate.saveContext()
-            print("Удаление завершено. Удалены все профили, где атрибут \(attribute) присутствует.")
-        } catch let error as NSError {
-            print("Ошибка при удалении: \(error), \(error.userInfo)")
-        }
-    }
-
-    
 }
 
+extension CoreDataeManager {
+    // Проверка  рецепта в базе данных
+        func checkIfRecipeExists(name: String) -> Bool {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Recipes")
+            fetchRequest.predicate = NSPredicate(format: "name == %@", name)
+            
+            do {
+                let count = try context.count(for: fetchRequest)
+                return count > 0 //  true, если рецепт найден
+            } catch {
+                print("Error checking recipe existence: \(error.localizedDescription)")
+                return false
+            }
+        }
+    // создания нового рецепта
+    func createRecipe(name: String, photo: String, calories: Int16,
+                          cookingTime: Int16, description: String?, ingredients: String?, carbohydrates: Int16,
+                          fat: Int16, protein: Int16, servings: Int16, category: String?) {
+        
+            if checkIfRecipeExists(name: name) {
+                print("Recipe with name '\(name)' already exists")
+                return
+            }
+            
+            let newRecipe = Recipes(context: context)
+            newRecipe.name = name
+            newRecipe.photo = photo
+            newRecipe.calories = calories
+            newRecipe.cooking_time = cookingTime
+            newRecipe.descript = description
+            newRecipe.ingredients = ingredients
+            newRecipe.carbohydrates = carbohydrates
+            newRecipe.fat = fat
+            newRecipe.protein = protein
+            newRecipe.servings = servings
+            newRecipe.category = category
+            
+            saveContextRecepies()
+        }
+    
+    private func saveContextRecepies() {
+        do {
+            try context.save()
+            print("Recipe saved successfully.")
+        } catch {
+            print("Error saving recipe: \(error.localizedDescription)")
+        }
+    }
+    //delete
+    public func deleteAllRecepies(){
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Recipes")
+        do {
+            let profile = try? context.fetch(fetchRequest) as? [Recipes]
+            profile?.forEach{context.delete($0)}
+        }
+        appDelegate.saveContext()
+    }
+    
+    //получения всех рецептов
+    public func fetchAllRecipes() -> [Recipes]?{
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Recipes")
+        do {
+            let recipes = try? context.fetch(fetchRequest) as? [Recipes]
+            return recipes
+        } catch let error as NSError {
+            print("Error fetching recipes: \(error), \(error.userInfo)")
+            return nil
+        }
+    }
+    
+    public func printAllRecipes() {
+        if let recipes = fetchAllRecipes() {
+            var index = 1
+            for recipe in recipes {
+                print("\(index) - \(recipe.name ?? "No name")")
+                index += 1
+            }
+        } else {
+            print("No recipes found")
+        }
+    }
+}

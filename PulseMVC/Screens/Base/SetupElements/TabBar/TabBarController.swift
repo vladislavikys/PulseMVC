@@ -24,21 +24,20 @@ class TabBarController:UITabBarController{
     
     
     private func setupTabs(){
-        let pulseViewController = PulseViewController()
+        let pulse = PulseViewController()
         let history = HistoryViewController()
-        //let diet = DietViewController()
-        let diet = BaseRecipeView()
+        let diet = DietViewController()
         let test = TestViewController()
         let profile = ProfileViewController()
         
         // Настроим тайтлы и изображения для каждого таба
-        pulseViewController.tabBarItem = UITabBarItem(title: "Pulse", image: UIImage(named: "pulse_icon"), tag: 0)
+        pulse.tabBarItem = UITabBarItem(title: "Pulse", image: UIImage(named: "pulse_icon"), tag: 0)
         history.tabBarItem = UITabBarItem(title: "History", image: UIImage(named: "history_icon"), tag: 1)
         diet.tabBarItem = UITabBarItem(title: "Diet", image: UIImage(named: "diet_icon"), tag: 2)
         test.tabBarItem = UITabBarItem(title: "Test", image: UIImage(named: "test_icon"), tag: 3)
         profile.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "profile_icon"), tag: 4)
         
-        viewControllers =  [pulseViewController, history, diet, test, profile]
+        viewControllers =  [pulse, history, diet, test, profile]
         
         tabBar.tintColor = AppColor.selectedTabBar.color
         tabBar.backgroundColor = AppColor.tabBarBack.color

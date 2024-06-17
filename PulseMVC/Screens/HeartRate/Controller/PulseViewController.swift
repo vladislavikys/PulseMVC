@@ -39,14 +39,19 @@ class PulseViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //createDefResepies()
+        CoreDataeManager.shared.printAllRecipes()
+
         displayCheckPayWall()
         setupUI()
-        fingerOnCameraGuide.isHidden = true
         hideView()
         displayCheckWelcomeView()
     }
     
     func setupUI() {
+        fingerOnCameraGuide.isHidden = true
+
         view.addSubview(buttonInfo)
         view.addSubview(pulseStatusLabel)
         view.addSubview(cameraFingerGuideText)
@@ -163,6 +168,14 @@ class PulseViewController: BaseViewController {
 }
 
 extension PulseViewController {
+    func openDiet(){
+        let diet = DietViewController()
+        diet.modalPresentationStyle = .fullScreen
+        diet.modalTransitionStyle = .crossDissolve
+        present(diet, animated: true, completion: nil)
+    }
+    
+    
     func hideView(){
         hideWelcomeView()
         hideCameraView()
@@ -451,6 +464,7 @@ extension PulseViewController {
         self.fingerOnCameraGuide.isHidden = true
         self.heartbeatGraphView.isHidden = false
         self.pulseStatusLabel.text = "No finger"
+        self.pulseStackView.pulseLabel.text = "00"
         self.toggleTorch(status: false)
         self.heartRateManager.stopCapture()
         timer.invalidate()
