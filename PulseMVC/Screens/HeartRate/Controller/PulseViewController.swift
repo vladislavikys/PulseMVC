@@ -40,7 +40,7 @@ class PulseViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //createDefResepies()
+        createDefResepies()
         CoreDataeManager.shared.printAllRecipes()
 
         displayCheckPayWall()

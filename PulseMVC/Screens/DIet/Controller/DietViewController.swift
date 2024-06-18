@@ -36,14 +36,14 @@ class DietViewController: BaseViewController {
     }
     
     private func setupConstraints() {
-        for (index, horizontalView) in horizontalViews.enumerated() {
+        for (index, horizontalView) in horizontalViews.enumerated() {   // пеербираем массив всех горищонтальных вью
             horizontalView.snp.makeConstraints { make in
-                if index == 0 {
+                if index == 0 {  // если это первое то привязка с сэйф ареа
                     make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(14)
-                } else {
+                } else { // приявязывается к нижнему краю предыдушего вью
                     make.top.equalTo(horizontalViews[index - 1].snp.bottom)
                 }
-                make.left.right.equalToSuperview().inset(-15)
+                make.left.right.equalToSuperview().inset(-15) // левый и правый края приявязка
                 make.height.equalTo(216)
             }
         }

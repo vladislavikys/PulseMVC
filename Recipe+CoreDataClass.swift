@@ -31,6 +31,6 @@ extension Recipes {
     @NSManaged public var servings: Int16
     @NSManaged public var category: String?
     
-    
+    @NSManaged public var instructions: String?
     
 }

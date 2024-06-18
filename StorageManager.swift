@@ -120,8 +120,8 @@ extension CoreDataeManager {
         }
     // создания нового рецепта
     func createRecipe(name: String, photo: String, calories: Int16,
-                          cookingTime: Int16, description: String?, ingredients: String?, carbohydrates: Int16,
-                          fat: Int16, protein: Int16, servings: Int16, category: String?) {
+                          cookingTime: Int16, description: String, ingredients: String, carbohydrates: Int16,
+                      fat: Int16, protein: Int16, servings: Int16, category: String, instructions: String ) {
         
             if checkIfRecipeExists(name: name) {
                 print("Recipe with name '\(name)' already exists")
@@ -140,6 +140,7 @@ extension CoreDataeManager {
             newRecipe.protein = protein
             newRecipe.servings = servings
             newRecipe.category = category
+            newRecipe.instructions = instructions 
             
             saveContextRecepies()
         }

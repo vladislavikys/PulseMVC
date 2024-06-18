@@ -36,7 +36,7 @@ class Cell: UICollectionViewCell {
         contentView.addSubview(caloriesLabel)
         contentView.addSubview(timeLabel)
         
-        recipeImageView.contentMode = .scaleAspectFill
+        recipeImageView.contentMode = .scaleToFill
         
         nameLabel.textColor = .black
         nameLabel.textAlignment = .left
