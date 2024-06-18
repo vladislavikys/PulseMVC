@@ -18,7 +18,8 @@
 		E0C36B9E2BB69B2400C0840A /* FilterHeart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C36B9D2BB69B2400C0840A /* FilterHeart.swift */; };
 		E0C36BA02BB69B3800C0840A /* PulseDetectorHeart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C36B9F2BB69B3800C0840A /* PulseDetectorHeart.swift */; };
 		E0C36BA42BB69B6B00C0840A /* ManagerHeartRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C36BA32BB69B6B00C0840A /* ManagerHeartRate.swift */; };
-		E0D934C62C2025EC0048AD62 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D934C52C2025EC0048AD62 /* NameView.swift */; };
+		E0D934CA2C21A0B60048AD62 /* VerticalViewSeeAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D934C92C21A0B60048AD62 /* VerticalViewSeeAll.swift */; };
+		E0D934CD2C21A2850048AD62 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D934CB2C21A2850048AD62 /* NameView.swift */; };
 		E0DB8DF12BB2AA82006B6517 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DB8DF02BB2AA82006B6517 /* ResultView.swift */; };
 		E0DB8DF32BB2C061006B6517 /* StatusPulseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DB8DF22BB2C061006B6517 /* StatusPulseView.swift */; };
 		E0DB8DF82BB2EE9C006B6517 /* StackResultH.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DB8DF72BB2EE9C006B6517 /* StackResultH.swift */; };
@@ -88,7 +89,8 @@
 		E0C36B9D2BB69B2400C0840A /* FilterHeart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHeart.swift; sourceTree = "<group>"; };
 		E0C36B9F2BB69B3800C0840A /* PulseDetectorHeart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseDetectorHeart.swift; sourceTree = "<group>"; };
 		E0C36BA32BB69B6B00C0840A /* ManagerHeartRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerHeartRate.swift; sourceTree = "<group>"; };
-		E0D934C52C2025EC0048AD62 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
+		E0D934C92C21A0B60048AD62 /* VerticalViewSeeAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalViewSeeAll.swift; sourceTree = "<group>"; };
+		E0D934CB2C21A2850048AD62 /* NameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
 		E0DB8DF02BB2AA82006B6517 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		E0DB8DF22BB2C061006B6517 /* StatusPulseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPulseView.swift; sourceTree = "<group>"; };
 		E0DB8DF72BB2EE9C006B6517 /* StackResultH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackResultH.swift; sourceTree = "<group>"; };
@@ -233,10 +235,10 @@
 			name = ManagerHeart;
 			sourceTree = "<group>";
 		};
-		E0D934C42C2025C40048AD62 /* RecepeViewAdd */ = {
+		E0D934CC2C21A2850048AD62 /* RecepeViewAdd */ = {
 			isa = PBXGroup;
 			children = (
-				E0D934C52C2025EC0048AD62 /* NameView.swift */,
+				E0D934CB2C21A2850048AD62 /* NameView.swift */,
 			);
 			path = RecepeViewAdd;
 			sourceTree = "<group>";
@@ -410,10 +412,10 @@
 		F542FCB62B6E73CB00ACB81B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E0D934C42C2025C40048AD62 /* RecepeViewAdd */,
-				E090F8E92BDAA37700F65BD5 /* RecipeView.swift */,
+				E0D934CC2C21A2850048AD62 /* RecepeViewAdd */,
 				E0F06F262BDD01FF00C767D9 /* HorizontalView.swift */,
 				E0F06F282BDD03BC00C767D9 /* Cell.swift */,
+				E0D934C92C21A0B60048AD62 /* VerticalViewSeeAll.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -422,6 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				F542FCC42B6E774400ACB81B /* DietViewController.swift */,
+				E090F8E92BDAA37700F65BD5 /* RecipeView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -703,10 +706,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0D934CA2C21A0B60048AD62 /* VerticalViewSeeAll.swift in Sources */,
 				E0C36B982BB69ACA00C0840A /* AVCaptureDevice.swift in Sources */,
 				F542FCCD2B6E77FC00ACB81B /* TestView.swift in Sources */,
+				E0D934CD2C21A2850048AD62 /* NameView.swift in Sources */,
 				F5E9C4E32B6FB426001D5621 /* AppColor.swift in Sources */,
-				E0D934C62C2025EC0048AD62 /* NameView.swift in Sources */,
 				F508212D2B71439500CEF074 /* PulseStack.swift in Sources */,
 				F5A02EF12B6BF0B700DF7ED7 /* PulseViewController.swift in Sources */,
 				E0A4A1A12BDFD3590065A416 /* Recipe+CoreDataClass.swift in Sources */,

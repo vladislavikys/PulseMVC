@@ -1,42 +1,43 @@
 import UIKit
 
-protocol HorizontalViewDelegate: AnyObject {
+protocol VerticalViewSeeAllDelegate: AnyObject {
+    func didTapBack()
     func didSelectRecipe(at index: Int)
-    func didHideAllHorizViewShowVert(from horizontalView: HorizontalView)
 }
 
-class HorizontalView: UIView {
-    weak var delegate: HorizontalViewDelegate?
-    
-    weak var parentViewController: UIViewController?
-    
-    
+class VerticalViewSeeAll: UIView {
+
+    weak var delegate: VerticalViewSeeAllDelegate?
+
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
-        label.textAlignment = .left
+        label.font = UIFont.systemFont(ofSize: 36, weight: .bold)
+        label.text = "Title"
+        label.textAlignment = .center
         return label
     }()
     
-    let allLabel: UILabel = {
-        let label = UILabel()
-        label.text = "See All"
-        label.textColor = .orange
-        label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-        label.textAlignment = .right
-        label.isUserInteractionEnabled = true
-        return label
+    let backButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named:"back"), for: .normal)
+        button.tintColor = UIColor.black
+        button.imageView?.contentMode = .scaleAspectFit
+        button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        return button
     }()
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: 140, height: 160)
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+        layout.scrollDirection = .vertical
+        let itemWidth = (UIScreen.main.bounds.width - 30) / 2 // Adjust the calculation to ensure two columns
+        layout.itemSize = CGSize(width: itemWidth, height: 160)
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        layout.minimumInteritemSpacing = 10
+        layout.minimumLineSpacing = 10
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
-        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = false
         collectionView.register(Cell.self, forCellWithReuseIdentifier: "cell")
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -45,56 +46,53 @@ class HorizontalView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backButton.isHidden = false
         setupViews()
-        setupTapGesture()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func setupViews() {
         addSubview(titleLabel)
-        addSubview(allLabel)
+        addSubview(backButton)
         addSubview(collectionView)
-        
-        titleLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(36)
-            make.top.equalToSuperview()
-            make.height.equalTo(30)
+        backButton.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(80)
+            make.leading.equalToSuperview().offset(20)
+            make.width.height.equalTo(20)
         }
-        allLabel.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().offset(-36)
-            make.top.equalToSuperview()
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(backButton.snp.bottom).offset(20)
+            make.leading.equalToSuperview().offset(20)
             make.height.equalTo(30)
         }
         
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(10)
-            make.left.right.equalToSuperview().inset(10)
-            make.height.equalTo(160)
+            make.top.equalTo(titleLabel.snp.bottom).offset(24)
+            make.leading.trailing.equalToSuperview().inset(10)
+            make.bottom.equalToSuperview().offset(-10)
         }
     }
-    
-    private func setupTapGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleSeeAllTap))
-        allLabel.addGestureRecognizer(tapGesture)
+
+    func setTitle(_ title: String) {
+        titleLabel.text = title
     }
-    
-    @objc private func handleSeeAllTap() {
-        print("See All tapped")
-        delegate?.didHideAllHorizViewShowVert(from: self) // скрываем все вью с диет контроллера
+
+    @objc private func backButtonTapped() {
+        delegate?.didTapBack()
     }
 }
 
-extension HorizontalView: UICollectionViewDataSource, UICollectionViewDelegate {
+extension VerticalViewSeeAll: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let recipeCount = CoreDataeManager.shared.fetchAllRecipes()?.count {
             return recipeCount
         }
         return 0
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? Cell else {
             fatalError("Unable to dequeue Cell")
@@ -108,7 +106,7 @@ extension HorizontalView: UICollectionViewDataSource, UICollectionViewDelegate {
         }
         return cell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         delegate?.didSelectRecipe(at: indexPath.row)
     }

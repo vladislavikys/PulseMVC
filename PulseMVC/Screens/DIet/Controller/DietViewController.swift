@@ -7,7 +7,9 @@
 
 import UIKit
 
-class DietViewController: BaseViewController {
+class DietViewController: BaseViewController, VerticalViewSeeAllDelegate {
+    
+    
     
     let breackfast = HorizontalView()
     let lunch = HorizontalView()
@@ -15,6 +17,9 @@ class DietViewController: BaseViewController {
     
     
     var horizontalViews : [HorizontalView] = []
+    var verticalView = VerticalViewSeeAll()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,17 +28,23 @@ class DietViewController: BaseViewController {
     }
     
     private func setupViews() {
-        breackfast.titleLabel.text = "Breakfast"
-        lunch.titleLabel.text = "Lunch"
-        dinner.titleLabel.text = "Dinner"
+        breackfast.titleLabel.text = "Завтрак"
+        lunch.titleLabel.text = "Обед"
+        dinner.titleLabel.text = "Ужин"
         
         horizontalViews = [breackfast,lunch,dinner]
         
-        for horizontalView in horizontalViews {
+        for (index, horizontalView)  in horizontalViews.enumerated() {
             view.addSubview(horizontalView)
+            horizontalView.tag = index + 1
             horizontalView.delegate = self
         }
+        
+        verticalView.delegate = self
+        verticalView.isHidden = true
+        view.addSubview(verticalView)
     }
+
     
     private func setupConstraints() {
         for (index, horizontalView) in horizontalViews.enumerated() {   // пеербираем массив всех горищонтальных вью
@@ -47,12 +58,41 @@ class DietViewController: BaseViewController {
                 make.height.equalTo(216)
             }
         }
+        
+        verticalView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
 }
 
 extension DietViewController: HorizontalViewDelegate {
+    
     func didSelectRecipe(at index: Int) {
         let recipeView = RecipeView()
         present(recipeView, animated: true)
     }
+    
+    func didHideAllHorizViewShowVert(from horizontalView: HorizontalView) {
+        horizontalViews.forEach{ $0.isHidden = true }
+        verticalView.isHidden = false
+        
+        switch horizontalView.tag {
+        case 1 :
+            verticalView.setTitle("Завтрак")
+        case 2 :
+            verticalView.setTitle("Обед")
+        case 3 :
+            verticalView.setTitle("Ужин")
+        default:
+            verticalView.setTitle("Рецепты")
+        }
+    }
+    
+    func didTapBack() {
+        verticalView.isHidden = true
+        horizontalViews.forEach {
+            $0.isHidden = false
+        }
+    }
 }
+
