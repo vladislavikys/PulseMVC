@@ -10,27 +10,26 @@ import UIKit
 class NameView: UIView {
     
     
-    let name : String = ""
-    let opinion : String = ""
+    let name : String = "Name"
+    let opinion : String = "Opinion"
     
-    let kcal : Int = 0
-    let min : Int = 0
-    let serv : Int = 0
+    let kcal : Int = 1000
+    let min : Int = 30
+    let serv : Int = 2
     
     
-    // Инициализация через код
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         createBackView()
     }
     
-    // Инициализация через Interface Builder (Storyboard или XIB)
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         createBackView()
     }
     
-    // Метод настройки внешнего вида
+
     private func createBackView() {
         self.frame = CGRect(x: 0, y: 0, width: 300, height: 125)
         self.backgroundColor = .white

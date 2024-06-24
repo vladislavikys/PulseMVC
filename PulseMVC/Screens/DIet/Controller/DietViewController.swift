@@ -1,98 +1,111 @@
-//
-//  DietViewController.swift
-//  PulseMVC
-//
-//  Created by Влад on 3.02.24.
-//
-
 import UIKit
 
 class DietViewController: BaseViewController, VerticalViewSeeAllDelegate {
     
-    
-    
-    let breackfast = HorizontalView()
+    // Горизонтальные представления для завтрака, обеда и ужина
+    let breakfast = HorizontalView()
+    let breakfastText = "Завтрак"
     let lunch = HorizontalView()
+    let lunchText = "Обед"
     let dinner = HorizontalView()
+    let dinnerText = "Ужин"
     
-    
-    var horizontalViews : [HorizontalView] = []
-    var verticalView = VerticalViewSeeAll()
-    
-    
+    var horizontalViews: [HorizontalView] = [] // Массив для хранения горизонтальных представлений
+    var verticalView = VerticalViewSeeAll() // Вертикальное представление для отображения всех рецептов
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
-        setupConstraints()
+        setupViews() // Настройка визуальных компонентов
+        setupConstraints() // Установка ограничений
     }
     
     private func setupViews() {
-        breackfast.titleLabel.text = "Завтрак"
-        lunch.titleLabel.text = "Обед"
-        dinner.titleLabel.text = "Ужин"
+        // Настройка завтрака
+        breakfast.category = breakfastText
+        breakfast.titleLabel.text = breakfastText
+        breakfast.loadRecipes()
         
-        horizontalViews = [breackfast,lunch,dinner]
+        // Настройка обеда
+        lunch.category = lunchText
+        lunch.titleLabel.text = lunchText
+        lunch.loadRecipes()
         
-        for (index, horizontalView)  in horizontalViews.enumerated() {
+        // Настройка ужина
+        dinner.category = dinnerText
+        dinner.titleLabel.text = dinnerText
+        dinner.loadRecipes()
+        
+        // Добавляем горизонтальные представления в массив и на экран
+        horizontalViews = [breakfast, lunch, dinner]
+        
+        for (index, horizontalView) in horizontalViews.enumerated() {
             view.addSubview(horizontalView)
-            horizontalView.tag = index + 1
-            horizontalView.delegate = self
+            horizontalView.tag = index + 1 // Присваиваем тег для идентификации
+            horizontalView.delegate = self // Устанавливаем делегат
         }
         
+        // Настройка вертикального представления
         verticalView.delegate = self
-        verticalView.isHidden = true
+        verticalView.isHidden = true // Скрываем изначально
         view.addSubview(verticalView)
     }
-
     
     private func setupConstraints() {
-        for (index, horizontalView) in horizontalViews.enumerated() {   // пеербираем массив всех горищонтальных вью
+        // Установка ограничений для горизонтальных представлений
+        for (index, horizontalView) in horizontalViews.enumerated() {
             horizontalView.snp.makeConstraints { make in
-                if index == 0 {  // если это первое то привязка с сэйф ареа
-                    make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(14)
-                } else { // приявязывается к нижнему краю предыдушего вью
-                    make.top.equalTo(horizontalViews[index - 1].snp.bottom)
+                if index == 0 {
+                    make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(14) // Отступ от верхней границы для первого представления
+                } else {
+                    make.top.equalTo(horizontalViews[index - 1].snp.bottom) // Размещаем представления друг под другом
                 }
-                make.left.right.equalToSuperview().inset(-15) // левый и правый края приявязка
-                make.height.equalTo(216)
+                make.left.right.equalToSuperview().inset(-15) // Выравниваем по краям экрана с отступом
+                make.height.equalTo(216) // Фиксированная высота представления
             }
         }
         
         verticalView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalToSuperview() 
         }
     }
 }
 
+// Расширение для обработки событий горизонтальных представлений
 extension DietViewController: HorizontalViewDelegate {
-    
+    // Обработка выбора рецепта из горизонтального представления
     func didSelectRecipe(at index: Int) {
-        let recipeView = RecipeView()
-        present(recipeView, animated: true)
+        let recipeView = RecipeView() // Создаем экран для просмотра рецепта
+        present(recipeView, animated: true) // Открываем экран с анимацией
     }
     
+    // Обработка события нажатия на "See All" в горизонтальном представлении
     func didHideAllHorizViewShowVert(from horizontalView: HorizontalView) {
-        horizontalViews.forEach{ $0.isHidden = true }
-        verticalView.isHidden = false
+        horizontalViews.forEach { $0.isHidden = true } // Скрываем все горизонтальные представления
+        verticalView.isHidden = false // Показываем вертикальное представление
         
-        switch horizontalView.tag {
-        case 1 :
-            verticalView.setTitle("Завтрак")
-        case 2 :
-            verticalView.setTitle("Обед")
-        case 3 :
-            verticalView.setTitle("Ужин")
+        // Устанавливаем заголовок и категорию для вертикального представления в зависимости от выбранного горизонтального представления
+        switch horizontalView {
+        case breakfast:
+            verticalView.setTitle(breakfastText)
+            verticalView.category = breakfastText
+        case lunch:
+            verticalView.setTitle(lunchText)
+            verticalView.category = lunchText
+        case dinner:
+            verticalView.setTitle(dinnerText)
+            verticalView.category = dinnerText
         default:
             verticalView.setTitle("Рецепты")
+            verticalView.category = nil
         }
+        
+        verticalView.loadRecipes()
     }
     
+    // Обработка события нажатия кнопки "Назад" в вертикальном представлении
     func didTapBack() {
-        verticalView.isHidden = true
-        horizontalViews.forEach {
-            $0.isHidden = false
-        }
+        verticalView.isHidden = true // Скрываем вертикальное представление
+        horizontalViews.forEach { $0.isHidden = false } // Показываем все горизонтальные представления
+        setupConstraints() // Переустанавливаем ограничения для горизонтальных представлений
     }
 }
-
