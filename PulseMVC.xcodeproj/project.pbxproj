@@ -10,6 +10,7 @@
 		DFF715820705E8A4FC1D903B /* Pods_PulseMVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF5D93D076ADAABC1C81BFB /* Pods_PulseMVC.framework */; };
 		E00260992BD90F0100E9117F /* VadimProgressCopyLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00260982BD90F0100E9117F /* VadimProgressCopyLogic.swift */; };
 		E036215F2BA5A63000E6B076 /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E036215E2BA5A63000E6B076 /* Profile+CoreDataClass.swift */; };
+		E0379A722C33084800A04D94 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0379A712C33084800A04D94 /* CircularProgressView.swift */; };
 		E090F8EA2BDAA37700F65BD5 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E090F8E92BDAA37700F65BD5 /* RecipeView.swift */; };
 		E0A4A1A12BDFD3590065A416 /* Recipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A4A1A02BDFD3590065A416 /* Recipe+CoreDataClass.swift */; };
 		E0B467DD2BBE87C50006119E /* ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B467DC2BBE87C50006119E /* ext.swift */; };
@@ -81,6 +82,7 @@
 		B9CC3EDFDDD11404740CA379 /* Pods-PulseMVC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulseMVC.debug.xcconfig"; path = "Target Support Files/Pods-PulseMVC/Pods-PulseMVC.debug.xcconfig"; sourceTree = "<group>"; };
 		E00260982BD90F0100E9117F /* VadimProgressCopyLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VadimProgressCopyLogic.swift; sourceTree = "<group>"; };
 		E036215E2BA5A63000E6B076 /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E0379A712C33084800A04D94 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		E090F8E92BDAA37700F65BD5 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 		E0A4A1A02BDFD3590065A416 /* Recipe+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Recipe+CoreDataClass.swift"; path = "/Users/vladzarya/Documents/Рабочий стол/swift project all/2024/PulseMVC/Recipe+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		E0B467DC2BBE87C50006119E /* ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ext.swift; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 				E0F06F262BDD01FF00C767D9 /* HorizontalView.swift */,
 				E0F06F282BDD03BC00C767D9 /* Cell.swift */,
 				E0D934C92C21A0B60048AD62 /* VerticalViewSeeAll.swift */,
+				E0379A712C33084800A04D94 /* CircularProgressView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -749,6 +752,7 @@
 				E0F06F292BDD03BC00C767D9 /* Cell.swift in Sources */,
 				E0E483082BBE80EA00E62036 /* HeartRateModel.swift in Sources */,
 				F54ACF402B9B2274002467A0 /* MyProgressBar.swift in Sources */,
+				E0379A722C33084800A04D94 /* CircularProgressView.swift in Sources */,
 				F59EF6142B80F6CD0014C7E0 /* DimmyView.swift in Sources */,
 				E0C36BA02BB69B3800C0840A /* PulseDetectorHeart.swift in Sources */,
 				F5984E802B6A99940090376F /* SceneDelegate.swift in Sources */,

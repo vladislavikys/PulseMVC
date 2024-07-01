@@ -3,8 +3,9 @@ import CoreData
 
 // Протокол делегата для обратного вызова событий
 protocol VerticalViewSeeAllDelegate: AnyObject {
-    func didTapBack() // Метод вызывается при нажатии кнопки назад
-    func didSelectRecipe(at index: Int) // Метод вызывается при выборе рецепта
+    func didSelectRecipe(_ recipe: Recipes)
+    func didHideAllHorizViewShowVert(from horizontalView: HorizontalView)
+    func didTapBack()
 }
 
 class VerticalViewSeeAll: UIView {
@@ -102,7 +103,6 @@ class VerticalViewSeeAll: UIView {
     // Загрузка и отображение рецептов по категории
     func loadRecipes() {
         guard let category = category else {
-            // Если категория не задана, выходим из функции
             return
         }
         
@@ -110,10 +110,19 @@ class VerticalViewSeeAll: UIView {
         fetchRequest.predicate = NSPredicate(format: "category == %@", category)
         
         do {
-            recipes = try CoreDataeManager.shared.context.fetch(fetchRequest) // Получаем рецепты из базы данных
-            collectionView.reloadData() // Обновляем коллекцию
+            recipes = try CoreDataeManager.shared.context.fetch(fetchRequest)
+            collectionView.reloadData()
         } catch {
             print("Failed to fetch recipes for category \(category): \(error)")
+            showAlert(message: "Не удалось загрузить рецепты для категории \(category). Пожалуйста, попробуйте позже.")
+        }
+    }
+
+    private func showAlert(message: String) {
+        if let viewController = self.findViewController() {
+            let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ОК", style: .default, handler: nil))
+            viewController.present(alert, animated: true, completion: nil)
         }
     }
     
@@ -154,7 +163,9 @@ extension VerticalViewSeeAll: UICollectionViewDataSource, UICollectionViewDelega
     }
 
     // Обработка выбора ячейки коллекции
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.didSelectRecipe(at: indexPath.row) // Вызываем метод делегата при выборе рецепта
-    }
+    // Обработка выбора ячейки коллекции
+      func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedRecipe = recipes[indexPath.row] // Получаем выбранный рецепт
+        delegate?.didSelectRecipe(selectedRecipe) // Передаем рецепт делегату
+      }
 }
