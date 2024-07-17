@@ -12,8 +12,6 @@ class RecipeView: UIViewController {
     let fatIndicatorText = UILabel()
     var carbsIndicator = CircularProgressView()
     let carbsIndicatorText = UILabel()
-    var ingredientsListLabel = UITextView()
-    var cookingInstructionsLabel = UITextView()
     var scrollView = UIScrollView()
 
     // Добавляем кнопку назад
@@ -32,6 +30,9 @@ class RecipeView: UIViewController {
     // Создаем stackView как свойство класса
     private let nutrientStackView = UIStackView()
 
+    // Создаем stackView для списка ингредиентов
+    private let ingredientsStackView = UIStackView()
+
     init(recipe: Recipes) {
         self.recipe = recipe
         super.init(nibName: nil, bundle: nil)
@@ -47,6 +48,7 @@ class RecipeView: UIViewController {
         setupConstraints()
         updateUI()
         displayRecipe()
+        setupIngredientList() // Вызываем метод для настройки отображения списка ингредиентов
     }
 
     private func setupViews() {
@@ -64,11 +66,12 @@ class RecipeView: UIViewController {
 
         setupNutrientIndicators()
 
-        ingredientsListLabel.isEditable = false
-        cookingInstructionsLabel.isEditable = false
+        scrollView.addSubview(ingredientsStackView)
 
-        scrollView.addSubview(ingredientsListLabel)
-        scrollView.addSubview(cookingInstructionsLabel)
+        // Настраиваем ingredientsStackView
+        ingredientsStackView.axis = .vertical  // Устанавливаем вертикальную ось
+        ingredientsStackView.spacing = 5
+        ingredientsStackView.alignment = .fill
     }
 
     private func setupNutrientIndicators() {
@@ -86,12 +89,12 @@ class RecipeView: UIViewController {
 
         for (indicator, textLabel, title) in indicators {
             textLabel.text = title
-            textLabel.textAlignment = .center // Выравнивание текста
-            textLabel.numberOfLines = 0 // Позволяет многострочный текст, если необходимо
+            textLabel.textAlignment = .center
+            textLabel.numberOfLines = 0
 
             let stackViewItem = UIStackView()
             stackViewItem.axis = .vertical
-            stackViewItem.spacing = 5
+            stackViewItem.spacing = 25
             stackViewItem.alignment = .center
             stackViewItem.addArrangedSubview(textLabel)
             stackViewItem.addArrangedSubview(indicator)
@@ -135,19 +138,9 @@ class RecipeView: UIViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide)
         }
 
-        ingredientsListLabel.snp.makeConstraints { make in
-            make.top.equalTo(scrollView.snp.top)
-            make.left.equalTo(scrollView.snp.left)
-            make.right.equalTo(scrollView.snp.right)
-            make.height.equalTo(200)
-        }
-
-        cookingInstructionsLabel.snp.makeConstraints { make in
-            make.top.equalTo(ingredientsListLabel.snp.bottom).offset(10)
-            make.left.equalTo(scrollView.snp.left)
-            make.right.equalTo(scrollView.snp.right)
-            make.bottom.equalTo(scrollView.snp.bottom)
-            make.height.equalTo(300)
+        ingredientsStackView.snp.makeConstraints { make in
+            make.edges.equalTo(scrollView)
+            make.width.equalTo(scrollView)
         }
     }
 
@@ -160,9 +153,6 @@ class RecipeView: UIViewController {
         recipeNameView.serv = Int(recipe.servings)
 
         recipeImageView.image = UIImage(named: "\(String(recipe.photo ?? ""))")
-
-        ingredientsListLabel.text = recipe.ingredients ?? "No Ingredients"
-        cookingInstructionsLabel.text = recipe.instructions ?? "No Instructions"
 
         // Устанавливаем значения для круговых индикаторов
         proteinIndicator.progress = Float(recipe.protein) / 100.0
@@ -184,6 +174,23 @@ class RecipeView: UIViewController {
         print("Protein: \(recipe.protein)")
         print("Fat: \(recipe.fat)")
         print("Carbs: \(recipe.carbohydrates)")
+    }
+
+    private func setupIngredientList() {
+        let ingredientsTitle = UILabel()
+        ingredientsTitle.text = "Ingredient list"
+        ingredientsTitle.font = UIFont.boldSystemFont(ofSize: 18)
+        ingredientsStackView.addArrangedSubview(ingredientsTitle)
+
+        guard let ingredientsText = recipe.ingredients else { return }
+        let ingredients = ingredientsText.split(separator: "\n")
+        for ingredient in ingredients {
+            let label = UILabel()
+            label.text = String(ingredient)
+            label.font = UIFont.systemFont(ofSize: 16)
+            label.textColor = .red
+            ingredientsStackView.addArrangedSubview(label)
+        }
     }
 
     // Обработчик нажатия кнопки назад
