@@ -13,16 +13,7 @@ class RecipeView: UIViewController {
     var carbsIndicator = CircularProgressView()
     let carbsIndicatorText = UILabel()
     var scrollView = UIScrollView()
-
-    // Добавляем кнопку назад
-    private let backButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(UIImage(named: "back"), for: .normal)
-        button.tintColor = UIColor.black
-        button.imageView?.contentMode = .scaleAspectFit
-        button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
-        return button
-    }()
+    private let backButton = UIButton(type: .system)
 
     // Объявляем переменную для хранения рецепта
     private var recipe: Recipes
@@ -30,8 +21,10 @@ class RecipeView: UIViewController {
     // Создаем stackView как свойство класса
     private let nutrientStackView = UIStackView()
 
-    // Создаем stackView для списка ингредиентов
+    // Создаем главный stackView для содержимого scrollView
+    private let contentStackView = UIStackView()
     private let ingredientsStackView = UIStackView()
+    private let instructionsStackView = UIStackView()
 
     init(recipe: Recipes) {
         self.recipe = recipe
@@ -47,31 +40,48 @@ class RecipeView: UIViewController {
         setupViews()
         setupConstraints()
         updateUI()
-        displayRecipe()
         setupIngredientList() // Вызываем метод для настройки отображения списка ингредиентов
+        setupInstructions() // Вызываем метод для настройки отображения инструкций
     }
 
     private func setupViews() {
         view.backgroundColor = .white
 
+        // Настройка кнопки назад
+        backButton.setImage(UIImage(named: "back"), for: .normal)
+        backButton.tintColor = UIColor.black
+        backButton.imageView?.contentMode = .scaleAspectFit
+        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+
         // Добавляем все UI компоненты на главный вид
-        view.addSubview(recipeImageView)
-        view.addSubview(recipeNameView)
         view.addSubview(scrollView)
-        view.addSubview(nutrientStackView)
-        view.addSubview(backButton) // Добавляем кнопку назад
+        scrollView.addSubview(contentStackView)
+        contentStackView.addArrangedSubview(recipeImageView)
+        contentStackView.addArrangedSubview(recipeNameView)
+        contentStackView.addArrangedSubview(nutrientStackView)
+        contentStackView.addArrangedSubview(ingredientsStackView)
+        contentStackView.addArrangedSubview(instructionsStackView)
+        view.addSubview(backButton)
 
         recipeImageView.contentMode = .scaleAspectFill
         view.backgroundColor = .lightGray
 
         setupNutrientIndicators()
 
-        scrollView.addSubview(ingredientsStackView)
+        // Настраиваем contentStackView
+        contentStackView.axis = .vertical
+        contentStackView.spacing = 20
+        contentStackView.alignment = .fill
 
         // Настраиваем ingredientsStackView
-        ingredientsStackView.axis = .vertical  // Устанавливаем вертикальную ось
+        ingredientsStackView.axis = .vertical
         ingredientsStackView.spacing = 5
         ingredientsStackView.alignment = .fill
+        
+        // Настраиваем instructionsStackView
+        instructionsStackView.axis = .vertical
+        instructionsStackView.spacing = 10
+        instructionsStackView.alignment = .fill
     }
 
     private func setupNutrientIndicators() {
@@ -110,37 +120,25 @@ class RecipeView: UIViewController {
             make.width.height.equalTo(40)
         }
 
+        scrollView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
+
+        contentStackView.snp.makeConstraints { make in
+            make.edges.equalTo(scrollView)
+            make.width.equalTo(scrollView)
+        }
+
         recipeImageView.snp.makeConstraints { make in
-            make.top.equalTo(backButton.snp.bottom).offset(10)
-            make.left.equalToSuperview().offset(-1)
-            make.right.equalToSuperview().offset(-1)
             make.height.equalTo(250)
         }
 
         recipeNameView.snp.makeConstraints { make in
-            make.top.equalTo(recipeImageView.snp.bottom).offset(-40)
-            make.left.equalToSuperview().offset(30)
-            make.right.equalToSuperview().offset(-30)
             make.height.equalTo(140)
         }
 
         nutrientStackView.snp.makeConstraints { make in
-            make.top.equalTo(recipeNameView.snp.bottom).offset(30)
-            make.left.equalToSuperview().offset(20)
-            make.right.equalToSuperview().offset(-20)
             make.height.equalTo(120)
-        }
-
-        scrollView.snp.makeConstraints { make in
-            make.top.equalTo(nutrientStackView.snp.bottom).offset(20)
-            make.left.equalToSuperview().offset(20)
-            make.right.equalToSuperview().offset(-20)
-            make.bottom.equalTo(view.safeAreaLayoutGuide)
-        }
-
-        ingredientsStackView.snp.makeConstraints { make in
-            make.edges.equalTo(scrollView)
-            make.width.equalTo(scrollView)
         }
     }
 
@@ -165,17 +163,6 @@ class RecipeView: UIViewController {
         carbsIndicatorText.text = "Carbs: \(recipe.carbohydrates)"
     }
 
-    private func displayRecipe() {
-        print("Recipe Details:")
-        print("Name: \(recipe.name ?? "No Name")")
-        print("Description: \(recipe.descript ?? "No Description")")
-        print("Ingredients: \(recipe.ingredients ?? "No Ingredients")")
-        print("Instructions: \(recipe.instructions ?? "No Instructions")")
-        print("Protein: \(recipe.protein)")
-        print("Fat: \(recipe.fat)")
-        print("Carbs: \(recipe.carbohydrates)")
-    }
-
     private func setupIngredientList() {
         let ingredientsTitle = UILabel()
         ingredientsTitle.text = "Ingredient list"
@@ -191,6 +178,21 @@ class RecipeView: UIViewController {
             label.textColor = .red
             ingredientsStackView.addArrangedSubview(label)
         }
+    }
+
+    private func setupInstructions() {
+        let instructionsTitle = UILabel()
+        instructionsTitle.text = "Cooking Instructions"
+        instructionsTitle.font = UIFont.boldSystemFont(ofSize: 18)
+        instructionsStackView.addArrangedSubview(instructionsTitle)
+
+        guard let instructionsText = recipe.instructions else { return }
+        let instructionsLabel = UILabel()
+        instructionsLabel.text = instructionsText
+        instructionsLabel.font = UIFont.systemFont(ofSize: 16)
+        instructionsLabel.textColor = .black
+        instructionsLabel.numberOfLines = 0
+        instructionsStackView.addArrangedSubview(instructionsLabel)
     }
 
     // Обработчик нажатия кнопки назад
