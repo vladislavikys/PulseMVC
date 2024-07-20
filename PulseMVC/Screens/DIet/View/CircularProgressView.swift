@@ -11,7 +11,7 @@ class CircularProgressView: UIView {
         }
     }
     
-    var lineWidth: CGFloat = 10 {
+    var lineWidth: CGFloat = 5 { // Уменьшение толщины линии
         didSet {
             shapeLayer.lineWidth = lineWidth
             backgroundLayer.lineWidth = lineWidth
@@ -19,13 +19,13 @@ class CircularProgressView: UIView {
         }
     }
 
-    var progressColor: UIColor = .blue {
+    var progressColor: UIColor = .orange {
         didSet {
             shapeLayer.strokeColor = progressColor.cgColor
         }
     }
     
-    var backgroundLayerColor: UIColor = .red {
+    var backgroundLayerColor: UIColor = .lightGray { 
         didSet {
             backgroundLayer.strokeColor = backgroundLayerColor.cgColor
         }
@@ -42,17 +42,17 @@ class CircularProgressView: UIView {
     }
     
     private func setupView() {
-        shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.strokeColor = progressColor.cgColor
-        shapeLayer.lineWidth = lineWidth
-        shapeLayer.lineCap = .round
-        layer.addSublayer(shapeLayer)
-        
         backgroundLayer.fillColor = UIColor.clear.cgColor
         backgroundLayer.strokeColor = backgroundLayerColor.cgColor
         backgroundLayer.lineWidth = lineWidth
         backgroundLayer.lineCap = .round
         layer.addSublayer(backgroundLayer)
+        
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.strokeColor = progressColor.cgColor
+        shapeLayer.lineWidth = lineWidth
+        shapeLayer.lineCap = .round
+        layer.addSublayer(shapeLayer)
     }
     
     private func updateProgress() {

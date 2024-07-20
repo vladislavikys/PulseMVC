@@ -100,6 +100,9 @@ class RecipeView: UIViewController {
             (carbsIndicator, carbsIndicatorText, "Carbs")
         ]
 
+        // Устанавливаем начальную ширину линии для индикаторов
+        indicators.forEach { $0.0.lineWidth = 5 }
+
         // Добавляем каждый индикатор и его метку в стек 🏗️
         for (indicator, textLabel, title) in indicators {
             textLabel.text = title
@@ -108,10 +111,14 @@ class RecipeView: UIViewController {
 
             let stackViewItem = UIStackView()
             stackViewItem.axis = .vertical
-            stackViewItem.spacing = 25
+            stackViewItem.spacing = 8
             stackViewItem.alignment = .center
             stackViewItem.addArrangedSubview(textLabel)
             stackViewItem.addArrangedSubview(indicator)
+
+            indicator.snp.makeConstraints { make in
+                make.width.height.equalTo(60) // Устанавливаем размер индикаторов
+            }
 
             nutrientStackView.addArrangedSubview(stackViewItem)
         }
@@ -143,26 +150,26 @@ class RecipeView: UIViewController {
 
         // Устанавливаем высоту и ширину для названия рецепта 📜
         recipeNameView.snp.makeConstraints { make in
-            make.top.equalTo(recipeImageView.snp.bottom).offset(-45) // Здесь изменено значение отступа
+            make.top.equalTo(recipeImageView.snp.bottom).offset(-45)
             make.height.equalTo(130)
             make.width.equalTo(320)
-            make.centerX.equalTo(scrollView) // Центрируем по горизонтали
+            make.centerX.equalTo(scrollView)
         }
 
         // Устанавливаем высоту для nutrientStackView 🍽️
         nutrientStackView.snp.makeConstraints { make in
-            make.top.equalTo(recipeNameView.snp.bottom).offset(10) // Добавляем отступ 40 пунктов вниз
+            make.top.equalTo(recipeNameView.snp.bottom).offset(40)
             make.height.equalTo(120)
         }
 
         // Устанавливаем отступ для ingredientsStackView 🥕
         ingredientsStackView.snp.makeConstraints { make in
-            make.top.equalTo(nutrientStackView.snp.bottom).offset(10) // Добавляем отступ 40 пунктов вниз
+            make.top.equalTo(nutrientStackView.snp.bottom).offset(40)
         }
 
         // Устанавливаем отступ для instructionsStackView 📜
         instructionsStackView.snp.makeConstraints { make in
-            make.top.equalTo(ingredientsStackView.snp.bottom).offset(10) // Добавляем отступ 40 пунктов вниз
+            make.top.equalTo(ingredientsStackView.snp.bottom).offset(40)
         }
     }
 
@@ -178,9 +185,17 @@ class RecipeView: UIViewController {
         recipeImageView.image = UIImage(named: "\(String(recipe.photo ?? ""))")
 
         // Устанавливаем значения для круговых индикаторов 🎯
-        proteinIndicator.progress = Float(recipe.protein) / 100.0
-        fatIndicator.progress = Float(recipe.fat) / 100.0
-        carbsIndicator.progress = Float(recipe.carbohydrates) / 100.0
+        let totalNutrients = Float(recipe.protein + recipe.fat + recipe.carbohydrates)
+        
+        if totalNutrients > 0 {
+            proteinIndicator.progress = Float(recipe.protein) / totalNutrients
+            fatIndicator.progress = Float(recipe.fat) / totalNutrients
+            carbsIndicator.progress = Float(recipe.carbohydrates) / totalNutrients
+        } else {
+            proteinIndicator.progress = 0
+            fatIndicator.progress = 0
+            carbsIndicator.progress = 0
+        }
 
         // Устанавливаем текст для индикаторов ✏️
         proteinIndicatorText.text = "Protein: \(recipe.protein)"
