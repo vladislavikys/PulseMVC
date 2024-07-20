@@ -4,10 +4,12 @@ class CircularProgressView: UIView {
 
     private let shapeLayer = CAShapeLayer()
     private let backgroundLayer = CAShapeLayer()
+    private let percentageLabel = UILabel()
     
     var progress: Float = 0 {
         didSet {
             updateProgress()
+            updatePercentageLabel()
         }
     }
     
@@ -25,7 +27,7 @@ class CircularProgressView: UIView {
         }
     }
     
-    var backgroundLayerColor: UIColor = .lightGray { 
+    var backgroundLayerColor: UIColor = .lightGray { // Светло-серый цвет для фона
         didSet {
             backgroundLayer.strokeColor = backgroundLayerColor.cgColor
         }
@@ -53,6 +55,11 @@ class CircularProgressView: UIView {
         shapeLayer.lineWidth = lineWidth
         shapeLayer.lineCap = .round
         layer.addSublayer(shapeLayer)
+        
+        percentageLabel.font = UIFont.systemFont(ofSize: 16)
+        percentageLabel.textAlignment = .center
+        percentageLabel.textColor = .black
+        addSubview(percentageLabel)
     }
     
     private func updateProgress() {
@@ -69,8 +76,13 @@ class CircularProgressView: UIView {
         backgroundLayer.path = backgroundPath.cgPath
     }
     
+    private func updatePercentageLabel() {
+        percentageLabel.text = "\(Int(progress * 100))%"
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         updateProgress()
+        percentageLabel.frame = bounds
     }
 }

@@ -67,7 +67,7 @@ class RecipeView: UIViewController {
         view.addSubview(backButton)
 
         recipeImageView.contentMode = .scaleAspectFill
-        view.backgroundColor = .lightGray
+        
 
         setupNutrientIndicators() // Настраиваем индикаторы питательных веществ 📊
 
@@ -90,37 +90,55 @@ class RecipeView: UIViewController {
     private func setupNutrientIndicators() {
         // Настройка stackView для индикаторов питательных веществ 🍽️
         nutrientStackView.axis = .horizontal
-        nutrientStackView.spacing = 20
+        nutrientStackView.spacing = 5
         nutrientStackView.alignment = .center
         nutrientStackView.distribution = .equalSpacing
 
-        let indicators: [(CircularProgressView, UILabel, String)] = [
-            (proteinIndicator, proteinIndicatorText, "Protein"),
-            (fatIndicator, fatIndicatorText, "Fat"),
-            (carbsIndicator, carbsIndicatorText, "Carbs")
+        let indicators: [(CircularProgressView, String)] = [
+            (proteinIndicator, "Protein"),
+            (fatIndicator, "Fat"),
+            (carbsIndicator, "Carbs")
         ]
 
         // Устанавливаем начальную ширину линии для индикаторов
         indicators.forEach { $0.0.lineWidth = 5 }
 
         // Добавляем каждый индикатор и его метку в стек 🏗️
-        for (indicator, textLabel, title) in indicators {
-            textLabel.text = title
-            textLabel.textAlignment = .center
-            textLabel.numberOfLines = 0
+        for (indicator, title) in indicators {
+            let titleLabel = UILabel()
+            titleLabel.text = title
+            titleLabel.textAlignment = .center
+            titleLabel.numberOfLines = 1
+            titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+
+            let valueLabel = UILabel()
+            valueLabel.textAlignment = .center
+            valueLabel.numberOfLines = 1
+            valueLabel.textColor = .gray
+            valueLabel.font = UIFont.systemFont(ofSize: 14)
 
             let stackViewItem = UIStackView()
             stackViewItem.axis = .vertical
             stackViewItem.spacing = 8
             stackViewItem.alignment = .center
-            stackViewItem.addArrangedSubview(textLabel)
             stackViewItem.addArrangedSubview(indicator)
+            stackViewItem.addArrangedSubview(titleLabel)
+            stackViewItem.addArrangedSubview(valueLabel)
 
             indicator.snp.makeConstraints { make in
                 make.width.height.equalTo(60) // Устанавливаем размер индикаторов
             }
 
             nutrientStackView.addArrangedSubview(stackViewItem)
+
+            // Обновляем текст значения в зависимости от типа индикатора
+            if indicator == proteinIndicator {
+                valueLabel.text = "\(recipe.protein)g"
+            } else if indicator == fatIndicator {
+                valueLabel.text = "\(recipe.fat)g"
+            } else if indicator == carbsIndicator {
+                valueLabel.text = "\(recipe.carbohydrates)g"
+            }
         }
     }
 
@@ -196,11 +214,6 @@ class RecipeView: UIViewController {
             fatIndicator.progress = 0
             carbsIndicator.progress = 0
         }
-
-        // Устанавливаем текст для индикаторов ✏️
-        proteinIndicatorText.text = "Protein: \(recipe.protein)"
-        fatIndicatorText.text = "Fat: \(recipe.fat)"
-        carbsIndicatorText.text = "Carbs: \(recipe.carbohydrates)"
     }
 
     private func setupIngredientList() {
