@@ -20,9 +20,8 @@ extension UIView {
 }
 
 extension PulseViewController {
-    func printDB(){
-        if let coreData = CoreDataeManager.shared.fetchProfile(){
-            // Распечатываем данные пользователя
+    func printDB() {
+        if let coreData = CoreDataeManager.shared.fetchProfile() {
             print("-----------------")
             print("Выбранные единицы измерения: \(coreData.units ?? "Не указаны")")
             print("Пол: \(coreData.gender ?? "Не указан")")
@@ -33,28 +32,35 @@ extension PulseViewController {
             print("-----------------")
         }
     }
-    func createDefResepies(){
-       
+
+    func createDefResepies() {
         CoreDataeManager.shared.createRecipe(
             name: "Овсяная каша с протеином и фруктами",
-                    photo: "eat",
-                    calories: 350,
-                    cookingTime: 10,
-                    description: "Питательный и вкусный завтрак для спортсменов",
-                    ingredients: "Овсяные хлопья, протеиновый порошок, банан, ягоды, молоко",
-                    carbohydrates: 45,
-                    fat: 5,
-                    protein: 25,
-                    servings: 1,
-                    category: "Завтрак",
+            photo: "eat",
+            calories: 350,
+            cookingTime: 10,
+            description: "Питательный и вкусный завтрак для спортсменов",
+            ingredients: "Овсяные хлопья, протеиновый порошок, банан, ягоды, молоко",
+            ingredientDetails: [
+                "Овсяные хлопья": "100 г",
+                "Протеиновый порошок": "1 ложка",
+                "Банан": "1 шт",
+                "Ягоды": "100 г",
+                "Молоко": "200 мл"
+            ],
+            carbohydrates: 45,
+            fat: 5,
+            protein: 25,
+            servings: 1,
+            category: "Завтрак",
             instructions: """
             1. Залейте овсяные хлопья молоком и варите на среднем огне.
             2. Добавьте протеиновый порошок и хорошо перемешайте.
             3. Нарежьте банан и добавьте в кашу.
             4. Добавьте ягоды и подавайте горячим.
-            """)
+            """
+        )
 
-       
         CoreDataeManager.shared.createRecipe(
             name: "Куриная грудка с гарниром из риса и овощами",
             photo: "chiken",
@@ -62,6 +68,13 @@ extension PulseViewController {
             cookingTime: 30,
             description: "Сбалансированный обед с высоким содержанием белка и клетчатки",
             ingredients: "Куриная грудка, коричневый рис, брокколи, морковь, лук",
+            ingredientDetails: [
+                "Куриная грудка": "200 г",
+                "Коричневый рис": "100 г",
+                "Брокколи": "100 г",
+                "Морковь": "1 шт",
+                "Лук": "1 шт"
+            ],
             carbohydrates: 40,
             fat: 10,
             protein: 40,
@@ -82,6 +95,12 @@ extension PulseViewController {
             cookingTime: 5,
             description: "Питательный напиток для восстановления после тренировки",
             ingredients: "Протеиновый порошок, банан, арахисовое масло, молоко",
+            ingredientDetails: [
+                "Протеиновый порошок": "1 ложка",
+                "Банан": "1 шт",
+                "Арахисовое масло": "1 cт.л.",
+                "Молоко": "200 мл"
+            ],
             carbohydrates: 30,
             fat: 15,
             protein: 25,
@@ -101,6 +120,13 @@ extension PulseViewController {
             cookingTime: 40,
             description: "Полезный ужин с богатым источником белка и здоровых жиров",
             ingredients: "Форель, сладкий картофель, шпинат, лимон, оливковое масло",
+            ingredientDetails: [
+                "Форель": "200 г",
+                "Сладкий картофель": "300 г",
+                "Шпинат": "100 г",
+                "Лимон": "1 шт",
+                "Оливковое масло": "2 cт.л."
+            ],
             carbohydrates: 35,
             fat: 20,
             protein: 35,
@@ -122,6 +148,12 @@ extension PulseViewController {
             cookingTime: 5,
             description: "Легкий перекус с сочетанием белка, клетчатки и медленных углеводов",
             ingredients: "Греческий йогурт, гранола, яблоко, голубика",
+            ingredientDetails: [
+                "Греческий йогурт": "200 г",
+                "Гранола": "50 г",
+                "Яблоко": "1 шт",
+                "Голубика": "50 г"
+            ],
             carbohydrates: 30,
             fat: 8,
             protein: 18,
@@ -134,9 +166,7 @@ extension PulseViewController {
             4. Перемешайте и подавайте.
             """
         )
-        
-        //--------new gpt
-        
+
         CoreDataeManager.shared.createRecipe(
             name: "Салат с тунцом и фасолью",
             photo: "tuna_salad",
@@ -144,6 +174,14 @@ extension PulseViewController {
             cookingTime: 15,
             description: "Легкий и питательный салат с высоким содержанием белка",
             ingredients: "Тунец, фасоль, помидоры, огурцы, оливковое масло, лимонный сок",
+            ingredientDetails: [
+                "Тунец": "200 г",
+                "Фасоль": "100 г",
+                "Помидоры": "2 шт",
+                "Огурцы": "2 шт",
+                "Оливковое масло": "2 cт.л.",
+                "Лимонный сок": "1 cт.л."
+            ],
             carbohydrates: 20,
             fat: 15,
             protein: 25,
@@ -164,6 +202,13 @@ extension PulseViewController {
             cookingTime: 30,
             description: "Кремовый суп с брокколи и плавленым сыром",
             ingredients: "Брокколи, сыр, лук, картофель, сливки",
+            ingredientDetails: [
+                "Брокколи": "300 г",
+                "Сыр": "100 г",
+                "Лук": "1 шт",
+                "Картофель": "200 г",
+                "Сливки": "200 мл"
+            ],
             carbohydrates: 20,
             fat: 20,
             protein: 10,
@@ -185,6 +230,13 @@ extension PulseViewController {
             cookingTime: 35,
             description: "Сочное куриное мясо на гриле с овощами",
             ingredients: "Курица, болгарский перец, лук, кабачки, оливковое масло",
+            ingredientDetails: [
+                "Курица": "300 г",
+                "Болгарский перец": "2 шт",
+                "Лук": "1 шт",
+                "Кабачки": "2 шт",
+                "Оливковое масло": "2 cт.л."
+            ],
             carbohydrates: 15,
             fat: 25,
             protein: 35,
@@ -205,6 +257,14 @@ extension PulseViewController {
             cookingTime: 40,
             description: "Традиционное французское блюдо с овощами",
             ingredients: "Баклажаны, помидоры, цуккини, лук, оливковое масло, чеснок",
+            ingredientDetails: [
+                "Баклажаны": "2 шт",
+                "Помидоры": "4 шт",
+                "Цуккини": "2 шт",
+                "Лук": "1 шт",
+                "Оливковое масло": "2 cт.л.",
+                "Чеснок": "2 зубчика"
+            ],
             carbohydrates: 25,
             fat: 10,
             protein: 5,
@@ -216,7 +276,7 @@ extension PulseViewController {
             3. Полейте оливковым маслом и добавьте чеснок.
             4. Запекайте в духовке при 180°
             """
-            )
+        )
 
         CoreDataeManager.shared.createRecipe(
             name: "Смузи с манго и шпинатом",
@@ -225,6 +285,12 @@ extension PulseViewController {
             cookingTime: 5,
             description: "Освежающий и полезный смузи",
             ingredients: "Манго, шпинат, банан, кокосовая вода",
+            ingredientDetails: [
+                "Манго": "1 шт",
+                "Шпинат": "100 г",
+                "Банан": "1 шт",
+                "Кокосовая вода": "200 мл"
+            ],
             carbohydrates: 35,
             fat: 2,
             protein: 2,
@@ -244,6 +310,14 @@ extension PulseViewController {
             cookingTime: 25,
             description: "Вкусная паста с креветками и ароматным чесночным соусом",
             ingredients: "Паста, креветки, чеснок, сливки, пармезан, петрушка",
+            ingredientDetails: [
+                "Паста": "200 г",
+                "Креветки": "300 г",
+                "Чеснок": "3 зубчика",
+                "Сливки": "200 мл",
+                "Пармезан": "50 г",
+                "Петрушка": "50 г"
+            ],
             carbohydrates: 55,
             fat: 15,
             protein: 25,
@@ -265,6 +339,14 @@ extension PulseViewController {
             cookingTime: 10,
             description: "Питательный овсяноблин с добавлением свежих фруктов и йогурта",
             ingredients: "Овсянка, яйцо, молоко, клубника, банан, греческий йогурт",
+            ingredientDetails: [
+                "Овсянка": "100 г",
+                "Яйцо": "1 шт",
+                "Молоко": "100 мл",
+                "Клубника": "100 г",
+                "Банан": "1 шт",
+                "Греческий йогурт": "100 г"
+            ],
             carbohydrates: 40,
             fat: 5,
             protein: 10,
@@ -285,6 +367,13 @@ extension PulseViewController {
             cookingTime: 20,
             description: "Сытное и полезное блюдо из гречки с грибами и луком",
             ingredients: "Гречка, грибы, лук, масло, специи",
+            ingredientDetails: [
+                "Гречка": "200 г",
+                "Грибы": "200 г",
+                "Лук": "1 шт",
+                "Масло": "2 cт.л.",
+                "Специи": "по вкусу"
+            ],
             carbohydrates: 55,
             fat: 10,
             protein: 10,
@@ -305,6 +394,14 @@ extension PulseViewController {
             cookingTime: 60,
             description: "Вкусный и полезный десерт с морковью и орехами",
             ingredients: "Морковь, мука, яйца, сахар, орехи, масло",
+            ingredientDetails: [
+                "Морковь": "200 г",
+                "Мука": "200 г",
+                "Яйца": "3 шт",
+                "Сахар": "150 г",
+                "Орехи": "100 г",
+                "Масло": "100 г"
+            ],
             carbohydrates: 50,
             fat: 15,
             protein: 5,
@@ -325,6 +422,13 @@ extension PulseViewController {
             cookingTime: 20,
             description: "Классический салат Цезарь с куриным филе",
             ingredients: "Курица, салат ромэн, пармезан, крутоны, цезарь соус",
+            ingredientDetails: [
+                "Курица": "200 г",
+                "Салат ромэн": "100 г",
+                "Пармезан": "50 г",
+                "Крутоны": "50 г",
+                "Цезарь соус": "по вкусу"
+            ],
             carbohydrates: 20,
             fat: 25,
             protein: 30,
@@ -345,6 +449,14 @@ extension PulseViewController {
             cookingTime: 15,
             description: "Легкий и полезный салат, богатый белком и полезными жирами",
             ingredients: "Киноа, авокадо, помидоры, огурцы, оливковое масло, лимон",
+            ingredientDetails: [
+                "Киноа": "100 г",
+                "Авокадо": "1 шт",
+                "Помидоры": "2 шт",
+                "Огурцы": "2 шт",
+                "Оливковое масло": "2 cт.л.",
+                "Лимон": "1 шт"
+            ],
             carbohydrates: 40,
             fat: 20,
             protein: 10,
@@ -366,6 +478,14 @@ extension PulseViewController {
             cookingTime: 25,
             description: "Питательный суп, богатый белком и клетчаткой",
             ingredients: "Чечевица, томаты, лук, чеснок, оливковое масло, специи",
+            ingredientDetails: [
+                "Чечевица": "200 г",
+                "Томаты": "4 шт",
+                "Лук": "1 шт",
+                "Чеснок": "3 зубчика",
+                "Оливковое масло": "2 cт.л.",
+                "Специи": "по вкусу"
+            ],
             carbohydrates: 45,
             fat: 5,
             protein: 15,
@@ -379,6 +499,7 @@ extension PulseViewController {
             """
         )
 
+    
         CoreDataeManager.shared.createRecipe(
             name: "Омлет с овощами и сыром",
             photo: "omelet",
@@ -386,6 +507,13 @@ extension PulseViewController {
             cookingTime: 10,
             description: "Сытный завтрак, богатый белком и витаминами",
             ingredients: "Яйца, молоко, шпинат, болгарский перец, сыр",
+            ingredientDetails: [
+                "Яйца": "2 шт",
+                "Молоко": "100 мл",
+                "Шпинат": "50 г",
+                "Болгарский перец": "1 шт",
+                "Сыр": "50 г"
+            ],
             carbohydrates: 10,
             fat: 25,
             protein: 20,
@@ -406,6 +534,13 @@ extension PulseViewController {
             cookingTime: 5,
             description: "Освежающий напиток, богатый антиоксидантами и клетчаткой",
             ingredients: "Ягоды, овсянка, йогурт, мед, молоко",
+            ingredientDetails: [
+                "Ягоды": "150 г",
+                "Овсянка": "50 г",
+                "Йогурт": "100 г",
+                "Мед": "1 cт.л.",
+                "Молоко": "200 мл"
+            ],
             carbohydrates: 35,
             fat: 5,
             protein: 10,
@@ -425,6 +560,13 @@ extension PulseViewController {
             cookingTime: 45,
             description: "Сытный ужин с высоким содержанием белка и витаминов",
             ingredients: "Курица, картофель, морковь, брокколи, оливковое масло",
+            ingredientDetails: [
+                "Курица": "500 г",
+                "Картофель": "3 шт",
+                "Морковь": "2 шт",
+                "Брокколи": "200 г",
+                "Оливковое масло": "3 cт.л."
+            ],
             carbohydrates: 50,
             fat: 20,
             protein: 30,
@@ -448,6 +590,13 @@ extension PulseViewController {
             cookingTime: 20,
             description: "Вкусный обед с сочетанием углеводов, белков и жиров",
             ingredients: "Паста, помидоры, шпинат, сыр фета, оливковое масло",
+            ingredientDetails: [
+                "Паста": "200 г",
+                "Помидоры": "2 шт",
+                "Шпинат": "100 г",
+                "Сыр фета": "100 г",
+                "Оливковое масло": "2 cт.л."
+            ],
             carbohydrates: 60,
             fat: 15,
             protein: 15,
